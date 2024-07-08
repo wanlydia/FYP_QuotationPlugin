@@ -8,4 +8,7 @@ Author:Lydia, Chloe
 Author URI: https://github.com/wanlydia, https://github.com/CrossoverRed 
 License: GPL2
 */
+// Plugin activation hook (Chloe & Lydia)
+register_activation_hook(__FILE__, 'rp_calculator');
+
 ?>
