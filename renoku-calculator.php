@@ -32,7 +32,8 @@ add_action('admin_menu', 'rp_admin_menu');
 
 // Admin menu setup (Chloe & Lydia)
 function rp_admin_menu() {
-    add_menu_page( //Admin Page
+    add_menu_page( 
+        //We don't touch this, so I feel less confusing as it would be starting from 0, 1, 2
         'RP Calculator',               // Page title
         'RP Calculator',               // Menu title
         'manage_options',              // Capability
@@ -41,7 +42,8 @@ function rp_admin_menu() {
     );
 
     add_submenu_page(
-        'rp-calculator',               // Parent slug
+        //The "javascript"/functions of page 1
+        'rp-calculator',               // Parent slug --> linked to Menu Plug, which is like sub folders in 1 big folder
         'RP Calculator Sub Page 1',    // Page title
         'Sub Page 1',                  // Menu title
         'manage_options',              // Capability
@@ -90,7 +92,7 @@ function Renoku_Calculator_Pg3() {
 }
 
 // Shortcode to display the calculator in the website itself
-function rp_calc_form_shortcode() {
+function rp_calc_pg1_shortcode() {
     ob_start();
     ?>
     <div id="rp-calculator">
@@ -100,5 +102,29 @@ function rp_calc_form_shortcode() {
     <?php
     return ob_get_clean();
 }
-add_shortcode('rp_calc_form', 'rp_calc_form_shortcode');
+add_shortcode('rp_calc_pg1', 'rp_calc_pg1_shortcode');
+
+function rp_calc_pg2_shortcode() {
+    ob_start();
+    ?>
+    <div id="rp-calculator">
+        <!-- Calculator form content goes here -->
+        <h2>Calculator Form</h2>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('rp_calc_pg2', 'rp_calc_pg2_shortcode');
+
+function rp_calc_pg3_shortcode() {
+    ob_start();
+    ?>
+    <div id="rp-calculator">
+        <!-- Calculator form content goes here -->
+        <h2>Calculator Form</h2>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('rp_calc_pg3', 'rp_calc_pg3_shortcode');
 ?>
