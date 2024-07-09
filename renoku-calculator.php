@@ -32,12 +32,12 @@ add_action('admin_menu', 'rp_admin_menu');
 
 // Admin menu setup (Chloe & Lydia)
 function rp_admin_menu() {
-    add_menu_page(
-        'RP Calculator Main Settings', // Page title
+    add_menu_page( //Admin Page
+        'RP Calculator',               // Page title
         'RP Calculator',               // Menu title
         'manage_options',              // Capability
         'rp-calculator',               // Menu slug
-        'Renoku_Calculator_Pg1'        // Function to display the page content
+        'Renoku_Calculator_Base'        // Function to display the page content
     );
 
     add_submenu_page(
@@ -46,7 +46,7 @@ function rp_admin_menu() {
         'Sub Page 1',                  // Menu title
         'manage_options',              // Capability
         'rp-calculator-subpage1',      // Menu slug
-        'Renoku_Calculator_Pg2'        // Function to display the page content
+        'Renoku_Calculator_Pg1'        // Function to display the page content
     );
 
     add_submenu_page(
@@ -55,6 +55,15 @@ function rp_admin_menu() {
         'Sub Page 2',                  // Menu title
         'manage_options',              // Capability
         'rp-calculator-subpage2',      // Menu slug
+        'Renoku_Calculator_Pg2'        // Function to display the page content
+    );
+
+    add_submenu_page(
+        'rp-calculator',               // Parent slug
+        'RP Calculator Sub Page 3',    // Page title
+        'Sub Page 3',                  // Menu title
+        'manage_options',              // Capability
+        'rp-calculator-subpage3',      // Menu slug
         'Renoku_Calculator_Pg3'        // Function to display the page content
     );
 }
@@ -63,6 +72,11 @@ function rp_admin_menu() {
 function Renoku_Calculator_Pg1() {
     echo '<h1>RP Calculator Main Settings</h1>';
     echo '<p>Main settings page content goes here.</p>';
+    //The echo is because is still in php file
+    //Observed from Shernice and Jannah, they put code about making the data table functions are here.
+    //Like how there was an accompanying php file for the data table functions, seperate from the display page.
+    //I guess is like the javascript for the display page.
+    //Since we have 3 different pages to do I think have 3 different submenus for respective pages can work maybe?
 }
 
 function Renoku_Calculator_Pg2() {
@@ -75,7 +89,7 @@ function Renoku_Calculator_Pg3() {
     echo '<p>Sub page 2 content goes here.</p>';
 }
 
-// Shortcode to display the calculator
+// Shortcode to display the calculator in the website itself
 function rp_calc_form_shortcode() {
     ob_start();
     ?>
