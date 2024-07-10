@@ -132,6 +132,7 @@ function rp_calc_pg1_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('rp_calc_pg1', 'rp_calc_pg1_shortcode');
+//To put shortcode in Wordpress, find the shortcode then type: [rp_calc_pg1]
 
 function rp_calc_pg2_shortcode() {
     ob_start();
@@ -144,6 +145,7 @@ function rp_calc_pg2_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('rp_calc_pg2', 'rp_calc_pg2_shortcode');
+//To put shortcode in Wordpress, find the shortcode then type: [rp_calc_pg2]
 
 function rp_calc_pg3_shortcode() {
     ob_start();
@@ -156,4 +158,5 @@ function rp_calc_pg3_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('rp_calc_pg3', 'rp_calc_pg3_shortcode');
+//To put shortcode in Wordpress, find the shortcode then type: [rp_calc_pg3]
 ?>
