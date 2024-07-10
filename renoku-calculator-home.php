@@ -95,9 +95,10 @@ function Renoku_Calculator_Pg3() {
 function rp_calc_pg1_shortcode() {
     ob_start();
     ?>
-    <div id="rp-calculator">
+    <div id="rp-calculator-pg1">
         <!-- Calculator form content goes here -->
         <h2>Calculator Form</h2>
+        
     </div>
     <?php
     return ob_get_clean();
@@ -107,7 +108,7 @@ add_shortcode('rp_calc_pg1', 'rp_calc_pg1_shortcode');
 function rp_calc_pg2_shortcode() {
     ob_start();
     ?>
-    <div id="rp-calculator">
+    <div id="rp-calculator-pg2">
         <!-- Calculator form content goes here -->
         <h2>Calculator Form</h2>
     </div>
@@ -119,7 +120,7 @@ add_shortcode('rp_calc_pg2', 'rp_calc_pg2_shortcode');
 function rp_calc_pg3_shortcode() {
     ob_start();
     ?>
-    <div id="rp-calculator">
+    <div id="rp-calculator-pg3">
         <!-- Calculator form content goes here -->
         <h2>Calculator Form</h2>
     </div>
