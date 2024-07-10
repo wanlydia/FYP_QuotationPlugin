@@ -96,8 +96,9 @@ function rp_calc_pg1_shortcode() {
     ob_start();
     ?>
     <div id="rp-calculator-pg1">
-        <!-- Calculator form content goes here -->
-        <h2>Calculator Form</h2>
+        <!-- Background colour: #323131 -->
+        <h1>Quotation</h1> <!-- Maytra, colour is #F7C454 -->
+        <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3> <!-- Glacial Indifference, colour is ##F7F7F5 -->
         
     </div>
     <?php
