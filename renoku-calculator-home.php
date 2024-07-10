@@ -99,7 +99,34 @@ function rp_calc_pg1_shortcode() {
         <!-- Background colour: #323131 -->
         <h1>Quotation</h1> <!-- Maytra, colour is #F7C454 -->
         <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3> <!-- Glacial Indifference, colour is ##F7F7F5 -->
-        
+        <div class="Group-1">
+            <div class="property-status">
+                <p>Property Status</p>
+                <button id="btn-1" type="button">New</button>
+                <button id="btn-2" type="button">Resale</button>
+            </div>
+            <div class="">
+                <p>Property Type</p>
+                <button id="btn-3" type="button">HDB</button>
+                <button id="btn-4" type="button">Condo</button>
+                <button id="btn-5" type="button">Landed</button>
+            </div>
+        </div>
+        <div class="Group-2">
+            <div class="renovate">
+                <p>What To Renovate?</p>
+                <button id="btn-6" type="button">Living/Dining</button>
+                <button id="btn-7" type="button">Bedroom</button>
+                <button id="btn-8" type="button">Kitchen</button>
+                <button id="btn-9" type="button">Bathroom</button>
+            </div>
+            <div class="budget">
+                <p>No. of Bedrooms</p>
+                <input type="number" id="budget" name="budget" placeholder="Enter...">
+                <p>No. of Bathrooms</p>
+                <input type="number" id="budget" name="budget" placeholder="Enter...">
+            </div>
+        </div>
     </div>
     <?php
     return ob_get_clean();
