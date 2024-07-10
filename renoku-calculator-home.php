@@ -127,6 +127,7 @@ function rp_calc_pg1_shortcode() {
                 <input type="number" id="budget" name="budget" placeholder="Enter...">
             </div>
         </div>
+        <button id="btn-10" type="button">Next</button>
     </div>
     <?php
     return ob_get_clean();
