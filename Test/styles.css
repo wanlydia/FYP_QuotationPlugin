@@ -3,13 +3,11 @@ body {
     background-color: #323131;
     color: #FFFFFF; 
 }
-
 h3 {
     text-align: center;
     color: #F7C454;
     font-size:30px;
 }
-
 .common-btn{
     background-color: #323131;
     color: white;
@@ -28,4 +26,11 @@ h3 {
     background-color: #F7C454;
     color: black;
 border-color: #F7C454;
+}
+#bedrooms-box, #bathrooms-box {
+    border: 2px solid white; 
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size:14px;
 }

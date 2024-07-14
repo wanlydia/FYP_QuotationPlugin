@@ -16,14 +16,14 @@
                 <button id="btn-1" class="common-btn" type="button">New</button>
                 <button id="btn-2" class="common-btn" type="button">Resale</button>
             </div>
-            <div class="">
+            <div class="Group-2">
                 <p>Property Type</p>
                 <button id="btn-3" class="common-btn" type="button">HDB</button>
                 <button id="btn-4" class="common-btn" type="button">Condo</button>
                 <button id="btn-5" class="common-btn" type="button">Landed</button>
             </div>
         </div>
-        <div class="Group-2">
+        <div class="Group-3">
             <div class="renovate">
                 <p>What To Renovate?</p>
                 <button id="btn-6" class="common-btn" type="button">Living/Dining</button>
@@ -32,68 +32,36 @@
                 <button id="btn-9" class="common-btn" type="button">Bathroom</button>
             </div>
             <div class="budget">
-                <p>No. of Bedrooms</p>
-                <input type="number" id="budget" name="budget" placeholder="Enter...">
-                <p>No. of Bathrooms</p>
-                <input type="number" id="budget" name="budget" placeholder="Enter...">
+                <p id="bedrooms-txt">No. of Bedrooms</p> 
+                <input type="number" id="bedrooms-box" name="budget" placeholder="Enter..."> 
+                <p id="bathrooms-txt">No. of Bathrooms</p> 
+                <input type="number" id="bathrooms-box" name="budget" placeholder="Enter..."> 
             </div>
         </div>
         <button id="btn-10" class="common-btn" type="button">Next</button>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    var BtnOne = document.getElementById('btn-1');
-    var BtnTwo = document.getElementById('btn-2');
-    var BtnThree = document.getElementById('btn-3');
-    var BtnFourth = document.getElementById('btn-4');
-    var BtnFifth = document.getElementById('btn-5');
-    var BtnSixth = document.getElementById('btn-6');
-    var BtnSeventh = document.getElementById('btn-7');
-    var BtnEigth = document.getElementById('btn-8');
-    var BtnNineth = document.getElementById('btn-9');
-    var BtnTenth = document.getElementById('btn-10');
-	
-    BtnOne.addEventListener('click', function() {
-        BtnOne.classList.toggle('toggled');
-    });
+            var Btns = [
+                document.getElementById('btn-1'),
+                document.getElementById('btn-2'),
+                document.getElementById('btn-3'),
+                document.getElementById('btn-4'),
+                document.getElementById('btn-5'),
+                document.getElementById('btn-6'),
+                document.getElementById('btn-7'),
+                document.getElementById('btn-8'),
+                document.getElementById('btn-9'),
+                document.getElementById('btn-10')
+            ];
 
-    BtnTwo.addEventListener('click', function() {
-        BtnTwo.classList.toggle('toggled');
-    });
-
-    BtnThree.addEventListener('click', function() {
-        BtnThree.classList.toggle('toggled');
-    });
-
-    BtnFourth.addEventListener('click', function() {
-        BtnFourth.classList.toggle('toggled');
-    });
-	
-	BtnFifth.addEventListener('click', function() {
-        BtnFifth.classList.toggle('toggled');
-    });
-	
-	BtnSixth.addEventListener('click', function() {
-        BtnSixth.classList.toggle('toggled');
-    });
-	
-	BtnSeventh.addEventListener('click', function() {
-        BtnSeventh.classList.toggle('toggled');
-    });
-	
-	BtnEigth.addEventListener('click', function() {
-        BtnEigth.classList.toggle('toggled');
-    });
-
-    BtnNineth.addEventListener('click', function() {
-        BtnNineth.classList.toggle('toggled');
-    });
-
-    BtnTenth.addEventListener('click', function() {
-        BtnTenth.classList.toggle('toggled');
-    });
-});
-
+            Btns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    btn.classList.toggle('toggled');
+                });
+            });
+        });
+        
     </script>
 </body>
 </html>
