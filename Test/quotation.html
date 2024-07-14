@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,11 +28,11 @@
             <div class="renovate">
                 <p>What To Renovate?</p>
                 <button id="btn-6" class="common-btn" type="button">Living/Dining</button>
-                <button id="btn-7" class="common-btn" type="button">Bedroom</button>
+                <button id="btn-7" class="common-btn" type="button">Bedroom</button><br>
                 <button id="btn-8" class="common-btn" type="button">Kitchen</button>
                 <button id="btn-9" class="common-btn" type="button">Bathroom</button>
             </div>
-            <div class="budget">
+            <div class="budget-group">
                 <p id="bedrooms-txt">No. of Bedrooms</p> 
                 <input type="number" id="bedrooms-box" name="budget" placeholder="Enter..."> 
                 <p id="bathrooms-txt">No. of Bathrooms</p> 
@@ -55,13 +56,37 @@
                 document.getElementById('btn-10')
             ];
 
-            Btns.forEach(function(btn) {
+            Btns.forEach(function(btn, index) {
                 btn.addEventListener('click', function() {
+                    if (index === 0) {
+                        Btns[1].classList.remove('toggled');
+                    } else if (index === 1) {
+                        Btns[0].classList.remove('toggled');
+                    } else if (index >= 2 && index <= 4) {
+                        [2, 3, 4].forEach(function(i) {
+                            if (i !== index) Btns[i].classList.remove('toggled');
+                        });
+                    }
                     btn.classList.toggle('toggled');
                 });
             });
+
+            var bedroomsBox = document.getElementById('bedrooms-box');
+            var bathroomsBox = document.getElementById('bathrooms-box');
+
+            bedroomsBox.addEventListener('input', function() {
+                if (bedroomsBox.value < 0) {
+                    bedroomsBox.value = 0;
+                }
+            });
+
+            bathroomsBox.addEventListener('input', function() {
+                if (bathroomsBox.value < 0) {
+                    bathroomsBox.value = 0;
+                }
+            });
         });
-        
+
     </script>
 </body>
 </html>
