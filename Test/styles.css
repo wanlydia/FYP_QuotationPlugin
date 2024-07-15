@@ -17,6 +17,7 @@ h3 {
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 8px;
+    width:10%;
 }
 .common-btn:hover {
     border-color: #F7C454;
