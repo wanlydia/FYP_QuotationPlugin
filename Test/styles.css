@@ -17,7 +17,6 @@ h3 {
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 8px;
-    width:10%;
 }
 .common-btn:hover {
     border-color: #F7C454;
@@ -28,7 +27,7 @@ h3 {
     color: black;
     border-color: #F7C454;
 }
-#bedrooms-box, #bathrooms-box {
+#bedrooms-box, #bathrooms-box, #area-box {
     border: 2px solid white; 
     padding: 10px 10px;
     border-radius: 5px;

@@ -13,80 +13,97 @@
         <h3>KITCHEN</h3> <!-- Glacial Indifference, colour is ##F7F7F5 -->
         <div class="Group-1">
             <div class="hacking-grp">
-                <p>Hacking</p>
-                <button id="btn-1c1" class="common-btn" type="button">New</button>
-                <button id="btn-2c1" class="common-btn" type="button">Resale</button>
-                <button id="btn-3c1" class="common-btn" type="button">HDB</button>
+                <p>HACKING</p>
+                <button id="btn-1c1" class="common-btn" type="button">Light</button>
+                <button id="btn-2c1" class="common-btn" type="button">Moderate</button>
+                <button id="btn-3c1" class="common-btn" type="button">Extensive</button>
+                <p>Dismantle a cabinet, door or window without hacking walls or floors.</p>
             </div>
-            <div class="property-type-grp">
-                <p>Property Type</p>
-                <button id="btn-4c1" class="common-btn" type="button">HDB</button>
-                <button id="btn-5c1" class="common-btn" type="button">Condo</button>
-                <button id="btn-6c1" class="common-btn" type="button">Landed</button>
+            <div class="masonry-grp">
+                <p>MASONRY</p>
+                <button id="btn-4c1" class="common-btn" type="button">Light</button>
+                <button id="btn-5c1" class="common-btn" type="button">Moderate</button>
+                <button id="btn-6c1" class="common-btn" type="button">Extensive</button>
+                <p>Dismantle a cabinet, door or window without hacking walls or floors.</p>
             </div>
         </div>
         <div class="Group-2">
-            <div class="renovate">
-                <p>What To Renovate?</p>
-                <button id="btn-7c1" class="common-btn" type="button">Living/Dining</button>
-                <button id="btn-8c1" class="common-btn" type="button">Bedroom</button><br>
-                <button id="btn-9c1" class="common-btn" type="button">Kitchen</button>
-                <button id="btn-10c1" class="common-btn" type="button">Bathroom</button>
+            <div class="carpentry-grp">
+                <p>CARPENTRY</p>
+                <button id="btn-7c1" class="common-btn" type="button">Light</button>
+                <button id="btn-8c1" class="common-btn" type="button">Moderate</button>
+                <button id="btn-9c1" class="common-btn" type="button">Extensive</button>
+                <p>Dismantle a cabinet, door or window without hacking walls or floors.</p>
             </div>
-            <div class="budget-group">
-                <p id="bedrooms-txt">No. of Bedrooms</p> 
-                <input type="number" id="bedrooms-box" name="budget" placeholder="Enter..."> 
-                <p id="bathrooms-txt">No. of Bathrooms</p> 
-                <input type="number" id="bathrooms-box" name="budget" placeholder="Enter..."> 
+            <div class="reno-area-group">
+                <p id="reno-area-txt">Total Size of Renovated Area</p> 
+                <input type="number" id="area-box" name="Renovated Area" placeholder="Enter..."> m<sup>3</sup>
             </div>
         </div>
-        <button id="btn-11c1" class="common-btn" type="button">Next</button>
+        <button id="btn-10c1" class="common-btn" type="button">Calculate</button>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var Btns = [
-                document.getElementById('btn-1q'),
-                document.getElementById('btn-2q'),
-                document.getElementById('btn-3q'),
-                document.getElementById('btn-4q'),
-                document.getElementById('btn-5q'),
-                document.getElementById('btn-6q'),
-                document.getElementById('btn-7q'),
-                document.getElementById('btn-8q'),
-                document.getElementById('btn-9q'),
-                document.getElementById('btn-10q')
-            ];
+    var hackingBtns = [
+        document.getElementById('btn-1c1'),
+        document.getElementById('btn-2c1'),
+        document.getElementById('btn-3c1')
+    ];
 
-            Btns.forEach(function(btn, index) {
-                btn.addEventListener('click', function() {
-                    if (index === 0) {
-                        Btns[1].classList.remove('toggled');
-                    } else if (index === 1) {
-                        Btns[0].classList.remove('toggled');
-                    } else if (index >= 2 && index <= 4) {
-                        [2, 3, 4].forEach(function(i) {
-                            if (i !== index) Btns[i].classList.remove('toggled');
-                        });
-                    }
-                    btn.classList.toggle('toggled');
-                });
-            });
-
-            var bedroomsBox = document.getElementById('bedrooms-box');
-            var bathroomsBox = document.getElementById('bathrooms-box');
-
-            bedroomsBox.addEventListener('input', function() {
-                if (bedroomsBox.value < 0) {
-                    bedroomsBox.value = 0;
+    hackingBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            hackingBtns.forEach(function(innerBtn) {
+                if (innerBtn !== btn) {
+                    innerBtn.classList.remove('toggled');
                 }
             });
-
-            bathroomsBox.addEventListener('input', function() {
-                if (bathroomsBox.value < 0) {
-                    bathroomsBox.value = 0;
-                }
-            });
+            btn.classList.toggle('toggled');
         });
+    });
+
+    var masonryBtns = [
+        document.getElementById('btn-4c1'),
+        document.getElementById('btn-5c1'),
+        document.getElementById('btn-6c1')
+    ];
+
+    masonryBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            masonryBtns.forEach(function(innerBtn) {
+                if (innerBtn !== btn) {
+                    innerBtn.classList.remove('toggled');
+                }
+            });
+            btn.classList.toggle('toggled');
+        });
+    });
+
+    var carpentryBtns = [
+        document.getElementById('btn-7c1'),
+        document.getElementById('btn-8c1'),
+        document.getElementById('btn-9c1')
+    ];
+
+    carpentryBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            carpentryBtns.forEach(function(innerBtn) {
+                if (innerBtn !== btn) {
+                    innerBtn.classList.remove('toggled');
+                }
+            });
+            btn.classList.toggle('toggled');
+        });
+    });
+
+    var areaBox = document.getElementById('area-box');
+
+    areaBox.addEventListener('input', function() {
+        if (areaBox.value < 0) {
+            areaBox.value = 0;
+        }
+    });
+});
+
 
     </script>
 </body>
