@@ -40,11 +40,21 @@ h3 {
 .Group-1, .Group-2{
     text-align: center;
 }
-.Group-1 {
+.Group-1,.Group-2 {
     display: flex;
     justify-content: center;
     gap: 100px; 
 }
+/*Keep this here, is an alternate*/
+/* .Group-2 {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+} 
+.renovate-grp, .budget-group {
+    width: 45%; 
+}*/
+
 .property-status-grp, .property-type-grp {
     display: flex;
     flex-direction: column;
@@ -76,6 +86,12 @@ h3 {
 #btn-5q {
     grid-column: 1 / 2; /* Place btn-5q in the first column */
     grid-row: 2; /* Place btn-5q in the second row */
+}
+.button-container3 button {
+    margin-left: -4px; 
+}
+.renovate-grp p {
+    margin-bottom: 10px; 
 }
 
 /*calc-1.html*/
