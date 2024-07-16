@@ -38,6 +38,29 @@ h3 {
 .Group-1, .Group-2{
     text-align: center;
 }
+.Group-1 {
+    display: flex;
+    justify-content: center;
+    gap: 100px; 
+}
+.property-status-grp, .property-type-grp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.property-status-grp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.property-status-grp p {
+    margin-bottom: 10px; /* Adjust the space between the text and buttons as needed */
+}
+.property-status-grp .button-container1 {
+    display: flex;
+}
+
+
 /*calc-1.html*/
 
 /*reveal.html*/
