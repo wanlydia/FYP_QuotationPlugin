@@ -43,7 +43,8 @@ h3 {
 .Group-1,.Group-2 {
     display: flex;
     justify-content: center;
-    gap: 100px; 
+    /* gap: 100px;  */
+    position: relative;
 }
 /*Keep this here, is an alternate*/
 /* .Group-2 {
@@ -93,7 +94,9 @@ h3 {
 .renovate-grp p {
     margin-bottom: 10px; 
 }
-
+.renovate-grp, .budget-group, .property-status-grp,.property-type-grp {
+    width: 30%;
+}
 .bedrooms-container, .bathrooms-container{
     display: flex;
     align-items: center;
@@ -109,6 +112,11 @@ h3 {
 }
 .bathrooms-container{
     margin-top: 10px;
+}
+#btn-10q {
+    display: block;
+    margin: 20px auto 0; /* Top and bottom margin as needed */
+    margin-left: 895px; 
 }
 
 /*calc-1.html*/
