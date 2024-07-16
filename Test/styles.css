@@ -54,3 +54,10 @@ h3 {
     margin-top: -10px;
     color: #F7C454;
 }
+.highlight {
+    color: #F7C454;
+    text-decoration: underline;
+}
+#text2{
+    margin-top:-20px;
+}
