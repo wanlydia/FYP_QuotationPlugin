@@ -53,13 +53,33 @@ h3 {
     flex-direction: column;
     align-items: center;
 }
-.property-status-grp p {
-    margin-bottom: 10px; /* Adjust the space between the text and buttons as needed */
+.property-status-grp p, .property-type-grp p {
+    margin-bottom: 10px; 
 }
 .property-status-grp .button-container1 {
     display: flex;
 }
-
+/* .property-type-grp .button-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
+.property-type-grp .button-container2 {
+    display: grid;
+    grid-template-columns: auto auto; /* Two columns layout */
+    grid-gap: 0px; /* Change the spacing between buttons */
+    justify-content: center; 
+}
+#btn-3q {
+    grid-column: 1 / 2; /* Place btn-3q in the first column */
+}
+#btn-4q {
+    grid-column: 2 / 3; /* Place btn-4q in the second column */
+}
+#btn-5q {
+    grid-column: 1 / 2; /* Place btn-5q in the first column */
+    grid-row: 2; /* Place btn-5q in the second row */
+}
 
 /*calc-1.html*/
 
