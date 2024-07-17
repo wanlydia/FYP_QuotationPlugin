@@ -9,6 +9,7 @@
 /* get buttons to centre */
 .button-set {
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .bvd-button {
