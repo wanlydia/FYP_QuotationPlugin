@@ -142,3 +142,99 @@ h3 {
 #text2{
     margin-top:-20px;
 }
+/*Calculator*/
+#bvd-container {
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* get buttons to centre */
+.button-set {
+    margin-bottom: 20px;
+}
+
+.bvd-button {
+    background-color: #323131;
+    color: white;
+    border: 2px solid #323131;
+    border-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    width: 100px; 
+    text-align: center;
+}
+
+.bvd-button:hover {
+    border-color: #F7C454;
+    color: #F7C454;
+}
+
+.bvd-button.selected {
+    background-color: #F7C454;
+    color: black;
+    border-color: #F7C454;
+}
+
+#bvd-input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#bvd-submit {
+    background-color: #323131;
+    color: white;
+    border: 2px solid #323131;
+    border-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    width: 100px; 
+    text-align: center;
+}
+
+#bvd-result {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.button-text {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#rp-calculator-pg3 {
+    font-family: 'Glacial Indifference', sans-serif;
+    color: #F7F7F5;
+    background-color: #F7C454;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#est-reno-txt, #cost-txt {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #F7C454;
+    background-color: #F7F7F5;
+    padding: 5px;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
+}
