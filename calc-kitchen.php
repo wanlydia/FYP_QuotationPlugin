@@ -23,15 +23,15 @@ function bvd_display_buttons() {
             <button class="bvd-button set1" data-value="10">Light</button>
             <button class="bvd-button set1" data-value="20">Moderate</button>
             <button class="bvd-button set1" data-value="30">Extensive</button>
-            <div id="set1-text" class="button-text"></div>
         </div>
+        <div id="set1-text" class="button-text"></div>
         <div class="button-set">
             <p>MASONRY</p>
             <button class="bvd-button set2" data-value="10">Light</button>
             <button class="bvd-button set2" data-value="20">Moderate</button>
             <button class="bvd-button set2" data-value="30">Extensive</button>
-            <div id="set2-text" class="button-text"></div>
         </div>
+        <div id="set2-text" class="button-text"></div>
         <p>Total Size of Renovated Area</p> 
         <input type="number" id="bvd-input" placeholder="Enter...">
         <button id="bvd-submit">Submit</button>
