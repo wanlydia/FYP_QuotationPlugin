@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
         if (selectedValueSet1 !== null || selectedValueSet2 !== null) {
             var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0);
             var result = sum * inputValue;
-            $('#bvd-result').text('Result: ' + result);
+            $('#bvd-result').text('Result: $' + result);
         } else {
             $('#bvd-result').text('Please select at least one button');
         }
