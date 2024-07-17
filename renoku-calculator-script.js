@@ -4,12 +4,12 @@ jQuery(document).ready(function($) {
 
     // Text for each button
     var buttonText = {
-        'set1-10': 'You clicked Light in HACKING',
-        'set1-20': 'You clicked Moderate in HACKING',
-        'set1-30': 'You clicked Extensive in HACKING',
-        'set2-10': 'You clicked Light in MASONRY',
-        'set2-20': 'You clicked Moderate in MASONRY',
-        'set2-30': 'You clicked Extensive in MASONRY'
+        'set1-10': 'Minor modifications to walls or partitions, often for convenience, without major structural changes',
+        'set1-20': 'Removing or altering structural components like beams, requiring careful planning to maintain stability',
+        'set1-30': 'Major structural alterations, including removing load-bearing walls and extensive rewiring, impacting building integrity',
+        'set2-10': 'Dry-stacked stone wall supports, adding charm with minimal structural load and effortless maintenance',
+        'set2-20': 'Brick walls with mortar joints, offering durability and moderate insulation for residential buildings',
+        'set2-30': 'High-rise buildings with reinforced concrete and elaborate stone facades, ensuring strength and grandeur'
     };
 
     $('.bvd-button.set1').click(function() {
@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
         if (selectedValueSet1 !== null || selectedValueSet2 !== null) {
             var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0);
             var result = sum * inputValue;
-            $('#bvd-result').text('Result: ' + result);
+            $('#bvd-result').text('Result: $' + result);
         } else {
             $('#bvd-result').text('Please select at least one button');
         }
