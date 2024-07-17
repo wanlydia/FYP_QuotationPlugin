@@ -4,12 +4,12 @@ jQuery(document).ready(function($) {
 
     // Text for each button
     var buttonText = {
-        'set1-1': 'You clicked Button 1 from Set 1',
-        'set1-2': 'You clicked Button 2 from Set 1',
-        'set1-3': 'You clicked Button 3 from Set 1',
-        'set2-1': 'You clicked Button A from Set 2',
-        'set2-2': 'You clicked Button B from Set 2',
-        'set2-3': 'You clicked Button C from Set 2'
+        'set1-10': 'You clicked Light in HACKING',
+        'set1-20': 'You clicked Moderate in HACKING',
+        'set1-30': 'You clicked Extensive in HACKING',
+        'set2-10': 'You clicked Light in MASONRY',
+        'set2-20': 'You clicked Moderate in MASONRY',
+        'set2-30': 'You clicked Extensive in MASONRY'
     };
 
     $('.bvd-button.set1').click(function() {
