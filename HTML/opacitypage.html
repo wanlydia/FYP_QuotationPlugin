@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Sections</title>
+    <style>
+        .page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="pg1" class="page active">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <button id="first-btn">Living</button>
+    <button id="second-btn">Kitchen</button>
+    <button id="third-btn">Bathroom</button>
+    <button id="fourth-btn">Bedroom</button>
+    <button onclick="nextPage('pg2')">Next Button1</button>
+</div>
+
+<div id="pg2" class="page">
+    <h2>Living</h2>
+    <button>Sun Button</button>
+    <button>Moon Button</button><br><br>
+    <button onclick="nextPage('pg3')">Next Button2</button>
+</div>
+<div id="pg3" class="page">
+    <h2>Kitchen</h2>
+    <button>Sun Button</button>
+    <button>Moon Button</button><br><br>
+    <button onclick="nextPage('pg4')">Next Button2</button>
+</div>
+<div id="pg4" class="page">
+    <button>Crescent Button</button><br><br>
+    <button onclick="nextPage('pg1')">Next Button3</button>
+</div>
+
+<script>
+    function nextPage(nextPgId) {
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById(nextPgId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
