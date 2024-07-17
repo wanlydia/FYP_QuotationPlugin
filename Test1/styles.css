@@ -95,7 +95,7 @@ h3 {
     margin-bottom: 10px; 
 }
 .renovate-grp, .budget-group, .property-status-grp,.property-type-grp {
-    width: 40%;
+    width: 50%; /*Distance between each other*/
 }
 .bedrooms-container, .bathrooms-container{
     display: flex;
@@ -116,7 +116,7 @@ h3 {
 #btn-10q {
     display: block;
     margin: 20px auto 0; /* Top and bottom margin as needed */
-    margin-left: 895px; 
+    margin-left: 500px; /*position of the submit button*/
 }
 
 /*calc-1.html*/
