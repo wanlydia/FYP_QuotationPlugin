@@ -18,6 +18,7 @@ add_action('wp_enqueue_scripts', 'bvd_enqueue_scripts');
 function bvd_display_buttons() {
     ?>
     <div id="bvd-container">
+        <h2>KITCHEN</h2>
         <div class="button-set">
             <p>HACKING</p>
             <button class="bvd-button set1" data-value="10">Light</button>
