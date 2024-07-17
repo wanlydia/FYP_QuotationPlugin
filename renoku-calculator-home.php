@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Calculator Plugin (RP)
+Plugin Name: Calculator Home Plugin (RP)
 Plugin URI: https://renoku2.azharapp.com/reviews/
 Description: Calculator for Renoku's Website 
 Version: 1.0
