@@ -199,31 +199,17 @@ function rp_calc_pg1_shortcode() {
 add_shortcode('rp_calc_pg1', 'rp_calc_pg1_shortcode');
 //To put shortcode in Wordpress, find the shortcode then type: [rp_calc_pg1]
 
-function bvd_display_buttons() {
+function rp_calc_pg2_shortcode() {
+    ob_start();
     ?>
-    <div id="bvd-container">
-        <div class="button-set">
-            <p>HACKING</p>
-            <button class="bvd-button set1" data-value="10">Light</button>
-            <button class="bvd-button set1" data-value="20">Moderate</button>
-            <button class="bvd-button set1" data-value="30">Extensive</button>
-            <div id="set1-text" class="button-text"></div>
-        </div>
-        <div class="button-set">
-            <p>MASONRY</p>
-            <button class="bvd-button set2" data-value="10">Light</button>
-            <button class="bvd-button set2" data-value="20">Moderate</button>
-            <button class="bvd-button set2" data-value="30">Extensive</button>
-            <div id="set2-text" class="button-text"></div>
-        </div>
-        <p>Total Size of Renovated Area</p> 
-        <input type="number" id="bvd-input" placeholder="Enter...">
-        <button id="bvd-submit">Submit</button>
-        <div id="bvd-result"></div>
+    <div id="rp-calculator-pg2">
+        <!-- Calculator form content goes here -->
+        <h2>Calculator Form</h2>
     </div>
     <?php
+    return ob_get_clean();
 }
-add_shortcode('bvd_buttons', 'bvd_display_buttons');
+add_shortcode('rp_calc_pg2', 'rp_calc_pg2_shortcode');
 //To put shortcode in Wordpress, find the shortcode then type: [rp_calc_pg2]
 
 function rp_calc_pg3_shortcode() {
