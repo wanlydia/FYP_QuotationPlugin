@@ -31,6 +31,7 @@
 </head>
 <body>
 
+
 <div id="pg1" class="page active">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"><br><br>
@@ -39,16 +40,11 @@
         <button id="kitchen-btn" class="toggle-button" onclick="togglePage('pg4', this)">Kitchen</button>
         <button id="bathroom-btn" class="toggle-button" onclick="togglePage('pg5', this)">Bathroom</button>
         <button id="bedroom-btn" class="toggle-button" onclick="togglePage('pg3', this)">Bedroom</button>
-
-        <label for="input-box" id="bedrooms-txt">No. of Bedrooms</label> 
-        <input type="number" id="bedrooms-box" name="budget" placeholder="Enter...">
-
-        <label for="input-box" id="bathrooms-txt">No. of Bathrooms</label> 
-        <input type="number" id="bathrooms-box" name="budget" placeholder="Enter...">
     </div>
     <br>
     <button onclick="startSequence()">Next Button1</button>
 </div>
+
 
 <div id="pg2" class="page">
     <h2>Living</h2>
@@ -57,6 +53,7 @@
     <button onclick="nextInSequence()">Next Button2</button>
 </div>
 
+
 <div id="pg3" class="page">
     <h2>Bedroom</h2>
     <button class="toggle-button">Sun Button</button>
@@ -64,11 +61,13 @@
     <button onclick="nextInSequence()">Next Button2</button>
 </div>
 
+
 <div id="pg4" class="page">
     <h2>Kitchen</h2>
     <button class="toggle-button">Crescent Button</button><br><br>
     <button onclick="nextInSequence()">Next Button3</button>
 </div>
+
 
 <div id="pg5" class="page">
     <h2>Bathroom</h2>
@@ -76,15 +75,21 @@
     <button onclick="nextInSequence()">Next Button3</button>
 </div>
 
+
 <div id="pg6" class="page">
     <h2>Reviews</h2>
     <button class="toggle-button">Crescent Button</button><br><br>
     <button onclick="nextPage('pg1')">Next Button3</button>
 </div>
+<label for="input-box" id="bathrooms-txt">No. of Bathrooms</label> 
+<input type="number" id="bathrooms-box" name="budget" placeholder="Enter...">
+<label for="input-box" id="bedrooms-txt">No. of Bedrooms</label> 
+<input type="number" id="bedrooms-box" name="budget" placeholder="Enter...">
 
 <script>
     const sequence = [];
     let currentIndex = 0;
+
 
     function togglePage(pageId, button) {
         button.classList.toggle('active');
@@ -98,6 +103,7 @@
         }
     }
 
+
     function startSequence() {
         if (sequence.length === 0) {
             alert('Please select at least one page to visit.');
@@ -106,6 +112,7 @@
         currentIndex = 0;
         nextInSequence();
     }
+
 
     function nextInSequence() {
         if (currentIndex < sequence.length) {
@@ -116,6 +123,7 @@
         }
     }
 
+
     function nextPage(nextPgId) {
         const pages = document.querySelectorAll('.page');
         pages.forEach(page => {
@@ -124,6 +132,7 @@
         document.getElementById(nextPgId).classList.add('active');
     }
 </script>
+
 
 </body>
 </html>
