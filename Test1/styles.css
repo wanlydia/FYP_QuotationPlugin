@@ -95,7 +95,7 @@ h3 {
     margin-bottom: 10px; 
 }
 .renovate-grp, .budget-group, .property-status-grp,.property-type-grp {
-    width: 30%;
+    width: 40%;
 }
 .bedrooms-container, .bathrooms-container{
     display: flex;
