@@ -65,3 +65,24 @@
     font-size: 16px;
     text-align: center;
 }
+
+#rp-calculator-pg3 {
+    font-family: 'Glacial Indifference', sans-serif;
+    color: #F7F7F5;
+    background-color: #F7C454;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#est-reno-txt, #cost-txt {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #F7C454;
+    background-color: #F7F7F5;
+    padding: 5px;
+}
