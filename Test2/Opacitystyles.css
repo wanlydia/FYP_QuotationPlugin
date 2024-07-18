@@ -1,0 +1,130 @@
+.page {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.active {
+    display: block;
+    opacity: 1;
+}
+
+body {
+    font-family: 'Glacial Indifference', sans-serif;
+    background-color: #323131;
+    color: #FFFFFF; 
+}
+h3 {
+    text-align: center;
+    color: #F7C454;
+    font-size:30px;
+}
+.common-btn{
+    background-color: #323131;
+    color: white;
+    border: 2px solid #323131;
+    border-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    width: 100px; 
+    text-align: center;
+}
+.common-btn:hover {
+    border-color: #F7C454;
+    color: #F7C454;
+}
+.common-btn.active {
+    background-color: #F7C454;
+    color: black;
+    border-color: #F7C454;
+}
+#bedrooms-box, #bathrooms-box, #area-box {
+    border: 2px solid white; 
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size:14px;
+}
+/*quotation.html*/
+.Group-1, .Group-2{
+    text-align: center;
+}
+.Group-1,.Group-2 {
+    display: flex;
+    justify-content: center;
+    /* gap: 100px;  */
+    position: relative;
+}
+/*Keep this here, is an alternate*/
+/* .Group-2 {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+} 
+.renovate-grp, .budget-group {
+    width: 45%; 
+}*/
+
+.property-status-grp, .property-type-grp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.property-status-grp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.property-status-grp p, .property-type-grp p {
+    margin-bottom: 10px; 
+}
+.property-status-grp .button-container1 {
+    display: flex;
+}
+.property-type-grp .button-container2 {
+    display: grid;
+    grid-template-columns: auto auto; /* Two columns layout */
+    grid-gap: 0px; /* Change the spacing between buttons */
+    justify-content: center; 
+}
+#btn-3q {
+    grid-column: 1 / 2; /* Place btn-3q in the first column */
+}
+#btn-4q {
+    grid-column: 2 / 3; /* Place btn-4q in the second column */
+}
+#btn-5q {
+    grid-column: 1 / 2; /* Place btn-5q in the first column */
+    grid-row: 2; /* Place btn-5q in the second row */
+}
+.button-container button {
+    margin-left: -4px; 
+}
+.renovate-grp p {
+    margin-bottom: 10px; 
+}
+.renovate-grp, .budget-group, .property-status-grp,.property-type-grp {
+    width: 30%;
+}
+.bedrooms-container, .bathrooms-container{
+    display: flex;
+    align-items: center;
+}
+.bedrooms-container input {
+    margin-left: 8px;
+}
+.bathrooms-container input {
+    margin-left: 8px;
+}
+.budget-group{
+    margin-top:40px;
+}
+.bathrooms-container{
+    margin-top: 10px;
+}
+#btn-10q {
+    display: block;
+    margin: 20px auto 0; /* Top and bottom margin as needed */
+    margin-left: 895px; 
+}
