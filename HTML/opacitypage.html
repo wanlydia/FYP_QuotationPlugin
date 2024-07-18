@@ -30,88 +30,107 @@
     </style>
 </head>
 <body>
-
-
 <div id="pg1" class="page active">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"><br><br>
     <div class="button-container">
         <button id="living-btn" class="toggle-button" onclick="togglePage('pg2', this)">Living</button>
         <button id="kitchen-btn" class="toggle-button" onclick="togglePage('pg4', this)">Kitchen</button>
-        <button id="bathroom-btn" class="toggle-button" onclick="togglePage('pg5', this)">Bathroom</button>
-        <button id="bedroom-btn" class="toggle-button" onclick="togglePage('pg3', this)">Bedroom</button>
+        <button id="bathroom-btn" class="toggle-button" onclick="toggleBathroom(this)">Bathroom</button>
+        <button id="bedroom-btn" class="toggle-button" onclick="toggleBedroom(this)">Bedroom</button>
     </div>
-        <label for="input-box" id="bathrooms-txt">No. of Bathrooms</label> 
-        <input type="number" id="bathrooms-box" name="budget" placeholder="Enter...">
-        <label for="input-box" id="bedrooms-txt">No. of Bedrooms</label> 
-        <input type="number" id="bedrooms-box" name="budget" placeholder="Enter...">
+    <div id="bathrooms-container" style="display: none;">
+        <label for="bathrooms-box" id="bathrooms-txt">No. of Bathrooms</label> 
+        <input type="number" id="bathrooms-box" name="bathrooms" placeholder="Enter..." min="1" max="5">
+    </div>
+    <div id="bedrooms-container" style="display: none;">
+        <label for="bedrooms-box" id="bedrooms-txt">No. of Bedrooms</label> 
+        <input type="number" id="bedrooms-box" name="bedrooms" placeholder="Enter..." min="1" max="5">
+    </div>
     <br>
     <button onclick="startSequence()">Next Button1</button>
 </div>
-
-
 <div id="pg2" class="page">
     <h2>Living</h2>
     <button class="toggle-button">Sun Button</button>
     <button class="toggle-button">Moon Button</button><br><br>
     <button onclick="nextInSequence()">Next Button2</button>
 </div>
-
-
 <div id="pg3" class="page">
-    <h2>Bedroom</h2>
+    <h2>Bedroom 1</h2>
     <p>Bedroom Text Testing</p><br>
     <button onclick="nextInSequence()">Next Button2</button>
 </div>
-
-
 <div id="pg4" class="page">
     <h2>Kitchen</h2>
     <button class="toggle-button">Kitchen Button Testing</button><br>
     <button onclick="nextInSequence()">Next Button3</button>
 </div>
-
-
 <div id="pg5" class="page">
-    <h2>Bathroom</h2>
+    <h2>Bathroom 1</h2>
     <button class="toggle-button">Bathroom Button Test</button><br>
     <button onclick="nextInSequence()">Next Button3</button>
 </div>
-
 <div id="pg6" class="page">
     <h2>Reviews</h2>
     <p>Review testing</p>
     <button class="toggle-button">Reviews Button</button><br>
     <button onclick="nextPage('pg1')">Next Button3</button>
 </div>
-
 <script>
-    const sequence = [];
+    let sequence = [];
     let currentIndex = 0;
-
-
+    
     function togglePage(pageId, button) {
         button.classList.toggle('active');
-        if (button.classList.contains('active')) {
-            sequence.push(pageId);
-        } else {
-            const index = sequence.indexOf(pageId);
-            if (index > -1) {
-                sequence.splice(index, 1);
-            }
-        }
     }
 
+    function toggleBathroom(button) {
+        togglePage('pg5', button);
+        const container = document.getElementById('bathrooms-container');
+        container.style.display = button.classList.contains('active') ? 'block' : 'none';
+    }
+
+    function toggleBedroom(button) {
+        togglePage('pg3', button);
+        const container = document.getElementById('bedrooms-container');
+        container.style.display = button.classList.contains('active') ? 'block' : 'none';
+    }
 
     function startSequence() {
+        sequence = [];
+        const livingActive = document.getElementById('living-btn').classList.contains('active');
+        const kitchenActive = document.getElementById('kitchen-btn').classList.contains('active');
+        const bathroomActive = document.getElementById('bathroom-btn').classList.contains('active');
+        const bedroomActive = document.getElementById('bedroom-btn').classList.contains('active');
+        const bathroomsCount = parseInt(document.getElementById('bathrooms-box').value) || 0;
+        const bedroomsCount = parseInt(document.getElementById('bedrooms-box').value) || 0;
+
+        if (livingActive) {
+            sequence.push('pg2');
+        }
+        if (kitchenActive) {
+            sequence.push('pg4');
+        }
+        if (bathroomActive) {
+            for (let i = 1; i <= bathroomsCount; i++) {
+                sequence.push('pg5');
+            }
+        }
+        if (bedroomActive) {
+            for (let i = 1; i <= bedroomsCount; i++) {
+                sequence.push('pg3');
+            }
+        }
+
         if (sequence.length === 0) {
             alert('Please select at least one page to visit.');
             return;
         }
+
         currentIndex = 0;
         nextInSequence();
     }
-
 
     function nextInSequence() {
         if (currentIndex < sequence.length) {
@@ -122,7 +141,6 @@
         }
     }
 
-
     function nextPage(nextPgId) {
         const pages = document.querySelectorAll('.page');
         pages.forEach(page => {
@@ -130,8 +148,16 @@
         });
         document.getElementById(nextPgId).classList.add('active');
     }
+
+    document.getElementById('bathrooms-box').addEventListener('input', function() {
+        if (this.value < 1) this.value = 1;
+        if (this.value > 5) this.value = 5;
+    });
+
+    document.getElementById('bedrooms-box').addEventListener('input', function() {
+        if (this.value < 1) this.value = 1;
+        if (this.value > 5) this.value = 5;
+    });
 </script>
-
-
 </body>
 </html>
