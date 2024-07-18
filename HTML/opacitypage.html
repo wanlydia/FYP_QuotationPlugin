@@ -80,7 +80,7 @@
 <script>
     let sequence = [];
     let currentIndex = 0;
-    
+
     function togglePage(pageId, button) {
         button.classList.toggle('active');
     }
@@ -114,12 +114,12 @@
         }
         if (bathroomActive) {
             for (let i = 1; i <= bathroomsCount; i++) {
-                sequence.push('pg5');
+                sequence.push(`pg5-${i}`);
             }
         }
         if (bedroomActive) {
             for (let i = 1; i <= bedroomsCount; i++) {
-                sequence.push('pg3');
+                sequence.push(`pg3-${i}`);
             }
         }
 
@@ -134,7 +134,15 @@
 
     function nextInSequence() {
         if (currentIndex < sequence.length) {
-            nextPage(sequence[currentIndex]);
+            const nextPgId = sequence[currentIndex];
+            if (nextPgId.startsWith('pg5-')) {
+                const index = nextPgId.split('-')[1];
+                document.getElementById('pg5').querySelector('h2').innerText = `Bathroom ${index}`;
+            } else if (nextPgId.startsWith('pg3-')) {
+                const index = nextPgId.split('-')[1];
+                document.getElementById('pg3').querySelector('h2').innerText = `Bedroom ${index}`;
+            }
+            nextPage(nextPgId.split('-')[0]);
             currentIndex++;
         } else {
             nextPage('pg6'); // Navigate to the Reviews page
