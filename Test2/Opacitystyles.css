@@ -110,6 +110,7 @@ h3 {
 .bedrooms-container, .bathrooms-container{
     display: flex;
     align-items: center;
+    gap:10px;
 }
 .bedrooms-container input {
     margin-left: 8px;
