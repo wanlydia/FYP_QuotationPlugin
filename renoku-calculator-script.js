@@ -1,8 +1,9 @@
 jQuery(document).ready(function($) {
-    // Variable to store the selected value from the each set of buttons
+    // Variables to store the selected values from each set of buttons
     var selectedValueSet1 = null; 
     var selectedValueSet2 = null;
 
+    // Object to store text descriptions for each button
     var buttonText = {
         'kitchen-set1-10': 'Minor modifications to walls or partitions, often for convenience, without major structural changes',
         'kitchen-set1-20': 'Removing or altering structural components like beams, requiring careful planning to maintain stability',
@@ -23,7 +24,7 @@ jQuery(document).ready(function($) {
     $('.rq-button.kitchen-set1').click(function() {
         var $this = $(this); // Store the clicked button element
         if ($this.hasClass('selected')) { // If the button is already selected
-            $this.removeClass('selected'); // Remove the previously 'selected' class
+            $this.removeClass('selected'); // Remove the 'selected' class
             selectedValueSet1 = null; // Reset the selected value
             $('#kitchen-set1-text').text(''); // Clear the text description
         } else { // If the button is not selected
@@ -34,6 +35,7 @@ jQuery(document).ready(function($) {
         }
     });
 
+    // Event handler for clicking buttons in the second set (kitchen)
     $('.rq-button.kitchen-set2').click(function() {
         var $this = $(this); 
         if ($this.hasClass('selected')) {
@@ -48,6 +50,7 @@ jQuery(document).ready(function($) {
         }
     });
 
+    // Event handler for clicking buttons in the first set (living)
     $('.rq-button.living-set1').click(function() {
         var $this = $(this); 
         if ($this.hasClass('selected')) { 
@@ -62,6 +65,7 @@ jQuery(document).ready(function($) {
         }
     });
 
+    // Event handler for clicking buttons in the second set (living)
     $('.rq-button.living-set2').click(function() {
         var $this = $(this);
         if ($this.hasClass('selected')) {
@@ -86,7 +90,8 @@ jQuery(document).ready(function($) {
 
         if (selectedValueSet1 !== null || selectedValueSet2 !== null) { // Check if at least one button is selected
             var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0); // Calculate the sum of the selected values
-            var result = sum * inputValue; // Calculate the result
+            var kitchenResult = sum * inputValue; // Calculate the result
+            localStorage.setItem('kitchenResult', kitchenResult); // Store kitchenResult in localStorage
             window.location.href = 'https://localhost/wp_fyptest/index.php/living-2/'; // Redirect to the calc-living page (replace with actual URL)
         } else {
             $('#rq-result').text('Please select at least one button'); // Display an error message if no button is selected
@@ -101,14 +106,14 @@ jQuery(document).ready(function($) {
             return; // Exit the function
         }
 
-        if (selectedValueSet1 !== null || selectedValueSet2 !== null) {
-            var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0);
-            var result = sum * inputValue; // Calculate the result
-            $('#rq-result').text('Result: $' + result); // Display the result
+        var kitchenResult = parseFloat(localStorage.getItem('kitchenResult')) || 0; // Retrieve kitchenResult from localStorage
+
+        if (selectedValueSet1 !== null || selectedValueSet2 !== null) { // Check if at least one button is selected
+            var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0); // Calculate the sum of the selected values
+            var livingResult = sum * inputValue + kitchenResult; // Calculate the result by adding kitchenResult
+            $('#rq-result').text('Result: $' + livingResult); // Display the result
         } else {
             $('#rq-result').text('Please select at least one button'); // Display an error message if no button is selected
         }
     });
 });
-
- 
