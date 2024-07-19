@@ -17,25 +17,25 @@ add_action('wp_enqueue_scripts', 'rq_bathroom_enqueue_scripts');
 
 function rq_bathroom_display_buttons() {
     ?>
-    <div id="rq-bathroom-container">
+    <div id="rq-container">
         <h2>BATHROOM</h2>
         <div class="button-set">
             <p>PAINTING</p>
-            <button class="rq-button bathroom-set1" data-value="10">Light</button>
-            <button class="rq-button bathroom-set1" data-value="20">Moderate</button>
-            <button class="rq-button bathroom-set1" data-value="30">Extensive</button>
+            <button class="rq-button living-set1" data-value="10">Light</button>
+            <button class="rq-button living-set1" data-value="20">Moderate</button>
+            <button class="rq-button living-set1" data-value="30">Extensive</button>
         </div>
-        <div id="bathroom-set1-text" class="button-text"></div>
+        <div id="living-set1-text" class="button-text"></div>
         <div class="button-set">
             <p>FLOORING</p>
-            <button class="rq-button bathroom-set2" data-value="10">Light</button>
-            <button class="rq-button bathroom-set2" data-value="20">Moderate</button>
-            <button class="rq-button bathroom-set2" data-value="30">Extensive</button>
+            <button class="rq-button living-set2" data-value="10">Light</button>
+            <button class="rq-button living-set2" data-value="20">Moderate</button>
+            <button class="rq-button living-set2" data-value="30">Extensive</button>
         </div>
         <div id="bathroom-set2-text" class="button-text"></div>
         <p>Total Size of Renovated Area</p>
         <input type="number" id="rq-input" placeholder="Enter...">
-        <button id="rq-submit">Submit</button>
+        <button id="rq-bathroom-submit">Submit</button>
         <div id="rq-result"></div>
     </div>
     <?php
