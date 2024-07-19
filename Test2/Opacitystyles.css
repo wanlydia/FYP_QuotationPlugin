@@ -129,3 +129,32 @@ h3 {
     margin: 20px auto 0; /* Top and bottom margin as needed */
     margin-left: 895px; 
 }
+/*Review Results Page*/
+#review-results-pg{
+    text-align: center;
+}
+#review-header{
+    font-family: Maytra;
+    font-size: 75px;
+    font-weight: lighter;
+}
+#est-reno-txt{
+    font-weight: bold;
+    font-size: 17px;
+    
+}
+#cost-txt{
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: -10px;
+    color: #F7C454;
+    
+}
+.highlight {
+    color: #F7C454;
+    text-decoration: underline;
+}
+#text2{
+    margin-top:-20px;
+    text-align: center;
+}

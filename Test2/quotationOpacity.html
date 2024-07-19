@@ -66,28 +66,35 @@
     <h2>Living</h2>
     <button class="toggle-button">Sun Button</button>
     <button class="toggle-button">Moon Button</button><br><br>
-    <button onclick="nextInSequence()">Next Button2</button>
+    <button class="common-btn" onclick="nextInSequence()">Next</button>
 </div>
 <div id="pg3" class="page">
     <h2>Bedroom 1</h2>
     <p>Bedroom Text Testing</p><br>
-    <button onclick="nextInSequence()">Next Button2</button>
+    <button class="common-btn" onclick="nextInSequence()">Next</button>
 </div>
 <div id="pg4" class="page">
     <h2>Kitchen</h2>
     <button class="toggle-button">Kitchen Button Testing</button><br>
-    <button onclick="nextInSequence()">Next Button3</button>
+    <button class="common-btn" onclick="nextInSequence()">Next</button>
 </div>
 <div id="pg5" class="page">
     <h2>Bathroom 1</h2>
     <button class="toggle-button">Bathroom Button Test</button><br>
-    <button onclick="nextInSequence()">Next Button3</button>
+    <button class="common-btn" onclick="nextInSequence()">Next</button>
 </div>
 <div id="pg6" class="page">
-    <h2>Reviews</h2>
-    <p>Review testing</p>
-    <button class="toggle-button">Reviews Button</button><br>
-    <button onclick="nextPage('pg1')">Next Button3</button>
+    <div id="review-results-pg">
+        <h2 id="review-header">Reviews</h2>
+    <!-- Yellow colour: #F7C454; Glacial Indifference, colour is ##F7F7F5 -->
+        <p id="est-reno-txt">Your estimated renovation cost is</p>
+        <p id="cost-txt">$15.8K - $25.5K</p>
+        <div id="text2">
+            <p id="txtr-1">Ready to start your project? <span class="highlight">BOOK YOUR APPOINTMENT NOW</span></p>
+            <p id="txtr-2">Want to know what we can do? <span class="highlight">CHECK OUR PORTFOLIO</span></p>
+        </div>
+    </div>
+    <button class="common-btn" onclick="nextPage('pg1')">Next</button>
 </div>
 <script>
     // Start of the script of the Queueing and Numbers
