@@ -35,8 +35,7 @@ function rq_display_buttons() {
         <div id="kitchen-set2-text" class="button-text"></div>
         <p>Total Size of Renovated Area</p>
         <input type="number" id="rq-input" placeholder="Enter...">
-        <button id="rq-submit">Submit</button>
-        <div id="rq-result"></div>
+        <button id="rq-kitchen-submit">Submit</button>
     </div>
     <?php
 }

@@ -35,7 +35,7 @@ function rq_living_display_buttons() {
         <div id="living-set2-text" class="button-text"></div>
         <p>Total Size of Renovated Area</p>
         <input type="number" id="rq-input" placeholder="Enter...">
-        <button id="rq-submit">Submit</button>
+        <button id="rq-living-submit">Submit</button>
         <div id="rq-result"></div>
     </div>
     <?php

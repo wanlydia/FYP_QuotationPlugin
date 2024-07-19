@@ -76,8 +76,8 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Event handler for clicking the submit button
-    $('#rq-submit').click(function() {
+    // Event handler for clicking the KITCHEN submit button
+    $('#rq-kitchen-submit').click(function() {
         var inputValue = parseFloat($('#rq-input').val()); // Get the input value and convert it to a float
         if (isNaN(inputValue)) { // Check if the input is a valid number
             $('#rq-result').text('Please enter a valid number'); // Display an error message if not
@@ -87,10 +87,28 @@ jQuery(document).ready(function($) {
         if (selectedValueSet1 !== null || selectedValueSet2 !== null) { // Check if at least one button is selected
             var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0); // Calculate the sum of the selected values
             var result = sum * inputValue; // Calculate the result
+            window.location.href = 'https://localhost/wp_fyptest/index.php/living-2/'; // Redirect to the calc-living page (replace with actual URL)
+        } else {
+            $('#rq-result').text('Please select at least one button'); // Display an error message if no button is selected
+        }
+    });
+
+    // Event handler for clicking the LIVING submit button
+    $('#rq-living-submit').click(function() {
+        var inputValue = parseFloat($('#rq-input').val()); // Get the input value and convert it to a float
+        if (isNaN(inputValue)) { // Check if the input is a valid number
+            $('#rq-result').text('Please enter a valid number'); // Display an error message if not
+            return; // Exit the function
+        }
+
+        if (selectedValueSet1 !== null || selectedValueSet2 !== null) {
+            var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0);
+            var result = sum * inputValue; // Calculate the result
             $('#rq-result').text('Result: $' + result); // Display the result
-            window.location.href = 'URL_TO_CALC_LIVING_PAGE'; // Redirect to the calc-living page (replace with actual URL)
         } else {
             $('#rq-result').text('Please select at least one button'); // Display an error message if no button is selected
         }
     });
 });
+
+ 
