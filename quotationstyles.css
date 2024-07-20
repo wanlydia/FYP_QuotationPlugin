@@ -1,3 +1,14 @@
+/*Start of Renovation Calc Page*/
+.page {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.page.active {
+    display: block;
+    opacity: 1;
+}
+
 body {
     font-family: 'Glacial Indifference', sans-serif;
     background-color: #323131;
@@ -24,12 +35,12 @@ h3 {
     border-color: #F7C454;
     color: #F7C454;
 }
-.common-btn.toggled {
+.common-btn.active {
     background-color: #F7C454;
     color: black;
     border-color: #F7C454;
 }
-#bedrooms-box, #bathrooms-box, #area-box {
+#bedrooms-box, #bathrooms-box, #area-box, #rq-kitchen-submit {
     border: 2px solid white; 
     padding: 10px 10px;
     border-radius: 5px;
@@ -52,7 +63,7 @@ h3 {
     justify-content: space-around; 
     align-items: center;
 } 
-.renovate-grp, .budget-group {
+.renovate-grp, .bath-bed-group {
     width: 45%; 
 }*/
 
@@ -88,18 +99,19 @@ h3 {
     grid-column: 1 / 2; /* Place btn-5q in the first column */
     grid-row: 2; /* Place btn-5q in the second row */
 }
-.button-container3 button {
+.button-container button {
     margin-left: -4px; 
 }
 .renovate-grp p {
     margin-bottom: 10px; 
 }
-.renovate-grp, .budget-group, .property-status-grp,.property-type-grp {
+.renovate-grp, .bath-bed-group, .property-status-grp,.property-type-grp {
     width: 30%;
 }
 .bedrooms-container, .bathrooms-container{
     display: flex;
     align-items: center;
+    gap:10px;
 }
 .bedrooms-container input {
     margin-left: 8px;
@@ -107,7 +119,7 @@ h3 {
 .bathrooms-container input {
     margin-left: 8px;
 }
-.budget-group{
+.bath-bed-group{
     margin-top:40px;
 }
 .bathrooms-container{
@@ -118,22 +130,36 @@ h3 {
     margin: 20px auto 0; /* Top and bottom margin as needed */
     margin-left: 895px; 
 }
+.button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#living-btn, #bathroom-btn {
+    justify-self: end; /* Move these buttons to the right */
+    margin-right:4px; /* Add some space between the buttons */
+}
+/*End of Renovation Calc Page*/
 
-/*calc-1.html*/
-
-/*reveal.html*/
-#rp-calculator-pg3{
+/*Start of Review Results Page*/
+#review-results-pg{
     text-align: center;
+}
+#review-header{
+    font-family: Maytra;
+    font-size: 75px;
+    font-weight: lighter;
 }
 #est-reno-txt{
     font-weight: bold;
     font-size: 17px;
+    
 }
 #cost-txt{
     font-weight: bold;
     font-size: 35px;
     margin-top: -10px;
     color: #F7C454;
+    
 }
 .highlight {
     color: #F7C454;
@@ -141,4 +167,7 @@ h3 {
 }
 #text2{
     margin-top:-20px;
+    text-align: center;
 }
+/*End of Review Results Page*/
+

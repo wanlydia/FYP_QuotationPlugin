@@ -1,0 +1,209 @@
+<?php
+/*
+Plugin Name: Calculator Bedroom Plugin (RP)
+Plugin URI: https://renoku2.azharapp.com/reviews/
+Description: Calculator for Renoku's Website (Bedroom)
+Version: 1.0
+Author: Lydia, Chloe
+Author URI: https://github.com/wanlydia, https://github.com/CrossoverRed
+License: GPL2
+*/
+
+function rq_bedroom_enqueue_scripts() {
+    wp_enqueue_script('rq-script', plugins_url('renoku-calculator-script.js', __FILE__), array('jquery'), null, true);
+    wp_enqueue_style('rq-styles', plugins_url('quotationstyles.css', __FILE__));
+}
+add_action('wp_enqueue_scripts', 'rq_bedroom_enqueue_scripts');
+
+function rq_quotation() {
+    ?>
+    <div id="pg1" class="page active">
+    <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3> <!-- Glacial Indifference, colour is ##F7F7F5 -->
+    <div class="Group-1">
+        <div class="property-status-grp">
+            <p>Property Status</p>
+            <div class="button-container1">
+                <button id="btn-1q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-1q', 'btn-2q')">New</button>
+                <button id="btn-2q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-2q', 'btn-1q')">Resale</button>
+            </div>
+        </div>
+        <div class="property-type-grp">
+            <p>Property Type</p>
+            <div class="button-container2">
+                <button id="btn-3q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-3q', 'btn-4q', 'btn-5q')">HDB</button>
+                <button id="btn-4q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-4q', 'btn-3q', 'btn-5q')">Condo</button>
+                <button id="btn-5q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-5q', 'btn-3q', 'btn-4q')">Landed</button>
+            </div>
+        </div>
+    </div>
+    <div class="Group-2">
+        <div class="renovate-grp">
+            <p>What To Renovate?</p>
+            <div class="button-container">
+                <button id="living-btn" class="common-btn" onclick="togglePage('pg2', this)">Living</button>
+                <button id="kitchen-btn" class="common-btn" onclick="togglePage('pg4', this)">Kitchen</button>
+                <button id="bathroom-btn" class="common-btn" onclick="toggleBathroom(this)">Bathroom</button>
+                <button id="bedroom-btn" class="common-btn" onclick="toggleBedroom(this)">Bedroom</button>
+            </div>
+        </div>
+    
+    <div class="bath-bed-group"> 
+    <div id="bathrooms-container" style="display: none;">
+        <label for="bathrooms-box" id="bathrooms-txt">No. of Bathrooms</label> 
+        <input type="number" id="bathrooms-box" name="bathrooms" placeholder="No." min="1" max="5">
+    </div>
+    <br>
+    <div id="bedrooms-container" style="display: none;">
+        <label for="bedrooms-box" id="bedrooms-txt">No. of Bedrooms</label> 
+        <input type="number" id="bedrooms-box" name="bedrooms" placeholder="No." min="1" max="5">
+    </div>
+</div>
+</div>
+    <br>
+    <button id ="btn-10q" class="common-btn" type="button"onclick="startSequence()">Next</button>
+</div>
+<div id="pg2" class="page">
+    <h2>Living</h2>
+    <button class="toggle-button">Sun Button</button>
+    <button class="toggle-button">Moon Button</button><br><br>
+    <button class="common-btn" onclick="nextInSequence()">Next</button>
+</div>
+<div id="pg3" class="page">
+    <h2>Bedroom 1</h2>
+    <p>Bedroom Text Testing</p><br>
+    <button class="common-btn" onclick="nextInSequence()">Next</button>
+</div>
+<!-- Start of Kitchen Page -->
+<div id="pg4" class="page">
+    <h3>KITCHEN</h3>
+    <?php echo do_shortcode('[rq_buttons]'); ?> <!-- Display the plugin's stuff here -->
+     
+    <button class="common-btn" onclick="nextInSequence()">Next</button>
+</div>
+<!-- End of Kitchen Page -->
+<div id="pg5" class="page">
+    <h2>Bathroom 1</h2>
+    <button class="toggle-button">Bathroom Button Test</button><br>
+    <button class="common-btn" onclick="nextInSequence()">Next</button>
+</div>
+<div id="pg6" class="page">
+    <div id="review-results-pg">
+        <h2 id="review-header">Reviews Results</h2>
+    <!-- Yellow colour: #F7C454; Glacial Indifference, colour is ##F7F7F5 -->
+        <p id="est-reno-txt">Your estimated renovation cost is</p>
+        <p id="cost-txt">$15.8K - $25.5K</p>
+        <div id="text2">
+            <p id="txtr-1">Ready to start your project? <span class="highlight">BOOK YOUR APPOINTMENT NOW</span></p>
+            <p id="txtr-2">Want to know what we can do? <span class="highlight">CHECK OUR PORTFOLIO</span></p>
+        </div>
+    </div>
+    <button class="common-btn" onclick="nextPage('pg1')">Next</button>
+</div>
+<script>
+    // Start of the script of the Queueing and Numbers
+    let sequence = [];
+    let currentIndex = 0;
+
+    function toggleSingleButton(button, ...ids) {
+        ids.forEach(id => {
+            document.getElementById(id).classList.remove('active');
+        });
+        button.classList.add('active');
+    }
+
+    function togglePage(pageId, button) {
+        button.classList.toggle('active');
+    }
+
+    function toggleBathroom(button) {
+        togglePage('pg5', button);
+        const container = document.getElementById('bathrooms-container');
+        container.style.display = button.classList.contains('active') ? 'block' : 'none';
+    }
+
+    function toggleBedroom(button) {
+        togglePage('pg3', button);
+        const container = document.getElementById('bedrooms-container');
+        container.style.display = button.classList.contains('active') ? 'block' : 'none';
+    }
+
+    function startSequence() {
+        sequence = [];
+        const livingActive = document.getElementById('living-btn').classList.contains('active');
+        const kitchenActive = document.getElementById('kitchen-btn').classList.contains('active');
+        const bathroomActive = document.getElementById('bathroom-btn').classList.contains('active');
+        const bedroomActive = document.getElementById('bedroom-btn').classList.contains('active');
+        const bathroomsCount = parseInt(document.getElementById('bathrooms-box').value) || 0;
+        const bedroomsCount = parseInt(document.getElementById('bedrooms-box').value) || 0;
+
+        if (livingActive) {
+            sequence.push('pg2');
+        }
+        if (kitchenActive) {
+            sequence.push('pg4');
+        }
+        if (bathroomActive) {
+            for (let i = 1; i <= bathroomsCount; i++) {
+                sequence.push(`pg5-${i}`);
+            }
+        }
+        if (bedroomActive) {
+            for (let i = 1; i <= bedroomsCount; i++) {
+                sequence.push(`pg3-${i}`);
+            }
+        }
+
+        if (sequence.length === 0) {
+            alert('Please select at least one page to visit.');
+            return;
+        }
+
+        currentIndex = 0;
+        nextInSequence();
+    }
+
+    function nextInSequence() {
+        if (currentIndex < sequence.length) {
+            const nextPgId = sequence[currentIndex];
+            if (nextPgId.startsWith('pg5-')) {
+                const index = nextPgId.split('-')[1];
+                document.getElementById('pg5').querySelector('h2').innerText = `Bathroom ${index}`;
+            } else if (nextPgId.startsWith('pg3-')) {
+                const index = nextPgId.split('-')[1];
+                document.getElementById('pg3').querySelector('h2').innerText = `Bedroom ${index}`;
+            }
+            nextPage(nextPgId.split('-')[0]);
+            currentIndex++;
+        } else {
+            nextPage('pg6'); // Navigate to the Reviews page
+        }
+    }
+
+    function nextPage(nextPgId) {
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById(nextPgId).classList.add('active');
+    }
+
+    document.getElementById('bathrooms-box').addEventListener('input', function() {
+        if (this.value < 1) this.value = 1;
+        if (this.value > 5) this.value = 5;
+    });
+
+    document.getElementById('bedrooms-box').addEventListener('input', function() {
+        if (this.value < 1) this.value = 1;
+        if (this.value > 5) this.value = 5;
+    });
+    
+    // End of the script of the Queueing and Numbers
+
+    
+
+
+</script>
+    <?php
+}
+add_shortcode('rq_quotation_shortcode', 'rq_quotation');
+?>
