@@ -182,7 +182,7 @@ h3 {
 }
 
 /* Common styles for the groups */
-.hacking-grp, .masonry-grp, .carpentry-grp {
+.hacking-grp, .masonry-grp, .carpentry-grp, .plumbing-grp, .electrical-grp, .GlassnAluminium-grp, .painting-grp, .cleaningnpolishing-grp {
     text-align: center;
     width: 100%; /* Adjust the width as needed */
     max-width: 600px; /* Max width for the groups */
@@ -197,3 +197,8 @@ h3 {
 .Four-room-header {
     font-weight: bold;
 }
+.carpentry-grp .common-btn, .electrical-grp .common-btn, .hacking-grp .common-btn, .masonry-grp .common-btn, .plumbing-grp .common-btn, .GlassnAluminium-grp .common-btn, .painting-grp .common-btn, .cleaningnpolishing-grp .common-btn {
+    margin:-2.2px; /* Adjust space between the 3 buttons */
+}
+
+/*End of Kitchen Page*/
