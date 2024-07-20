@@ -62,12 +62,13 @@ jQuery(document).ready(function($) {
                 return; // Exit the function
             }
 
-            var previousResult = parseFloat(localStorage.getItem(buttonID.split('-')[1] + 'Result')) || 0; // Get the previous result from localStorage
+            // Get the previous results from localStorage
+            var previousResult = parseFloat(localStorage.getItem('totalResult')) || 0;
 
             if (selectedValueSet1 !== null || selectedValueSet2 !== null) { // Check if at least one button is selected
                 var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0); // Calculate the sum of the selected values
                 var result = sum * inputValue + previousResult; // Calculate the new result
-                localStorage.setItem(buttonID.split('-')[1] + 'Result', result); // Store the new result in localStorage
+                localStorage.setItem('totalResult', result); // Store the new result in localStorage
                 if (nextURL) {
                     window.location.href = nextURL; // Redirect to the next URL if provided
                 } else {

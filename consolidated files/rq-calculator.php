@@ -18,6 +18,7 @@ add_action('wp_enqueue_scripts', 'rq_enqueue_scripts');
 
 // Display buttons for Kitchen
 function rq_display_kitchen_buttons() {
+    ob_start(); // Start output buffering
     ?>
     <div id="rq-container">
         <h2>KITCHEN</h2>
@@ -41,11 +42,13 @@ function rq_display_kitchen_buttons() {
         <div id="rq-result"></div>
     </div>
     <?php
+    return ob_get_clean(); // Return the buffered content
 }
 add_shortcode('rq_kitchen_buttons', 'rq_display_kitchen_buttons');
 
 // Display buttons for Living Area
 function rq_display_living_buttons() {
+    ob_start();
     ?>
     <div id="rq-container">
         <h2>LIVING AREA</h2>
@@ -69,11 +72,13 @@ function rq_display_living_buttons() {
         <div id="rq-result"></div>
     </div>
     <?php
+    return ob_get_clean();
 }
 add_shortcode('rq_living_buttons', 'rq_display_living_buttons');
 
 // Display buttons for Bedroom
 function rq_display_bedroom_buttons() {
+    ob_start();
     ?>
     <div id="rq-container">
         <h2>BEDROOM</h2>
@@ -97,6 +102,7 @@ function rq_display_bedroom_buttons() {
         <div id="rq-result"></div>
     </div>
     <?php
+    return ob_get_clean();
 }
 add_shortcode('rq_bedroom_buttons', 'rq_display_bedroom_buttons');
 ?>
