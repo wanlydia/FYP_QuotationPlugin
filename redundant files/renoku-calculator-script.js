@@ -137,22 +137,22 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Event handler for clicking the BEDROOM submit button
-    $('#rq-bathroom-submit').click(function() {
-        var inputValue = parseFloat($('#rq-input').val()); // Get the input value and convert it to a float
-        if (isNaN(inputValue)) { // Check if the input is a valid number
-            $('#rq-result').text('Please enter a valid number'); // Display an error message if not
-            return; // Exit the function
-        }
+    // // Event handler for clicking the BEDROOM submit button
+    // $('#rq-bathroom-submit').click(function() {
+    //     var inputValue = parseFloat($('#rq-input').val()); // Get the input value and convert it to a float
+    //     if (isNaN(inputValue)) { // Check if the input is a valid number
+    //         $('#rq-result').text('Please enter a valid number'); // Display an error message if not
+    //         return; // Exit the function
+    //     }
 
-        var kitchenResult = parseFloat(localStorage.getItem('kitchenResult')) || 0; // Retrieve kitchenResult from localStorage
+    //     var kitchenResult = parseFloat(localStorage.getItem('kitchenResult')) || 0; // Retrieve kitchenResult from localStorage
 
-        if (selectedValueSet1 !== null || selectedValueSet2 !== null) { // Check if at least one button is selected
-            var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0); // Calculate the sum of the selected values
-            var bedroomResult = sum * inputValue + livingResult; // Calculate the result by adding kitchenResult
-            $('#rq-result').text('Result: $' + bedroomResult); // Display the result
-        } else {
-            $('#rq-result').text('Please select at least one button'); // Display an error message if no button is selected
-        }
-    });
+    //     if (selectedValueSet1 !== null || selectedValueSet2 !== null) { // Check if at least one button is selected
+    //         var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0); // Calculate the sum of the selected values
+    //         var bedroomResult = sum * inputValue + livingResult; // Calculate the result by adding kitchenResult
+    //         $('#rq-result').text('Result: $' + bedroomResult); // Display the result
+    //     } else {
+    //         $('#rq-result').text('Please select at least one button'); // Display an error message if no button is selected
+    //     }
+    // });
 });
