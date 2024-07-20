@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Opacitystyles.css">
+    <link rel="stylesheet" href="kitchenstyles.css">
+    <link rel="java.js" href="java.js">
     <title>Renovation Calculator</title>
     <style>
         
@@ -69,7 +71,76 @@
 <!-- Start of Kitchen Page -->
 <div id="pg4" class="page">
     <h3>KITCHEN</h3>
-    
+    <div id="Kitchen-Group">
+        <div class="column" id="column1">
+            <div class="hacking-grp">
+                <p class="Four-room-header">HACKING</p>
+                <button id="hack-light-btn" class="common-btn" data-value-min="130" data-value-max="2080" type="button">Light</button>
+                <button id="hack-moderate-btn" class="common-btn" data-value-min="2080" data-value-max="4810" type="button">Moderate</button>
+                <button id="hack-extensive-btn" class="common-btn" data-value-min="4810" data-value-max="14820" type="button">Extensive</button>
+                <div id="hack-light-sentence" style="display: none;">
+                    Removing a fixture (cabinets, cooking hob, built-in appliances) without hacking walls and/or floors.
+                </div>
+                <div id="hack-moderate-sentence" style="display: none;">
+                    Dismantling of several fixtures (cabinets, cooking hob, built-in appliances), inclusive of partial hacking of walls and/or floors.
+                </div>
+                <div id="hack-extensive-sentence" style="display: none;">
+                    Removal of all fixtures, with complete hacking of walls and/or floors.
+                </div>
+            </div>
+            
+            <div class="carpentry-grp">
+                <p class="Four-room-header">CARPENTRY</p>
+                <button id="carpentry-light-btn" class="common-btn carpentry-set2" type="button">Light</button>
+                <button id="carpentry-moderate-btn" class="common-btn carpentry-set2" type="button">Moderate</button>
+                <button id="carpentry-extensive-btn" class="common-btn carpentry-set2" type="button">Extensive</button>
+            </div>
+            <div class="masonry-grp">
+                <p class="Four-room-header">MASONRY</p>
+                <button id="masonry-light-btn" class="common-btn" type="button">Light</button>
+                <button id="masonry-moderate-btn" class="common-btn" type="button">Moderate</button>
+                <button id="masonry-extensive-btn" class="common-btn" type="button">Extensive</button>
+            </div>
+            <div class="plumbing-grp">
+                <p class="Four-room-header">PLUMBING</p> 
+                <button id="plumbing-light-btn" class="common-btn" type="button">Light</button>
+                <button id="plumbing-moderate-btn" class="common-btn" type="button">Moderate</button>
+                <button id="plumbing-extensive-btn" class="common-btn" type="button">Extensive</button>
+            </div>
+        </div>
+        <div class="column" id="column2">
+            <div class="electrical-grp">
+                <p class="Four-room-header">ELECTRICAL</p> 
+                <button id="electrical-light-btn" class="common-btn" type="button">Light</button>
+                <button id="electrical-moderate-btn" class="common-btn" type="button">Moderate</button>
+                <button id="electrical-extensive-btn" class="common-btn" type="button">Extensive</button>
+            </div>
+            <div class="GlassnAluminium-grp">
+                <p class="Four-room-header">GLASS & ALUMINIUM</p> 
+                <button id="GlassnAluminium-light-btn" class="common-btn" type="button">Light</button>
+                <button id="GlassnAluminium-moderate-btn" class="common-btn" type="button">Moderate</button>
+                <button id="GlassnAluminium-extensive-btn" class="common-btn" type="button">Extensive</button>
+            </div>
+            <div class="painting-grp">
+                <p class="Four-room-header">PAINTING</p> 
+                <button id="painting-light-btn" class="common-btn" type="button">Light</button>
+                <button id="painting-moderate-btn" class="common-btn" type="button">Moderate</button>
+                <button id="painting-extensive-btn" class="common-btn" type="button">Extensive</button>
+            </div>
+            <div class="cleaningnpolishing-grp">
+                <p class="Four-room-header">CLEANING & POLISHING</p> 
+                <button id="cleaningnpolishing-light-btn" class="common-btn" type="button">Light</button>
+                <button id="cleaningnpolishing-moderate-btn" class="common-btn" type="button">Moderate</button>
+                <button id="cleaningnpolishing-extensive-btn" class="common-btn" type="button">Extensive</button>
+            </div>
+        </div>
+        <div class="reno-area-container">
+            <div class="reno-area-group">
+                <p id="reno-area-txt">Total Size of Renovated Area</p> 
+                <input type="number" id="area-box" name="Renovated Area" placeholder="Enter..."> m<sup>3</sup>
+            </div>
+        </div>
+        </div>
     <button class="common-btn" onclick="nextInSequence()">Next</button>
 </div>
 <!-- End of Kitchen Page -->
@@ -188,6 +259,49 @@
         if (this.value < 1) this.value = 1;
         if (this.value > 5) this.value = 5;
     });
+    //Start of Toggle Hack Light Btn
+
+    function toggleSentence(buttonId, sentenceId) {
+    // Get the button and sentence elements
+    var button = document.getElementById(buttonId);
+    var sentence = document.getElementById(sentenceId);
+    
+    // Check if the button is already active
+    var isActive = button.classList.contains('active');
+    
+    // Hide all sentences and remove 'active' class from all buttons
+    document.querySelectorAll('.hacking-grp .common-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+    });
+    
+    document.querySelectorAll('.hacking-grp div[id$="-sentence"]').forEach(function(el) {
+        el.style.display = 'none';
+    });
+    
+    // If the button was not already active, activate it and show the sentence
+    if (!isActive) {
+        button.classList.add('active');
+        sentence.style.display = 'block';
+    }
+}
+
+// Attach event listeners to buttons
+document.getElementById('hack-light-btn').addEventListener('click', function() {
+    toggleSentence('hack-light-btn', 'hack-light-sentence');
+});
+
+document.getElementById('hack-moderate-btn').addEventListener('click', function() {
+    toggleSentence('hack-moderate-btn', 'hack-moderate-sentence');
+});
+
+document.getElementById('hack-extensive-btn').addEventListener('click', function() {
+    toggleSentence('hack-extensive-btn', 'hack-extensive-sentence');
+});
+//End of Toggle Button sentences
+// *Start of the Toggle Buttons for Kitchen*
+
+
+// *End of the Toggle Buttons for Kitchen*
 </script>
 </body>
 </html>
