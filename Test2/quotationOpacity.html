@@ -4,16 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Opacitystyles.css">
-    <title>Page Sections</title>
+    <title>Renovation Calculator</title>
     <style>
-        .button-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        #living-btn, #bathroom-btn {
-            justify-self: end; /* Move these buttons to the right */
-            margin-right:4px; /* Add some space between the buttons */
-        }
+        
     </style>
 </head>
 <body>
@@ -47,7 +40,7 @@
             </div>
         </div>
     
-    <div class="budget-group">
+    <div class="bath-bed-group"> 
     <div id="bathrooms-container" style="display: none;">
         <label for="bathrooms-box" id="bathrooms-txt">No. of Bathrooms</label> 
         <input type="number" id="bathrooms-box" name="bathrooms" placeholder="No." min="1" max="5">
@@ -73,11 +66,13 @@
     <p>Bedroom Text Testing</p><br>
     <button class="common-btn" onclick="nextInSequence()">Next</button>
 </div>
+<!-- Start of Kitchen Page -->
 <div id="pg4" class="page">
-    <h2>Kitchen</h2>
-    <button class="toggle-button">Kitchen Button Testing</button><br>
+    <h3>KITCHEN</h3>
+    
     <button class="common-btn" onclick="nextInSequence()">Next</button>
 </div>
+<!-- End of Kitchen Page -->
 <div id="pg5" class="page">
     <h2>Bathroom 1</h2>
     <button class="toggle-button">Bathroom Button Test</button><br>

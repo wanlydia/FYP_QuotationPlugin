@@ -1,3 +1,4 @@
+/*Start of Renovation Calc Page*/
 .page {
     display: none;
     opacity: 0;
@@ -62,7 +63,7 @@ h3 {
     justify-content: space-around; 
     align-items: center;
 } 
-.renovate-grp, .budget-group {
+.renovate-grp, .bath-bed-group {
     width: 45%; 
 }*/
 
@@ -104,7 +105,7 @@ h3 {
 .renovate-grp p {
     margin-bottom: 10px; 
 }
-.renovate-grp, .budget-group, .property-status-grp,.property-type-grp {
+.renovate-grp, .bath-bed-group, .property-status-grp,.property-type-grp {
     width: 30%;
 }
 .bedrooms-container, .bathrooms-container{
@@ -118,7 +119,7 @@ h3 {
 .bathrooms-container input {
     margin-left: 8px;
 }
-.budget-group{
+.bath-bed-group{
     margin-top:40px;
 }
 .bathrooms-container{
@@ -129,7 +130,17 @@ h3 {
     margin: 20px auto 0; /* Top and bottom margin as needed */
     margin-left: 895px; 
 }
-/*Review Results Page*/
+.button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#living-btn, #bathroom-btn {
+    justify-self: end; /* Move these buttons to the right */
+    margin-right:4px; /* Add some space between the buttons */
+}
+/*End of Renovation Calc Page*/
+
+/*Start of Review Results Page*/
 #review-results-pg{
     text-align: center;
 }
@@ -158,3 +169,4 @@ h3 {
     margin-top:-20px;
     text-align: center;
 }
+/*End of Review Results Page*/
