@@ -170,3 +170,30 @@ h3 {
     text-align: center;
 }
 /*End of Review Results Page*/
+
+/*Start of Kitchen Page*/
+
+/* Centering the Kitchen-Group */
+#Kitchen-Group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Add some space between the groups if needed */
+}
+
+/* Common styles for the groups */
+.hacking-grp, .masonry-grp, .carpentry-grp {
+    text-align: center;
+    width: 100%; /* Adjust the width as needed */
+    max-width: 600px; /* Max width for the groups */
+}
+
+/* Flex container for reno-area-group and calc-btn */
+.reno-area-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the input group and the button */
+}
+.Four-room-header {
+    font-weight: bold;
+}
