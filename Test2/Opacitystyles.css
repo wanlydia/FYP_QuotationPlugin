@@ -1,3 +1,4 @@
+/*Start of Renovation Calc Page*/
 .page {
     display: none;
     opacity: 0;
@@ -62,7 +63,7 @@ h3 {
     justify-content: space-around; 
     align-items: center;
 } 
-.renovate-grp, .budget-group {
+.renovate-grp, .bath-bed-group {
     width: 45%; 
 }*/
 
@@ -104,7 +105,7 @@ h3 {
 .renovate-grp p {
     margin-bottom: 10px; 
 }
-.renovate-grp, .budget-group, .property-status-grp,.property-type-grp {
+.renovate-grp, .bath-bed-group, .property-status-grp,.property-type-grp {
     width: 30%;
 }
 .bedrooms-container, .bathrooms-container{
@@ -118,7 +119,7 @@ h3 {
 .bathrooms-container input {
     margin-left: 8px;
 }
-.budget-group{
+.bath-bed-group{
     margin-top:40px;
 }
 .bathrooms-container{
@@ -129,7 +130,17 @@ h3 {
     margin: 20px auto 0; /* Top and bottom margin as needed */
     margin-left: 895px; 
 }
-/*Review Results Page*/
+.button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#living-btn, #bathroom-btn {
+    justify-self: end; /* Move these buttons to the right */
+    margin-right:4px; /* Add some space between the buttons */
+}
+/*End of Renovation Calc Page*/
+
+/*Start of Review Results Page*/
 #review-results-pg{
     text-align: center;
 }
@@ -158,3 +169,69 @@ h3 {
     margin-top:-20px;
     text-align: center;
 }
+/*End of Review Results Page*/
+
+/*Start of Kitchen Page*/
+
+/* Centering the Kitchen-Group */
+#Kitchen-Group {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    /* border: 2px solid rgba(250, 250, 250, 0.8); */
+}
+#column1{
+    margin-right: -250px; 
+    /*Lessens the gap between the 2 columns 
+    with Hacking, Carpentry, Masonry, Plumbing, Electrical,
+    Glass & Aluminium, Painting, Cleaning & Polishing*/
+}
+.common-btn {
+    margin: 5px;
+}
+.reno-area-container {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.Four-room-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* Common styles for the groups */
+.hacking-grp, .masonry-grp, .carpentry-grp, .plumbing-grp, .electrical-grp, .GlassnAluminium-grp, .painting-grp, .cleaningnpolishing-grp {
+    text-align: center;
+    width: 100%; /* Adjust the width as needed */
+    max-width: 600px; /* Max width for the groups */
+}
+
+/* Flex container for reno-area-group and calc-btn */
+.reno-area-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the input group and the button */
+}
+.Four-room-header {
+    font-weight: bold;
+}
+.carpentry-grp .common-btn, 
+.electrical-grp .common-btn, 
+.hacking-grp .common-btn, 
+.masonry-grp .common-btn, 
+.plumbing-grp .common-btn, 
+.GlassnAluminium-grp .common-btn, 
+.painting-grp .common-btn, 
+.cleaningnpolishing-grp .common-btn {
+    margin:-2.2px; /* Adjust space between the 3 buttons */
+}
+
+/*End of Kitchen Page*/
