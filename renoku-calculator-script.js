@@ -17,7 +17,14 @@ jQuery(document).ready(function($) {
         'living-set1-30': 'Advanced painting, including multiple coats, detailed work, and trim',
         'living-set2-10': 'Basic flooring installation, such as laminate or vinyl flooring',
         'living-set2-20': 'Intermediate flooring, including hardwood or engineered wood',
-        'living-set2-30': 'Advanced flooring, including custom tile work and inlays'
+        'living-set2-30': 'Advanced flooring, including custom tile work and inlays',
+
+        'bedroom-set1-10': 'Basic painting, with a single coat of paint applied to the walls',
+        'bedroom-set1-20': 'Intermediate painting, including primer and two coats of paint',
+        'bedroom-set1-30': 'Advanced painting, including multiple coats, detailed work, and trim',
+        'bedroom-set2-10': 'Basic flooring installation, such as laminate or vinyl flooring',
+        'bedroom-set2-20': 'Intermediate flooring, including hardwood or engineered wood',
+        'bedroom-set2-30': 'Advanced flooring, including custom tile work and inlays'
     };
 
     // Event handler for clicking buttons in the first set (kitchen)
@@ -136,23 +143,4 @@ jQuery(document).ready(function($) {
             $('#rq-result').text('Please select at least one button');
         }
     });
-
-    // // Event handler for clicking the BEDROOM submit button
-    // $('#rq-bathroom-submit').click(function() {
-    //     var inputValue = parseFloat($('#rq-input').val()); // Get the input value and convert it to a float
-    //     if (isNaN(inputValue)) { // Check if the input is a valid number
-    //         $('#rq-result').text('Please enter a valid number'); // Display an error message if not
-    //         return; // Exit the function
-    //     }
-
-    //     var kitchenResult = parseFloat(localStorage.getItem('kitchenResult')) || 0; // Retrieve kitchenResult from localStorage
-
-    //     if (selectedValueSet1 !== null || selectedValueSet2 !== null) { // Check if at least one button is selected
-    //         var sum = (selectedValueSet1 || 0) + (selectedValueSet2 || 0); // Calculate the sum of the selected values
-    //         var bedroomResult = sum * inputValue + livingResult; // Calculate the result by adding kitchenResult
-    //         $('#rq-result').text('Result: $' + bedroomResult); // Display the result
-    //     } else {
-    //         $('#rq-result').text('Please select at least one button'); // Display an error message if no button is selected
-    //     }
-    // });
 });
