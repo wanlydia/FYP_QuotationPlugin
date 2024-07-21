@@ -4,7 +4,7 @@
     opacity: 0;
     transition: opacity 0.5s;
 }
-.active {
+.page.active {
     display: block;
     opacity: 1;
 }
@@ -40,7 +40,7 @@ h3 {
     color: black;
     border-color: #F7C454;
 }
-#bedrooms-box, #bathrooms-box, #area-box {
+#bedrooms-box, #bathrooms-box, #area-box, #rq-kitchen-submit {
     border: 2px solid white; 
     padding: 10px 10px;
     border-radius: 5px;
@@ -171,67 +171,3 @@ h3 {
 }
 /*End of Review Results Page*/
 
-/*Start of Kitchen Page*/
-
-/* Centering the Kitchen-Group */
-#Kitchen-Group {
-    display: grid;
-    grid-template-columns: auto auto;
-    padding: 10px;
-}
-.column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:15px;
-    /* border: 2px solid rgba(250, 250, 250, 0.8); */
-}
-#column1{
-    margin-right: -250px; 
-    /*Lessens the gap between the 2 columns 
-    with Hacking, Carpentry, Masonry, Plumbing, Electrical,
-    Glass & Aluminium, Painting, Cleaning & Polishing*/
-}
-.common-btn {
-    margin: 5px;
-}
-.reno-area-container {
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-.Four-room-header {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-/* Common styles for the groups */
-.hacking-grp, .masonry-grp, .carpentry-grp, .plumbing-grp, .electrical-grp, .GlassnAluminium-grp, .painting-grp, .cleaningnpolishing-grp {
-    text-align: center;
-    width: 100%; /* Adjust the width as needed */
-    max-width: 600px; /* Max width for the groups */
-}
-
-/* Flex container for reno-area-group and calc-btn */
-.reno-area-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between the input group and the button */
-}
-.Four-room-header {
-    font-weight: bold;
-}
-.carpentry-grp .common-btn, 
-.electrical-grp .common-btn, 
-.hacking-grp .common-btn, 
-.masonry-grp .common-btn, 
-.plumbing-grp .common-btn, 
-.GlassnAluminium-grp .common-btn, 
-.painting-grp .common-btn, 
-.cleaningnpolishing-grp .common-btn {
-    margin:-2.2px; /* Adjust space between the 3 buttons */
-}
-
-/*End of Kitchen Page*/

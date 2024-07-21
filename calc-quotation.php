@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Opacitystyles.css">
-    <title>Renovation Calculator</title>
-    <style>
-        
-    </style>
-</head>
-<body>
-<div id="pg1" class="page active">
+<?php
+/*
+Plugin Name: Calculator Bedroom Plugin (RP)
+Plugin URI: https://renoku2.azharapp.com/reviews/
+Description: Calculator for Renoku's Website (Bedroom)
+Version: 1.0
+Author: Lydia, Chloe
+Author URI: https://github.com/wanlydia, https://github.com/CrossoverRed
+License: GPL2
+*/
+
+function rq_bedroom_enqueue_scripts() {
+    wp_enqueue_script('rq-script', plugins_url('renoku-calculator-script.js', __FILE__), array('jquery'), null, true);
+    wp_enqueue_style('rq-styles', plugins_url('quotationstyles.css', __FILE__));
+}
+add_action('wp_enqueue_scripts', 'rq_bedroom_enqueue_scripts');
+
+function rq_quotation() {
+    ?>
+    <div id="pg1" class="page active">
     <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3> <!-- Glacial Indifference, colour is ##F7F7F5 -->
     <div class="Group-1">
         <div class="property-status-grp">
@@ -196,5 +203,7 @@
 
 
 </script>
-</body>
-</html>
+    <?php
+}
+add_shortcode('rq_quotation_shortcode', 'rq_quotation');
+?>
