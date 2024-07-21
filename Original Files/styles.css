@@ -4,9 +4,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Glacial Indifference', sans-serif;
 }
 
-h2 {
+h2, #rq-result-test {
     font-weight: bold;
     font-family: 'Glacial Indifference', sans-serif;
     color: #F7F7F5;

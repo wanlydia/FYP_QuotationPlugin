@@ -18,6 +18,7 @@ add_action('wp_enqueue_scripts', 'rq_bedroom_enqueue_scripts');
 function rq_bedroom_display_buttons() {
     ?>
     <div id="rq-container">
+    <div id="rq-result-bedroom"></div>
         <h2>BEDROOM</h2>
         <div class="button-set">
             <p>PAINTING</p>

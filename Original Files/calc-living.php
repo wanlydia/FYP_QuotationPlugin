@@ -18,6 +18,7 @@ add_action('wp_enqueue_scripts', 'rq_living_enqueue_scripts');
 function rq_living_display_buttons() {
     ?>
     <div id="rq-container">
+    <div id="rq-result-living"></div>
         <h2>LIVING AREA</h2>
         <div class="button-set">
             <p>PAINTING</p>
