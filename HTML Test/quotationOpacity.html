@@ -10,168 +10,195 @@
     </style>
 </head>
 <body>
-<div id="pg1" class="page active">
-    <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3> <!-- Glacial Indifference, colour is ##F7F7F5 -->
-    <div class="Group-1">
-        <div class="property-status-grp">
-            <p>Property Status</p>
-            <div class="button-container1">
-                <button id="btn-1q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-1q', 'btn-2q')">New</button>
-                <button id="btn-2q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-2q', 'btn-1q')">Resale</button>
+    <div id="pg1" class="page active">
+        <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3>
+        <div class="Group-1">
+            <div class="property-status-grp">
+                <p>Property Status</p>
+                <div class="button-container1">
+                    <button id="btn-1q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-1q', 'btn-2q')">New</button>
+                    <button id="btn-2q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-2q', 'btn-1q')">Resale</button>
+                </div>
+            </div>
+            <div class="property-type-grp">
+                <p>Property Type</p>
+                <div class="button-container2">
+                    <button id="btn-3q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-3q', 'btn-4q', 'btn-5q')">HDB</button>
+                    <button id="btn-4q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-4q', 'btn-3q', 'btn-5q')">Condo</button>
+                    <button id="btn-5q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-5q', 'btn-3q', 'btn-4q')">Landed</button>
+                </div>
             </div>
         </div>
-        <div class="property-type-grp">
-            <p>Property Type</p>
-            <div class="button-container2">
-                <button id="btn-3q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-3q', 'btn-4q', 'btn-5q')">HDB</button>
-                <button id="btn-4q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-4q', 'btn-3q', 'btn-5q')">Condo</button>
-                <button id="btn-5q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-5q', 'btn-3q', 'btn-4q')">Landed</button>
+        <div class="Group-2">
+            <div class="renovate-grp">
+                <p>What To Renovate?</p>
+                <div class="button-container">
+                    <button id="living-btn" class="common-btn">Living</button>
+                    <button id="kitchen-btn" class="common-btn">Kitchen</button>
+                    <button id="bathroom-btn" class="common-btn" onclick="toggleContainer('bathrooms-container', this)">Bathroom</button>
+                    <button id="bedroom-btn" class="common-btn" onclick="toggleContainer('bedrooms-container', this)">Bedroom</button>
+                </div>
+            </div>
+        
+            <div class="bath-bed-group"> 
+                <div id="bathrooms-container" style="display: none;">
+                    <label for="bathrooms-box" id="bathrooms-txt">No. of Bathrooms</label> 
+                    <input type="number" id="bathrooms-box" name="bathrooms" placeholder="No." min="1" max="5">
+                </div>
+                <br>
+                <div id="bedrooms-container" style="display: none;">
+                    <label for="bedrooms-box" id="bedrooms-txt">No. of Bedrooms</label> 
+                    <input type="number" id="bedrooms-box" name="bedrooms" placeholder="No." min="1" max="5">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="Group-2">
-        <div class="renovate-grp">
-            <p>What To Renovate?</p>
-            <div class="button-container">
-                <button id="living-btn" class="common-btn" onclick="togglePage('pg2', this)">Living</button>
-                <button id="kitchen-btn" class="common-btn" onclick="togglePage('pg4', this)">Kitchen</button>
-                <button id="bathroom-btn" class="common-btn" onclick="toggleBathroom(this)">Bathroom</button>
-                <button id="bedroom-btn" class="common-btn" onclick="toggleBedroom(this)">Bedroom</button>
-            </div>
+        <br>
+        <!--Write here-->
+    <h2>Living</h2>
+    <div id="Living-Group">
+        <div id="painting-grp-living">
+            <p>PAINTING</p>
+                <button id="painting-light-btn" class="common-btn" type="button" onclick="togglePaintingButton('living', 'light')">Light</button>
+                <button id="painting-moderate-btn" class="common-btn" type="button" onclick="togglePaintingButton('living', 'moderate')">Moderate</button>
+                <button id="painting-extensive-btn" class="common-btn" type="button" onclick="togglePaintingButton('living', 'extensive')">Extensive</button>
         </div>
-    
-    <div class="bath-bed-group"> 
-    <div id="bathrooms-container" style="display: none;">
-        <label for="bathrooms-box" id="bathrooms-txt">No. of Bathrooms</label> 
-        <input type="number" id="bathrooms-box" name="bathrooms" placeholder="No." min="1" max="5">
+        <div id="flooring-grp-living">
+            <p>FLOORING</p>
+                <button id="flooring-light-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'light')">Light</button>
+                <button id="flooring-moderate-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'moderate')">Moderate</button>
+                <button id="flooring-extensive-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'extensive')">Extensive</button>
+            </div>
     </div>
     <br>
-    <div id="bedrooms-container" style="display: none;">
-        <label for="bedrooms-box" id="bedrooms-txt">No. of Bedrooms</label> 
-        <input type="number" id="bedrooms-box" name="bedrooms" placeholder="No." min="1" max="5">
-    </div>
-</div>
-</div>
-    <br>
-    <button id ="btn-10q" class="common-btn" type="button"onclick="startSequence()">Next</button>
-</div>
-
-<div id="pg6" class="page">
-    <div id="review-results-pg">
-        <h2 id="review-header">Reviews Results</h2>
-    <!-- Yellow colour: #F7C454; Glacial Indifference, colour is ##F7F7F5 -->
-        <p id="est-reno-txt">Your estimated renovation cost is</p>
-        <p id="cost-txt">$15.8K - $25.5K</p>
-        <div id="text2">
-            <p id="txtr-1">Ready to start your project? <span class="highlight">BOOK YOUR APPOINTMENT NOW</span></p>
-            <p id="txtr-2">Want to know what we can do? <span class="highlight">CHECK OUR PORTFOLIO</span></p>
+    <h2>KITCHEN</h2>
+    <div id="Kitchen-Group">
+        <div class="hacking-grp-kitchen">
+            <p>HACKING</p>
+            <button id="hack-light-btn-kitchen" class="common-btn" type="button">Light</button>
+            <button id="hack-moderate-btn-kitchen" class="common-btn" type="button">Moderate</button>
+            <button id="hack-extensive-btn-kitchen" class="common-btn" type="button">Extensive</button>
+            
+        </div>
+        <div class="masonry-grp-kitchen">
+            <p>MASONRY</p>
+            <button id="masonry-light-btn" class="common-btn" type="button">Light</button>
+            <button id="masonry-moderate-btn" class="common-btn" type="button">Moderate</button>
+            <button id="masonry-extensive-btn" class="common-btn" type="button">Extensive</button>
+            
         </div>
     </div>
-    <button class="common-btn" onclick="nextPage('pg1')">Next</button>
-</div>
-<script>
-    // Start of the script of the Queueing and Numbers
-    let sequence = [];
-    let currentIndex = 0;
-
-    function toggleSingleButton(button, ...ids) {
-        ids.forEach(id => {
-            document.getElementById(id).classList.remove('active');
-        });
-        button.classList.add('active');
-    }
-
-    function togglePage(pageId, button) {
-        button.classList.toggle('active');
-    }
-
-    function toggleBathroom(button) {
-        togglePage('pg5', button);
-        const container = document.getElementById('bathrooms-container');
-        container.style.display = button.classList.contains('active') ? 'block' : 'none';
-    }
-
-    function toggleBedroom(button) {
-        togglePage('pg3', button);
-        const container = document.getElementById('bedrooms-container');
-        container.style.display = button.classList.contains('active') ? 'block' : 'none';
-    }
-
-    function startSequence() {
-        sequence = [];
-        const livingActive = document.getElementById('living-btn').classList.contains('active');
-        const kitchenActive = document.getElementById('kitchen-btn').classList.contains('active');
-        const bathroomActive = document.getElementById('bathroom-btn').classList.contains('active');
-        const bedroomActive = document.getElementById('bedroom-btn').classList.contains('active');
-        const bathroomsCount = parseInt(document.getElementById('bathrooms-box').value) || 0;
-        const bedroomsCount = parseInt(document.getElementById('bedrooms-box').value) || 0;
-
-        if (livingActive) {
-            sequence.push('pg2');
-        }
-        if (kitchenActive) {
-            sequence.push('pg4');
-        }
-        if (bathroomActive) {
-            for (let i = 1; i <= bathroomsCount; i++) {
-                sequence.push(`pg5-${i}`);
-            }
-        }
-        if (bedroomActive) {
-            for (let i = 1; i <= bedroomsCount; i++) {
-                sequence.push(`pg3-${i}`);
-            }
-        }
-
-        if (sequence.length === 0) {
-            alert('Please select at least one page to visit.');
-            return;
-        }
-
-        currentIndex = 0;
-        nextInSequence();
-    }
-
-    function nextInSequence() {
-        if (currentIndex < sequence.length) {
-            const nextPgId = sequence[currentIndex];
-            if (nextPgId.startsWith('pg5-')) {
-                const index = nextPgId.split('-')[1];
-                document.getElementById('pg5').querySelector('h2').innerText = `Bathroom ${index}`;
-            } else if (nextPgId.startsWith('pg3-')) {
-                const index = nextPgId.split('-')[1];
-                document.getElementById('pg3').querySelector('h2').innerText = `Bedroom ${index}`;
-            }
-            nextPage(nextPgId.split('-')[0]);
-            currentIndex++;
-        } else {
-            nextPage('pg6'); // Navigate to the Reviews page
-        }
-    }
-
-    function nextPage(nextPgId) {
-        const pages = document.querySelectorAll('.page');
-        pages.forEach(page => {
-            page.classList.remove('active');
-        });
-        document.getElementById(nextPgId).classList.add('active');
-    }
-
-    document.getElementById('bathrooms-box').addEventListener('input', function() {
-        if (this.value < 1) this.value = 1;
-        if (this.value > 5) this.value = 5;
-    });
-
-    document.getElementById('bedrooms-box').addEventListener('input', function() {
-        if (this.value < 1) this.value = 1;
-        if (this.value > 5) this.value = 5;
-    });
+    <br>
+    <h2>BEDROOM</h2>
+    <div id="Bedroom-Group">
+        <div id="painting-grp-bedroom">
+            <p>PAINTING</p>
+            <button id="painting-light-btn-bed" class="common-btn" type="button" onclick="togglePaintingButton('bedroom', 'light')">Light</button>
+            <button id="painting-moderate-btn-bed" class="common-btn" type="button" onclick="togglePaintingButton('bedroom', 'moderate')">Moderate</button>
+            <button id="painting-extensive-btn-bed" class="common-btn" type="button" onclick="togglePaintingButton('bedroom', 'extensive')">Extensive</button>
+            <p id="sentence-3"></p>
+        </div>
+        <div id="flooring-grp-bedroom">
+            <p>FLOORING</p>
+            <button id="flooring-light-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'light')">Light</button>
+            <button id="flooring-moderate-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'moderate')">Moderate</button>
+            <button id="flooring-extensive-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'extensive')">Extensive</button>
+            <p id="sentence-4"></p>
+        </div>
+    </div>
+    <br>
+    <h2>BATHROOM</h2>
+    <div id="Bathroom-Group">
+        <div id="painting-grp-bathroom">
+            <p>PAINTING</p>
+            <button id="painting-light-btn-bath" class="common-btn data-paintBath" min="10" max="20" type="button">Light</button>
+            <button id="painting-moderate-btn-bath" class="common-btn data-paintBath" min="20" max="30" type="button">Moderate</button>
+            <button id="painting-extensive-btn-bath" class="common-btn data-paintBath" min="30" max="40" type="button">Extensive</button>
+            
+        </div>
+        <div id="tiling-grp-bathroom">
+            <p>TILING</p>
+                <button id="tiling-light-btn" class="common-btn data-tileBath" min="10" max="20" type="button">Light</button>
+                <button id="tiling-moderate-btn" class="common-btn data-tileBath" type="button">Moderate</button>
+                <button id="tiling-extensive-btn" class="common-btn data-tileBath" type="button">Extensive</button>
+                
+        </div>
+    </div>
+    <br>
+        <!--Write here-->
+        <button id="btn-10q" class="common-btn" type="button" onclick="nextPage('pg6')">Next</button>
+    </div>
     
-    // End of the script of the Queueing and Numbers
-
+    <div id="pg6" class="page">
+        <div id="review-results-pg">
+            <h2 id="review-header">Reviews Results</h2>
+            <p id="est-reno-txt">Your estimated renovation cost is</p>
+            <p id="cost-txt">$15.8K - $25.5K</p>
+            <div id="text2">
+                <p id="txtr-1">Ready to start your project? <span class="highlight">BOOK YOUR APPOINTMENT NOW</span></p>
+                <p id="txtr-2">Want to know what we can do? <span class="highlight">CHECK OUR PORTFOLIO</span></p>
+            </div>
+        </div>
+        <button class="common-btn" onclick="nextPage('pg1')">Next</button>
+    </div>
     
+    <script>
+        function toggleSingleButton(button, ...otherButtons) {
+            button.classList.toggle('active');
+            otherButtons.forEach(btn => {
+                const otherButton = document.getElementById(btn);
+                if (otherButton !== button) {
+                    otherButton.classList.remove('active');
+                }
+            });
+        }
 
+        function toggleContainer(containerId, button) {
+            const container = document.getElementById(containerId);
+            const isDisplayed = container.style.display === 'block';
+            container.style.display = isDisplayed ? 'none' : 'block';
+            button.classList.toggle('active', !isDisplayed);
+        }
 
-</script>
+        function togglePaintingButton(section, level) {
+            const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
+            buttons.forEach(btn => {
+                if (btn.id.includes(level)) {
+                    btn.classList.toggle('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function toggleFlooringButton(section, level) {
+            const buttons = document.querySelectorAll(`#flooring-grp-${section} button`);
+            buttons.forEach(btn => {
+                if (btn.id.includes(level)) {
+                    btn.classList.toggle('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+  const livingBtn = document.getElementById('living-btn');
+  const kitchenBtn = document.getElementById('kitchen-btn');
+
+  livingBtn.addEventListener('click', () => {
+    livingBtn.classList.toggle('active');
+    if (kitchenBtn.classList.contains('active')) {
+      kitchenBtn.classList.remove('active');
+    }
+  });
+
+  kitchenBtn.addEventListener('click', () => {
+    kitchenBtn.classList.toggle('active');
+    if (livingBtn.classList.contains('active')) {
+      livingBtn.classList.remove('active');
+    }
+  });
+});
+
+    </script>
 </body>
 </html>

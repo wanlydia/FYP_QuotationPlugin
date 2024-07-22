@@ -14,7 +14,7 @@ body {
     background-color: #323131;
     color: #FFFFFF; 
 }
-h3 {
+h3, h2 {
     text-align: center;
     color: #F7C454;
     font-size:30px;
@@ -171,3 +171,7 @@ h3 {
 }
 /*End of Review Results Page*/
 
+/*Start of Contact Page*/
+#Kitchen-Group, #Bathroom-Group, #Bedroom-Group, #Living-Group{
+    text-align: center;
+}
