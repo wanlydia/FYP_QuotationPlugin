@@ -1,0 +1,31 @@
+#rq_resultsContainer {
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* Ensure vertical stacking */
+    align-items: center; /* Center-align elements */
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 27px;
+    color: #FFFFFF; 
+    text-align: center;
+}
+
+#rq-results {
+    color: #F7C454;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#rq_links {
+    font-size: 20px !important; /* Ensure it takes precedence */
+}
+
+a.highlight {
+    color: #F7C454;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+a.highlight:hover {
+    text-decoration: none;
+}
