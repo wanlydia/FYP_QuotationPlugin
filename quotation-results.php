@@ -1,6 +1,7 @@
 <?php
 /*
 Plugin Name: Quotation Results
+Plugin URI: https://renoku2.azharapp.com/quotation/
 Description: A plugin that displays an estimated renovation cost.
 Version: 1.0
 Author: Lydia, Chloe
@@ -15,16 +16,15 @@ function rq_results_enqueue_scripts() {
 
 add_action('wp_enqueue_scripts', 'rq_results_enqueue_scripts');
 
-// Shortcode function
 function rq_results_shortcode() {
     ob_start(); ?>
-    <div id="rq_resultsContainer">
+    <div id="rq-resultsContainer">
         <p id="est-reno-txt">Your estimated renovation cost is</p>
         <div id="rq-results">
             <div id="rq-minResults"></div>-<div id="rq-maxResults"></div>
         </div>
         
-        <div id="rq_links">
+        <div id="rq-links">
             <p id="text">Ready to start your project? <a href="https://renoku2.azharapp.com/contact-us/" class="highlight">BOOK YOUR APPOINTMENT NOW</a></p>
             <p id="text">Want to know what we can do? <a href="https://renoku2.azharapp.com/gallery/" class="highlight">CHECK OUR GALLERY OF WORKS</a></p>
         </div>

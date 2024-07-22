@@ -1,14 +1,73 @@
-#rq_resultsContainer {
+#rq-formContainer, #rq-resultsContainer {
     padding: 20px;
     margin: 20px;
     display: flex;
-    flex-direction: column; /* Ensure vertical stacking */
-    align-items: center; /* Center-align elements */
+    flex-direction: column;
+    align-items: center;
     font-family: 'Glacial Indifference', sans-serif;
-    font-size: 27px;
+    font-size: 25px;
     color: #FFFFFF; 
     text-align: center;
 }
+
+h3 {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h2{
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: bold;
+    font-size: 27px;
+}
+
+.button-set {
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.rq-button {
+    background-color: #323131;
+    color: white;
+    border: 2px solid #323131;
+    border-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    width: 100px; 
+    text-align: center;
+}
+
+.rq-button:hover {
+    border-color: #F7C454;
+    color: #F7C454;
+}
+
+.rq-button.selected {
+    background-color: #F7C454;
+    color: black;
+    border-color: #F7C454;
+}
+
+.button-text {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+}
+
+.set1 {
+    text-align: center;
+}
+
+#rq-input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* RESULTS PAGE */
 
 #rq-results {
     color: #F7C454;
@@ -16,8 +75,8 @@
     font-weight: bold;
 }
 
-#rq_links {
-    font-size: 20px !important; /* Ensure it takes precedence */
+#rq-links {
+    font-size: 20px !important;
 }
 
 a.highlight {
