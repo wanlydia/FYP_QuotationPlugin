@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Calculator Results
+Plugin Name: Quotation Results
 Description: A plugin that displays an estimated renovation cost.
 Version: 1.0
 Author: Lydia, Chloe
@@ -13,7 +13,7 @@ function rq_results_enqueue_scripts() {
     wp_enqueue_style('rq-styles', plugins_url('styles.css', __FILE__), array(), '1.0.1'); // Updated version
 }
 
-add_action('wp_enqueue_scripts', 'rq_results_enqueue_scripts', 20); // Using higher priority
+add_action('wp_enqueue_scripts', 'rq_results_enqueue_scripts');
 
 // Shortcode function
 function rq_results_shortcode() {
