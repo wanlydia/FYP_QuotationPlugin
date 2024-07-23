@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles1.css">
-    <link rel="javascript" href="script1.js">
-    <title>Renovation Calculator</title>
-    <style>
-        
-    </style>
-</head>
-<body>
-    <div id="pg1" class="page active">
+<?php
+/*
+Plugin Name: Quotation Plugin
+Plugin URI: https://renoku2.azharapp.com/quotation/
+Description: Calculator for Renoku's Website
+Version: 1.0
+Author: Lydia, Chloe
+Author URI: https://github.com/wanlydia, https://github.com/CrossoverRed
+License: GPL2
+*/
+
+function rq_quotation_enqueue_scripts() {
+    wp_enqueue_script('rq-script', plugins_url('quotation-script.js', __FILE__), array('jquery'), null, true);
+    wp_enqueue_style('rq-styles', plugins_url('styles1.css',__FILE__), array(), '1.0.1');
+}
+
+add_action('wp_enqueue_scripts', 'rq_quotation_enqueue_scripts');
+
+function rq_quotation_shortcode() {
+    ob_start(); ?>
+        <div id="pg1" class="page active">
         <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3>
         <div class="Group-1">
             <div class="property-status-grp">
@@ -336,5 +343,8 @@ document.querySelectorAll('.rq-button').forEach(button => {
 //End of counting code
 
     </script>
-</body>
-</html>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('rq_quotation', 'rq_quotation_shortcode');
+?>
