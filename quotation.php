@@ -138,6 +138,21 @@ function rq_quotation_shortcode() {
 
         <button id="btn-10q" class="common-btn" type="button" onclick="nextPage('pg6')">Next</button>
     </div>
+    <div id="pg6" class="page">
+        <div id="rq-resultsContainer">
+        <p id="est-reno-txt">Your estimated renovation cost is</p>
+        <div id="rq-results">
+            $<div id="rq-minResults"></div>-<div id="rq-maxResults"></div>
+        </div>
+        
+        <div id="rq-links">
+            <p id="text">Ready to start your project? <a href="https://renoku2.azharapp.com/contact-us/" class="highlight">BOOK YOUR APPOINTMENT NOW</a></p>
+            <p id="text">Want to know what we can do? <a href="https://renoku2.azharapp.com/gallery/" class="highlight">CHECK OUR GALLERY OF WORKS</a></p>
+        </div>
+        </div>
+        <!--This code here only works in the same html/php page where goes to the choosing page.-->
+        <button class="common-btn" onclick="nextPage('pg1')">Next</button>
+    </div>
     <?php
     return ob_get_clean();
 }

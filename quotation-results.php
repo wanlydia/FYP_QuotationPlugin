@@ -21,7 +21,7 @@ function rq_results_shortcode() {
     <div id="rq-resultsContainer">
         <p id="est-reno-txt">Your estimated renovation cost is</p>
         <div id="rq-results">
-            <div id="rq-minResults"></div>-<div id="rq-maxResults"></div>
+            $<div id="rq-minResults"></div>-<div id="rq-maxResults"></div>
         </div>
         
         <div id="rq-links">
