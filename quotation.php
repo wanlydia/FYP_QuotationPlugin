@@ -72,65 +72,65 @@ function rq_quotation_shortcode() {
         <div id="rq-buttonSet">
             <div class="button-set">
                 <p>HACKING</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
+                <button class="rq-button hacking" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button hacking" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button hacking" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="hacking-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>MASONRY</p>
-                <button class="rq-button masonry" data-value="1.0">Light</button>
-                <button class="rq-button masonry" data-value="2.0">Moderate</button>
-                <button class="rq-button masonry" data-value="3.0">Extensive</button>
+                <button class="rq-button masonry" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button masonry" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button masonry" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="masonry-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>CARPENTRY</p>
-                <button class="rq-button carpentry" data-value="1.0">Light</button>
-                <button class="rq-button carpentry" data-value="2.0">Moderate</button>
-                <button class="rq-button carpentry" data-value="3.0">Extensive</button>
+                <button class="rq-button carpentry" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button carpentry" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button carpentry" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="carpentry-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>CEILING & PARTITION</p>
-                <button class="rq-button ceiling-partition" data-value="1.0">Light</button>
-                <button class="rq-button ceiling-partition" data-value="2.0">Moderate</button>
-                <button class="rq-button ceiling-partition" data-value="3.0">Extensive</button>
+                <button class="rq-button ceiling-partition" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button ceiling-partition" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button ceiling-partition" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="ceiling-partition-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>PLUMBING</p>
-                <button class="rq-button plumbing" data-value="1.0">Light</button>
-                <button class="rq-button plumbing" data-value="2.0">Moderate</button>
-                <button class="rq-button plumbing" data-value="3.0">Extensive</button>
+                <button class="rq-button plumbing" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button plumbing" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button plumbing" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="plumbing-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>ELECTRICAL</p>
-                <button class="rq-button electrical" data-value="1.0">Light</button>
-                <button class="rq-button electrical" data-value="2.0">Moderate</button>
-                <button class="rq-button electrical" data-value="3.0">Extensive</button>
+                <button class="rq-button electrical" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button electrical" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button electrical" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="electrical-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>PAINTING</p>
-                <button class="rq-button painting" data-value="1.0">Light</button>
-                <button class="rq-button painting" data-value="2.0">Moderate</button>
-                <button class="rq-button painting" data-value="3.0">Extensive</button>
+                <button class="rq-button painting" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button painting" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button painting" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="painting-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>CLEANING & POLISHING</p>
-                <button class="rq-button cleaning-polishing" data-value="1.0">Light</button>
-                <button class="rq-button cleaning-polishing" data-value="2.0">Moderate</button>
-                <button class="rq-button cleaning-polishing" data-value="3.0">Extensive</button>
+                <button class="rq-button cleaning-polishing" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button cleaning-polishing" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button cleaning-polishing" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="cleaning-polishing-text" class="button-text"></div>
         
@@ -142,3 +142,4 @@ function rq_quotation_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('rq_quotation', 'rq_quotation_shortcode');
+?>
