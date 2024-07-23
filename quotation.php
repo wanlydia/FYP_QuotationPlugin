@@ -20,7 +20,9 @@ function rq_quotation_shortcode() {
     ob_start(); ?>
     <div id="rq-formContainer" class="page active">
         <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3>
-        <div class="rq-essentials">
+
+        <!-- let friend settle this part owo -->
+        <div class="Group-1">
             <div class="rq-propertyStatus">
                 <p>Property Status</p>
                 <div class="button-propertyStatus">
@@ -65,22 +67,9 @@ function rq_quotation_shortcode() {
 
         </div>
         <br>
-        <!--Write here-->
         <h2>TYPES OF WORKS</h2>
+        <p id="types-text">Select the services that you require based on its intensity. If you do not require the service, leave it blank</p>
         <div id="rq-buttonSet">
-            <!-- <div id="painting-grp-living">
-                <p>PAINTING</p>
-                <button id="painting-light-btn" class="common-btn" type="button" onclick="togglePaintingLivingButton('living', 'light')">Light</button>
-                <button id="painting-moderate-btn" class="common-btn" type="button" onclick="togglePaintingLivingButton('living', 'moderate')">Moderate</button>
-                <button id="painting-extensive-btn" class="common-btn" type="button" onclick="togglePaintingLivingButton('living', 'extensive')">Extensive</button>
-            </div>
-            <div id="flooring-grp-living">
-                <p>FLOORING</p>
-                <button id="flooring-light-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'light')">Light</button>
-                <button id="flooring-moderate-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'moderate')">Moderate</button>
-                <button id="flooring-extensive-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'extensive')">Extensive</button>
-            </div> -->
-
             <div class="button-set">
                 <p>HACKING</p>
                 <button class="rq-button hacking" data-value="1.0">Light</button>
@@ -95,7 +84,7 @@ function rq_quotation_shortcode() {
                 <button class="rq-button hacking" data-value="2.0">Moderate</button>
                 <button class="rq-button hacking" data-value="3.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="masonry-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>PIPING</p>
