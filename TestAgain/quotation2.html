@@ -62,30 +62,32 @@
                 <button id="painting-light-btn" class="common-btn" type="button" onclick="togglePaintingLivingButton('living', 'light')" data-value="10">Light</button>
                 <button id="painting-moderate-btn" class="common-btn" type="button" onclick="togglePaintingLivingButton('living', 'moderate')" data-value="20">Moderate</button>
                 <button id="painting-extensive-btn" class="common-btn" type="button" onclick="togglePaintingLivingButton('living', 'extensive')" data-value="30">Extensive</button>
-        </div>
+                <div id="painting-text-living" class="button-text"></div>
+            </div>
         <div id="flooring-grp-living">
             <p>FLOORING</p>
                 <button id="flooring-light-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'light')" data-value="10">Light</button>
                 <button id="flooring-moderate-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'moderate')" data-value="20">Moderate</button>
                 <button id="flooring-extensive-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'extensive')" data-value="30">Extensive</button>
-            </div>
+                <div id="flooring-text-living" class="button-text"></div>
+        </div>
     </div>
     <br>
     <h2>KITCHEN</h2>
     <div id="Kitchen-Group">
         <div class="hacking-grp-kitchen">
             <p>HACKING</p>
-            <button id="hack-light-btn-kitchen" class="common-btn" type="button" onclick="toggleHackingButton('kitchen', 'light')">Light</button>
-            <button id="hack-moderate-btn-kitchen" class="common-btn" type="button" onclick="toggleHackingButton('kitchen', 'moderate')">Moderate</button>
-            <button id="hack-extensive-btn-kitchen" class="common-btn" type="button" onclick="toggleHackingButton('kitchen', 'extensive')">Extensive</button>
-            
+            <button id="hack-light-btn-kitchen" class="common-btn" type="button" onclick="toggleHackingButton('kitchen', 'light')" data-value="10">Light</button>
+            <button id="hack-moderate-btn-kitchen" class="common-btn" type="button" onclick="toggleHackingButton('kitchen', 'moderate')" data-value="20">Moderate</button>
+            <button id="hack-extensive-btn-kitchen" class="common-btn" type="button" onclick="toggleHackingButton('kitchen', 'extensive')" data-value="30">Extensive</button>
+            <div id="hacking-text-kitchen" class="button-text"></div>
         </div>
         <div class="masonry-grp-kitchen">
             <p>MASONRY</p>
-            <button id="masonry-light-btn" class="common-btn" type="button" onclick="toggleMasonryButton('kitchen', 'light')">Light</button>
-            <button id="masonry-moderate-btn" class="common-btn" type="button" onclick="toggleMasonryButton('kitchen', 'moderate')">Moderate</button>
-            <button id="masonry-extensive-btn" class="common-btn" type="button" onclick="toggleMasonryButton('kitchen', 'extensive')">Extensive</button>
-            
+            <button id="masonry-light-btn" class="common-btn" type="button" onclick="toggleMasonryButton('kitchen', 'light')" data-value="10">Light</button>
+            <button id="masonry-moderate-btn" class="common-btn" type="button" onclick="toggleMasonryButton('kitchen', 'moderate')" data-value="20">Moderate</button>
+            <button id="masonry-extensive-btn" class="common-btn" type="button" onclick="toggleMasonryButton('kitchen', 'extensive')" data-value="30">Extensive</button>
+            <div id="masonry-text-kitchen" class="button-text"></div>
         </div>
     </div>
     <br>
@@ -93,16 +95,16 @@
     <div id="Bedroom-Group">
         <div id="painting-grp-bedroom">
             <p>PAINTING</p>
-            <button id="painting-light-btn-bed" class="common-btn" type="button" onclick="togglePaintingBedButton('bedroom', 'light')">Light</button>
-            <button id="painting-moderate-btn-bed" class="common-btn" type="button" onclick="togglePaintingBedButton('bedroom', 'moderate')">Moderate</button>
-            <button id="painting-extensive-btn-bed" class="common-btn" type="button" onclick="togglePaintingBedButton('bedroom', 'extensive')">Extensive</button>
-            <p id="sentence-3"></p>
+            <button id="painting-light-btn-bed" class="common-btn" type="button" onclick="togglePaintingBedButton('bedroom', 'light')" data-value="10">Light</button>
+            <button id="painting-moderate-btn-bed" class="common-btn" type="button" onclick="togglePaintingBedButton('bedroom', 'moderate')" data-value="20">Moderate</button>
+            <button id="painting-extensive-btn-bed" class="common-btn" type="button" onclick="togglePaintingBedButton('bedroom', 'extensive')" data-value="30">Extensive</button>
+            <div id="painting-text-bedroom" class="button-text"></div>
         </div>
         <div id="flooring-grp-bedroom">
             <p>FLOORING</p>
-            <button id="flooring-light-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'light')">Light</button>
-            <button id="flooring-moderate-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'moderate')">Moderate</button>
-            <button id="flooring-extensive-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'extensive')">Extensive</button>
+            <button id="flooring-light-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'light')" data-value="10">Light</button>
+            <button id="flooring-moderate-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'moderate')" data-value="20">Moderate</button>
+            <button id="flooring-extensive-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'extensive')" data-value="30">Extensive</button>
             <p id="sentence-4"></p>
         </div>
     </div>
@@ -111,16 +113,16 @@
     <div id="Bathroom-Group">
         <div id="painting-grp-bathroom">
             <p>PAINTING</p>
-            <button id="painting-light-btn-bath" class="common-btn" type="button" onclick="togglePaintingBathButton('bathroom', 'light')">Light</button>
-            <button id="painting-moderate-btn-bath" class="common-btn" type="button" onclick="togglePaintingBathButton('bathroom', 'moderate')">Moderate</button>
-            <button id="painting-extensive-btn-bath" class="common-btn" type="button" onclick="togglePaintingBathButton('bathroom', 'extensive')">Extensive</button>
+            <button id="painting-light-btn-bath" class="common-btn" type="button" onclick="togglePaintingBathButton('bathroom', 'light')" data-value="10">Light</button>
+            <button id="painting-moderate-btn-bath" class="common-btn" type="button" onclick="togglePaintingBathButton('bathroom', 'moderate')" data-value="20">Moderate</button>
+            <button id="painting-extensive-btn-bath" class="common-btn" type="button" onclick="togglePaintingBathButton('bathroom', 'extensive')" data-value="30">Extensive</button>
             
         </div>
         <div id="tiling-grp-bathroom">
             <p>TILING</p>
-            <button id="tiling-light-btn" class="common-btn" type="button" onclick="toggleTilingButton('bathroom', 'light')">Light</button>
-            <button id="tiling-moderate-btn" class="common-btn" type="button" onclick="toggleTilingButton('bathroom', 'moderate')">Moderate</button>
-            <button id="tiling-extensive-btn" class="common-btn" type="button" onclick="toggleTilingButton('bathroom', 'extensive')">Extensive</button>
+            <button id="tiling-light-btn" class="common-btn" type="button" onclick="toggleTilingButton('bathroom', 'light')" data-value="10">Light</button>
+            <button id="tiling-moderate-btn" class="common-btn" type="button" onclick="toggleTilingButton('bathroom', 'moderate')" data-value="20">Moderate</button>
+            <button id="tiling-extensive-btn" class="common-btn" type="button" onclick="toggleTilingButton('bathroom', 'extensive')" data-value="30">Extensive</button>
         </div>
     </div>
     <br>
@@ -166,7 +168,6 @@ function nextPage(pageId) {
     document.getElementById(pageId).classList.add('active');
 }
 
-
         function toggleFlooringButton(section, level) {
             const buttons = document.querySelectorAll(`#flooring-grp-${section} button`);
             buttons.forEach(btn => {
@@ -178,28 +179,6 @@ function nextPage(pageId) {
             });
         }
         
-        function toggleHackingButton(section, level) {
-    const buttons = document.querySelectorAll(`#Kitchen-Group .hacking-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-
-function toggleMasonryButton(section, level) {
-    const buttons = document.querySelectorAll(`#Kitchen-Group .masonry-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-
 // Function to toggle tiling buttons
 function toggleTilingButton(section, level) {
     const buttons = document.querySelectorAll(`#tiling-grp-${section} button`);
@@ -241,13 +220,92 @@ function togglePaintingBathButton(section, level) {
         }
     });
 }
-document.getElementById('living-btn').addEventListener('click', function() {
+
+
+
+        document.getElementById('living-btn').addEventListener('click', function() {
             this.classList.toggle('active');
         });
 
         document.getElementById('kitchen-btn').addEventListener('click', function() {
             this.classList.toggle('active');
         });
+
+        //Start of Data Values
+        let selectedValues = {
+    living: {
+        painting: 0,
+        flooring: 0
+    },
+    kitchen: {
+        hacking: 0,
+        masonry: 0
+    },
+    bedroom: {
+        painting: 0,
+        flooring: 0
+    },
+    bathroom: {
+        painting: 0,
+        tiling: 0
+    }
+};
+
+function togglePaintingLivingButton(section, type) {
+    toggleButton(section, 'painting', type);
+}
+
+function toggleFlooringButton(section, type) {
+    toggleButton(section, 'flooring', type);
+}
+
+function toggleHackingButton(section, type) {
+    toggleButton(section, 'hacking', type);
+}
+
+function toggleMasonryButton(section, type) {
+    toggleButton(section, 'masonry', type);
+}
+
+function togglePaintingBedButton(section, type) {
+    toggleButton(section, 'painting', type);
+}
+
+function togglePaintingBathButton(section, type) {
+    toggleButton(section, 'painting', type);
+}
+
+function toggleTilingButton(section, type) {
+    toggleButton(section, 'tiling', type);
+}
+
+function toggleButton(section, category, type) {
+    const buttons = document.querySelectorAll(`#${category}-grp-${section} .common-btn`);
+    buttons.forEach(button => {
+        if (button.id.includes(type)) {
+            if (button.classList.contains('active')) {
+                button.classList.remove('active');
+                selectedValues[section][category] = 0;
+            } else {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                selectedValues[section][category] = parseInt(button.dataset.value);
+            }
+        }
+    });
+    calculateTotalCost();
+}
+
+function calculateTotalCost() {
+    let total = 0;
+    for (const section in selectedValues) {
+        for (const category in selectedValues[section]) {
+            total += selectedValues[section][category];
+        }
+    }
+    document.getElementById('cost-txt').textContent = `$${total}`;
+}
+//End of Data Values
     </script>
 </body>
 </html>
