@@ -144,7 +144,7 @@
     </div>
     
     <script>
-        function toggleSingleButton(button, ...otherButtons) {
+    function toggleSingleButton(button, ...otherButtons) {
     button.classList.toggle('active');
     otherButtons.forEach(btn => {
         const otherButton = document.getElementById(btn);
@@ -168,6 +168,7 @@ function nextPage(pageId) {
     document.getElementById(pageId).classList.add('active');
 }
 
+
         function toggleFlooringButton(section, level) {
             const buttons = document.querySelectorAll(`#flooring-grp-${section} button`);
             buttons.forEach(btn => {
@@ -179,217 +180,76 @@ function nextPage(pageId) {
             });
         }
         
-// Function to toggle tiling buttons
-// function toggleTilingButton(section, level) {
-//     const buttons = document.querySelectorAll(`#tiling-grp-${section} button`);
-//     buttons.forEach(btn => {
-//         if (btn.id.includes(level)) {
-//             btn.classList.toggle('active');
-//         } else {
-//             btn.classList.remove('active');
-//         }
-//     });
-// }
-// function togglePaintingLivingButton(section, level) {
-//     const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
-//     buttons.forEach(btn => {
-//         if (btn.id.includes(level)) {
-//             btn.classList.toggle('active');
-//         } else {
-//             btn.classList.remove('active');
-//         }
-//     });
-// }
-// function togglePaintingBedButton(section, level) {
-//     const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
-//     buttons.forEach(btn => {
-//         if (btn.id.includes(level)) {
-//             btn.classList.toggle('active');
-//         } else {
-//             btn.classList.remove('active');
-//         }
-//     });
-// }
-// function togglePaintingBathButton(section, level) {
-//     const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
-//     buttons.forEach(btn => {
-//         if (btn.id.includes(level)) {
-//             btn.classList.toggle('active');
-//         } else {
-//             btn.classList.remove('active');
-//         }
-//     });
-// }
-
-function toggleHackingButton(section, level) {
+        function toggleHackingButton(section, level) {
     const buttons = document.querySelectorAll(`#Kitchen-Group .hacking-grp-${section} button`);
     buttons.forEach(btn => {
-        if (btn.id === `hack-${level}-btn-kitchen`) {
+        if (btn.id.includes(level)) {
             btn.classList.toggle('active');
         } else {
             btn.classList.remove('active');
         }
     });
-    updateTotalCost();
 }
 
 function toggleMasonryButton(section, level) {
     const buttons = document.querySelectorAll(`#Kitchen-Group .masonry-grp-${section} button`);
     buttons.forEach(btn => {
-        if (btn.id === `masonry-${level}-btn`) {
+        if (btn.id.includes(level)) {
             btn.classList.toggle('active');
         } else {
             btn.classList.remove('active');
         }
     });
-    updateTotalCost();
 }
 
-
-function togglePaintingLivingButton(section, level) {
-    const buttons = document.querySelectorAll(`#Living-Group .painting-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-    updateTotalCost();
-}
-
-function toggleFlooringButton(section, level) {
-    const buttons = document.querySelectorAll(`#Living-Group .flooring-grp-${section} button, #Bedroom-Group .flooring-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-    updateTotalCost();
-}
-
-function togglePaintingBedButton(section, level) {
-    const buttons = document.querySelectorAll(`#Bedroom-Group .painting-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-    updateTotalCost();
-}
-
-function togglePaintingBathButton(section, level) {
-    const buttons = document.querySelectorAll(`#Bathroom-Group .painting-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-    updateTotalCost();
-}
-
+// Function to toggle tiling buttons
 function toggleTilingButton(section, level) {
-    const buttons = document.querySelectorAll(`#Bathroom-Group .tiling-grp-${section} button`);
+    const buttons = document.querySelectorAll(`#tiling-grp-${section} button`);
     buttons.forEach(btn => {
         if (btn.id.includes(level)) {
-            btn.classList.add('active');
+            btn.classList.toggle('active');
         } else {
             btn.classList.remove('active');
         }
     });
-    updateTotalCost();
 }
-
-
-        document.getElementById('living-btn').addEventListener('click', function() {
+function togglePaintingLivingButton(section, level) {
+    const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
+    buttons.forEach(btn => {
+        if (btn.id.includes(level)) {
+            btn.classList.toggle('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+function togglePaintingBedButton(section, level) {
+    const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
+    buttons.forEach(btn => {
+        if (btn.id.includes(level)) {
+            btn.classList.toggle('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+function togglePaintingBathButton(section, level) {
+    const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
+    buttons.forEach(btn => {
+        if (btn.id.includes(level)) {
+            btn.classList.toggle('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+document.getElementById('living-btn').addEventListener('click', function() {
             this.classList.toggle('active');
         });
 
         document.getElementById('kitchen-btn').addEventListener('click', function() {
             this.classList.toggle('active');
         });
-
-        //Start of Data Values
-        let selectedValues = {
-    living: {
-        painting: 0,
-        flooring: 0
-    },
-    kitchen: {
-        hacking: 0,
-        masonry: 0
-    },
-    bedroom: {
-        painting: 0,
-        flooring: 0
-    },
-    bathroom: {
-        painting: 0,
-        tiling: 0
-    }
-};
-
-function togglePaintingLivingButton(section, type) {
-    toggleButton(section, 'painting', type);
-}
-
-function toggleFlooringButton(section, type) {
-    toggleButton(section, 'flooring', type);
-}
-
-function toggleHackingButton(section, type) {
-    toggleButton(section, 'hacking', type);
-}
-
-function toggleMasonryButton(section, type) {
-    toggleButton(section, 'masonry', type);
-}
-
-function togglePaintingBedButton(section, type) {
-    toggleButton(section, 'painting', type);
-}
-
-function togglePaintingBathButton(section, type) {
-    toggleButton(section, 'painting', type);
-}
-
-function toggleTilingButton(section, type) {
-    toggleButton(section, 'tiling', type);
-}
-
-function toggleButton(section, category, type) {
-    const buttons = document.querySelectorAll(`#${category}-grp-${section} .common-btn`);
-    buttons.forEach(button => {
-        if (button.id.includes(type)) {
-            if (button.classList.contains('active')) {
-                button.classList.remove('active');
-                selectedValues[section][category] = 0;
-            } else {
-                buttons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                selectedValues[section][category] = parseInt(button.dataset.value);
-            }
-        }
-    });
-    calculateTotalCost();
-}
-
-function calculateTotalCost() {
-    let total = 0;
-    for (const section in selectedValues) {
-        for (const category in selectedValues[section]) {
-            total += selectedValues[section][category];
-        }
-    }
-    document.getElementById('cost-txt').textContent = `$${total}`;
-}
-//End of Data Values
     </script>
 </body>
 </html>
