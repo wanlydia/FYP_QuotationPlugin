@@ -180,47 +180,131 @@ function nextPage(pageId) {
         }
         
 // Function to toggle tiling buttons
-function toggleTilingButton(section, level) {
-    const buttons = document.querySelectorAll(`#tiling-grp-${section} button`);
+// function toggleTilingButton(section, level) {
+//     const buttons = document.querySelectorAll(`#tiling-grp-${section} button`);
+//     buttons.forEach(btn => {
+//         if (btn.id.includes(level)) {
+//             btn.classList.toggle('active');
+//         } else {
+//             btn.classList.remove('active');
+//         }
+//     });
+// }
+// function togglePaintingLivingButton(section, level) {
+//     const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
+//     buttons.forEach(btn => {
+//         if (btn.id.includes(level)) {
+//             btn.classList.toggle('active');
+//         } else {
+//             btn.classList.remove('active');
+//         }
+//     });
+// }
+// function togglePaintingBedButton(section, level) {
+//     const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
+//     buttons.forEach(btn => {
+//         if (btn.id.includes(level)) {
+//             btn.classList.toggle('active');
+//         } else {
+//             btn.classList.remove('active');
+//         }
+//     });
+// }
+// function togglePaintingBathButton(section, level) {
+//     const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
+//     buttons.forEach(btn => {
+//         if (btn.id.includes(level)) {
+//             btn.classList.toggle('active');
+//         } else {
+//             btn.classList.remove('active');
+//         }
+//     });
+// }
+
+function toggleHackingButton(section, level) {
+    const buttons = document.querySelectorAll(`#Kitchen-Group .hacking-grp-${section} button`);
     buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
+        if (btn.id === `hack-${level}-btn-kitchen`) {
             btn.classList.toggle('active');
         } else {
             btn.classList.remove('active');
         }
     });
-}
-function togglePaintingLivingButton(section, level) {
-    const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-function togglePaintingBedButton(section, level) {
-    const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-function togglePaintingBathButton(section, level) {
-    const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
+    updateTotalCost();
 }
 
+function toggleMasonryButton(section, level) {
+    const buttons = document.querySelectorAll(`#Kitchen-Group .masonry-grp-${section} button`);
+    buttons.forEach(btn => {
+        if (btn.id === `masonry-${level}-btn`) {
+            btn.classList.toggle('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    updateTotalCost();
+}
+
+
+function togglePaintingLivingButton(section, level) {
+    const buttons = document.querySelectorAll(`#Living-Group .painting-grp-${section} button`);
+    buttons.forEach(btn => {
+        if (btn.id.includes(level)) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    updateTotalCost();
+}
+
+function toggleFlooringButton(section, level) {
+    const buttons = document.querySelectorAll(`#Living-Group .flooring-grp-${section} button, #Bedroom-Group .flooring-grp-${section} button`);
+    buttons.forEach(btn => {
+        if (btn.id.includes(level)) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    updateTotalCost();
+}
+
+function togglePaintingBedButton(section, level) {
+    const buttons = document.querySelectorAll(`#Bedroom-Group .painting-grp-${section} button`);
+    buttons.forEach(btn => {
+        if (btn.id.includes(level)) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    updateTotalCost();
+}
+
+function togglePaintingBathButton(section, level) {
+    const buttons = document.querySelectorAll(`#Bathroom-Group .painting-grp-${section} button`);
+    buttons.forEach(btn => {
+        if (btn.id.includes(level)) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    updateTotalCost();
+}
+
+function toggleTilingButton(section, level) {
+    const buttons = document.querySelectorAll(`#Bathroom-Group .tiling-grp-${section} button`);
+    buttons.forEach(btn => {
+        if (btn.id.includes(level)) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    updateTotalCost();
+}
 
 
         document.getElementById('living-btn').addEventListener('click', function() {
