@@ -92,7 +92,7 @@ function rq_quotation_shortcode() {
                 <button class="rq-button carpentry" data-value="2.0">Moderate</button>
                 <button class="rq-button carpentry" data-value="3.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="carpentry-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>CEILING & PARTITION</p>
@@ -100,7 +100,7 @@ function rq_quotation_shortcode() {
                 <button class="rq-button ceiling-partition" data-value="2.0">Moderate</button>
                 <button class="rq-button ceiling-partition" data-value="3.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="ceiling-partition-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>PLUMBING</p>
@@ -108,7 +108,7 @@ function rq_quotation_shortcode() {
                 <button class="rq-button plumbing" data-value="2.0">Moderate</button>
                 <button class="rq-button plumbing" data-value="3.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="plumbing-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>ELECTRICAL</p>
@@ -116,7 +116,7 @@ function rq_quotation_shortcode() {
                 <button class="rq-button electrical" data-value="2.0">Moderate</button>
                 <button class="rq-button electrical" data-value="3.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="electrical-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>PAINTING</p>
@@ -124,7 +124,7 @@ function rq_quotation_shortcode() {
                 <button class="rq-button painting" data-value="2.0">Moderate</button>
                 <button class="rq-button painting" data-value="3.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="painting-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>CLEANING & POLISHING</p>
@@ -132,7 +132,7 @@ function rq_quotation_shortcode() {
                 <button class="rq-button cleaning-polishing" data-value="2.0">Moderate</button>
                 <button class="rq-button cleaning-polishing" data-value="3.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="cleaning-polishing-text" class="button-text"></div>
         
         </div>
 

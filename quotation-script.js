@@ -45,7 +45,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.rq-button.hacking').click(function() {
+    $('.rq-button.masonry').click(function() {
         var $this = $(this); // Store the clicked button element
         var setClass = $(this).attr('class').split(' ')[1]; // Get the class of the clicked button set (kitchen-set1, living-set1, bedroom-set1)
         if ($this.hasClass('selected')) { // If the button is already selected
@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.rq-button.hacking').click(function() {
+    $('.rq-button.carpentry').click(function() {
         var $this = $(this); // Store the clicked button element
         var setClass = $(this).attr('class').split(' ')[1]; // Get the class of the clicked button set (kitchen-set1, living-set1, bedroom-set1)
         if ($this.hasClass('selected')) { // If the button is already selected
@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.rq-button.hacking').click(function() {
+    $('.rq-button.ceiling-partition').click(function() {
         var $this = $(this); // Store the clicked button element
         var setClass = $(this).attr('class').split(' ')[1]; // Get the class of the clicked button set (kitchen-set1, living-set1, bedroom-set1)
         if ($this.hasClass('selected')) { // If the button is already selected
@@ -90,7 +90,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.rq-button.hacking').click(function() {
+    $('.rq-button.plumbing').click(function() {
         var $this = $(this); // Store the clicked button element
         var setClass = $(this).attr('class').split(' ')[1]; // Get the class of the clicked button set (kitchen-set1, living-set1, bedroom-set1)
         if ($this.hasClass('selected')) { // If the button is already selected
@@ -105,7 +105,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.rq-button.hacking').click(function() {
+    $('.rq-button.electrical').click(function() {
         var $this = $(this); // Store the clicked button element
         var setClass = $(this).attr('class').split(' ')[1]; // Get the class of the clicked button set (kitchen-set1, living-set1, bedroom-set1)
         if ($this.hasClass('selected')) { // If the button is already selected
@@ -120,7 +120,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.rq-button.hacking').click(function() {
+    $('.rq-button.painting').click(function() {
         var $this = $(this); // Store the clicked button element
         var setClass = $(this).attr('class').split(' ')[1]; // Get the class of the clicked button set (kitchen-set1, living-set1, bedroom-set1)
         if ($this.hasClass('selected')) { // If the button is already selected
@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.rq-button.hacking').click(function() {
+    $('.rq-button.cleaning-polishing').click(function() {
         var $this = $(this); // Store the clicked button element
         var setClass = $(this).attr('class').split(' ')[1]; // Get the class of the clicked button set (kitchen-set1, living-set1, bedroom-set1)
         if ($this.hasClass('selected')) { // If the button is already selected
