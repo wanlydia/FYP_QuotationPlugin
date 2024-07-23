@@ -10,7 +10,7 @@ License: GPL2
 */
 
 function rq_quotation_enqueue_scripts() {
-    wp_enqueue_style('rq-styles', plugins_url('styles1.css',__FILE__), array(), '1.0.1');
+    wp_enqueue_style('rq-styles', plugins_url('styles.css',__FILE__), array(), '1.0.1');
 }
 
 add_action('wp_enqueue_scripts', 'rq_quotation_enqueue_scripts');
