@@ -75,27 +75,27 @@ jQuery(document).ready(function($) {
     });
 
     // Function to toggle the active state of a single button and deactivate others
-    // window.toggleSingleButton = function(button, ...otherButtons) {
-    //     $(button).toggleClass('active');
-    //     otherButtons.forEach(btn => $('#' + btn).removeClass('active'));
-    // }
+    window.toggleSingleButton = function(button, ...otherButtons) {
+        $(button).toggleClass('active');
+        otherButtons.forEach(btn => $('#' + btn).removeClass('active'));
+    }
 
     // Function to toggle visibility of containers (bathroom, bedroom) and button state
-    // window.toggleContainer = function(containerId, button) {
-    //     const $container = $('#' + containerId);
-    //     const isDisplayed = $container.is(':visible');
-    //     $container.toggle(!isDisplayed);
-    //     $(button).toggleClass('active', !isDisplayed);
-    // }
+    window.toggleContainer = function(containerId, button) {
+        const $container = $('#' + containerId);
+        const isDisplayed = $container.is(':visible');
+        $container.toggle(!isDisplayed);
+        $(button).toggleClass('active', !isDisplayed);
+    }
 
     // Function to navigate to the next page
-    // window.nextPage = function(pageId) {
-    //     $('.page').hide();
-    //     $('#' + pageId).show();
-    // }
+    window.nextPage = function(pageId) {
+        $('.page').hide();
+        $('#' + pageId).show();
+    }
 
     // Attach click event handlers to living and kitchen buttons
-    // $('#living-btn, #kitchen-btn').click(function() {
-    //     $(this).toggleClass('active').siblings().removeClass('active');
-    // });
+    $('#living-btn, #kitchen-btn').click(function() {
+        $(this).toggleClass('active').siblings().removeClass('active');
+    });
 });

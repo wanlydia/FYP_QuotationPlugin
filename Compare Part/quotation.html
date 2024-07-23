@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles1.css">
-    <link rel="javascript" href="script1.js">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="javascript" href="script2.js">
     <title>Renovation Calculator</title>
     <style>
-        
+    
     </style>
 </head>
 <body>
@@ -65,79 +65,84 @@
         <div id="rq-buttonSet">
             <div class="button-set">
                 <p>HACKING</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
+                <button class="rq-button hacking" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button hacking" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button hacking" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="hacking-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>MASONRY</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
+                <button class="rq-button masonry" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button masonry" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button masonry" data-min="3" data-max="9.0">Extensive</button>
             </div>
             <div id="masonry-text" class="button-text"></div>
 
             <div class="button-set">
-                <p>PIPING</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
+                <p>CARPENTRY</p>
+                <button class="rq-button carpentry" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button carpentry" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button carpentry" data-min="3" data-max="9.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="carpentry-text" class="button-text"></div>
+
+            <div class="button-set">
+                <p>CEILING & PARTITION</p>
+                <button class="rq-button ceiling-partition" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button ceiling-partition" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button ceiling-partition" data-min="3" data-max="9.0">Extensive</button>
+            </div>
+            <div id="ceiling-partition-text" class="button-text"></div>
+
+            <div class="button-set">
+                <p>PLUMBING</p>
+                <button class="rq-button plumbing" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button plumbing" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button plumbing" data-min="3" data-max="9.0">Extensive</button>
+            </div>
+            <div id="plumbing-text" class="button-text"></div>
+
+            <div class="button-set">
+                <p>ELECTRICAL</p>
+                <button class="rq-button electrical" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button electrical" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button electrical" data-min="3" data-max="9.0">Extensive</button>
+            </div>
+            <div id="electrical-text" class="button-text"></div>
 
             <div class="button-set">
                 <p>PAINTING</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
+                <button class="rq-button painting" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button painting" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button painting" data-min="3" data-max="9.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="painting-text" class="button-text"></div>
 
             <div class="button-set">
-                <p>HACKING</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
+                <p>CLEANING & POLISHING</p>
+                <button class="rq-button cleaning-polishing" data-min="1" data-max="3.0">Light</button>
+                <button class="rq-button cleaning-polishing" data-min="2" data-max="6.0">Moderate</button>
+                <button class="rq-button cleaning-polishing" data-min="3" data-max="9.0">Extensive</button>
             </div>
-            <div id="hacking-text" class="button-text"></div>
-
-            <div class="button-set">
-                <p>HACKING</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
-            </div>
-            <div id="hacking-text" class="button-text"></div>
-
-            <div class="button-set">
-                <p>HACKING</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
-            </div>
-            <div id="hacking-text" class="button-text"></div>
-
-            <div class="button-set">
-                <p>HACKING</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
-            </div>
-            <div id="hacking-text" class="button-text"></div>
-
-            <div class="button-set">
-                <p>HACKING</p>
-                <button class="rq-button hacking" data-value="1.0">Light</button>
-                <button class="rq-button hacking" data-value="2.0">Moderate</button>
-                <button class="rq-button hacking" data-value="3.0">Extensive</button>
-            </div>
-            <div id="hacking-text" class="button-text"></div>
+            <div id="cleaning-polishing-text" class="button-text"></div>
         
         </div>
 
         <button id="btn-10q" class="common-btn" type="button" onclick="nextPage('pg6')">Next</button>
     </div>
-</body>
-</html>
+    <div id="pg6" class="page">
+        <div id="rq-resultsContainer">
+        <p id="est-reno-txt">Your estimated renovation cost is</p>
+        <div id="rq-results">
+            $<div id="rq-minResults"></div>-<div id="rq-maxResults"></div>
+        </div>
+        
+        <div id="rq-links">
+            <p id="text">Ready to start your project? <a href="https://renoku2.azharapp.com/contact-us/" class="highlight">BOOK YOUR APPOINTMENT NOW</a></p>
+            <p id="text">Want to know what we can do? <a href="https://renoku2.azharapp.com/gallery/" class="highlight">CHECK OUR GALLERY OF WORKS</a></p>
+        </div>
+        </div>
+        <!--This code here only works in the same html/php page where goes to the choosing page.-->
+        <button class="common-btn" onclick="nextPage('pg1')">Next</button>
+    </div>

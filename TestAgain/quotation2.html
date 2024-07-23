@@ -13,25 +13,20 @@
 <body>
     <div id="pg1" class="page active">
         <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3>
-        <!--Alot of my current id used are linked to javascript or css heavily. 
-        If really want to change the name of the id really badly, just tell me or ctrl+F in htm1 here or css,
-        so compare and contrast and replace so as you please.-->
         <div class="Group-1">
             <div class="property-status-grp">
                 <p>Property Status</p>
-                <div class="button-container1"> <!--This id affects css-->
-                    <button id="btn-1q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-1q', 'btn-2q')">New</button>
-                    <!--The id so that only 1 of the 2 toggles can be chosen. The type="button is needed", toggle onclick is for toggle function to work-->
-                    <button id="btn-2q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-2q', 'btn-1q')">Resale</button>
+                <div class="button-container1"> 
+                    <button id="btn-1q" class="rq-button" type="button" onclick="toggleSingleButton(this, 'btn-1q', 'btn-2q')">New</button>
+                    <button id="btn-2q" class="rq-button" type="button" onclick="toggleSingleButton(this, 'btn-2q', 'btn-1q')">Resale</button>
                 </div>
             </div>
             <div class="property-type-grp"> <!--This id affects css-->
                 <p>Property Type</p>
                 <div class="button-container2"> <!--This id affects css-->
-                    <button id="btn-3q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-3q', 'btn-4q', 'btn-5q')">HDB</button>
-                    <!--The id so that only 1 of the 3 toggles can be chosen. The type="button is needed", toggle onclick is for toggle function to work-->
-                    <button id="btn-4q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-4q', 'btn-3q', 'btn-5q')">Condo</button>
-                    <button id="btn-5q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-5q', 'btn-3q', 'btn-4q')">Landed</button>
+                    <button id="btn-3q" class="rq-button" type="button" onclick="toggleSingleButton(this, 'btn-3q', 'btn-4q', 'btn-5q')">HDB</button>
+                    <button id="btn-4q" class="rq-button" type="button" onclick="toggleSingleButton(this, 'btn-4q', 'btn-3q', 'btn-5q')">Condo</button>
+                    <button id="btn-5q" class="rq-button" type="button" onclick="toggleSingleButton(this, 'btn-5q', 'btn-3q', 'btn-4q')">Landed</button>
                 </div>
             </div>
         </div>
@@ -39,11 +34,10 @@
             <div class="renovate-grp"> <!--This id can be changed, but is in css that affects the width between the 2 columns and paragrpah margin-bottom-->
                 <p>What To Renovate?</p>
                 <div class="button-container">
-                    <button id="living-btn" class="common-btn">Living</button>
-                    <button id="kitchen-btn" class="common-btn">Kitchen</button>
-                    <button id="bathroom-btn" class="common-btn" onclick="toggleContainer('bathrooms-container', this)">Bathroom</button>
-                    <button id="bedroom-btn" class="common-btn" onclick="toggleContainer('bedrooms-container', this)">Bedroom</button>
-                <!--The id for the javascript The type="button is needed", toggle onclick is for the containers for the input to appear-->
+                    <button id="living-btn" class="rq-button">Living</button>
+                    <button id="kitchen-btn" class="rq-button">Kitchen</button>
+                    <button id="bathroom-btn" class="rq-button" onclick="toggleContainer('bathrooms-container', this)">Bathroom</button>
+                    <button id="bedroom-btn" class="rq-button" onclick="toggleContainer('bedrooms-container', this)">Bedroom</button>
                 </div>
             </div>
         
@@ -63,82 +57,89 @@
         <h2>TYPES OF WORKS</h2>
         <p id="types-text">Select the services that you require based on its intensity. If you do not require the service, leave it blank.</p>
         <br>
-        <!--Write here-->
-    <h2>Living</h2>
-    <div id="Living-Group">
-        <div id="painting-grp-living"><!--This affects the javascript of #painting-grp-${section} button for the toggle fucntions to work, which is linked to the 3 id of the 3 buttons below-->
-            <p>PAINTING</p>
-                <button id="painting-light-btn" class="common-btn" type="button" onclick="togglePaintingLivingButton('living', 'light')" data-value="1.0">Light</button>
-                <button id="painting-moderate-btn" class="common-btn" type="button" onclick="togglePaintingLivingButton('living', 'moderate')" data-value="2.0">Moderate</button>
-                <button id="painting-extensive-btn" class="common-btn" type="button" onclick="togglePaintingLivingButton('living', 'extensive')" data-value="3.0">Extensive</button>
-                <!--The id for the javascript The type="button is needed", toggle onclick is for the containers for 1 of the 3 toggle buttons to appear-->
-                <div id="painting-text-living" class="button-text"></div><!--Change this to what you want-->
-            </div>
-        <div id="flooring-grp-living"> <!--This affects the javascript of #flooring-grp-${section} button for the toggle fucntions to work-->
-            <p>FLOORING</p>
-                <button id="flooring-light-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'light')" data-value="1.0">Light</button>
-                <button id="flooring-moderate-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'moderate')" data-value="2.0">Moderate</button>
-                <button id="flooring-extensive-btn" class="common-btn" type="button" onclick="toggleFlooringButton('living', 'extensive')" data-value="3.0">Extensive</button>
-                <div id="flooring-text-living" class="button-text"></div><!--Change this to what you want-->
-        </div>
+        <div id="rq-buttonset">
+    <div class="button-set">
+        <p>HACKING</p>
+        <button id="hack-light-btn" class="rq-button hack" type="button" onclick="toggleSingleButton(this, 'hack-light-btn', 'hack-moderate-btn', 'hack-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="hack-moderate-btn" class="rq-button hack" type="button" onclick="toggleSingleButton(this, 'hack-light-btn', 'hack-moderate-btn', 'hack-extensive-btn')" data-min="2" data-max="6.0">Moderate</button>
+        <button id="hack-extensive-btn" class="rq-button hack" type="button" onclick="toggleSingleButton(this, 'hack-light-btn', 'hack-moderate-btn', 'hack-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
     </div>
-    <br>
-    <h2>KITCHEN</h2>
-    <div id="Kitchen-Group">
-        <div class="hacking-grp-kitchen"><!--This affects the javascript of #hacking-grp-${section} button for the toggle fucntions to work, which is linked to the 3 id of the 3 buttons below-->
-            <p>HACKING</p>
-            <button id="hack-light-btn-kitchen" class="common-btn" type="button" onclick="toggleHackingButton('kitchen', 'light')" data-value="1.0">Light</button>
-            <button id="hack-moderate-btn-kitchen" class="common-btn" type="button" onclick="toggleHackingButton('kitchen', 'moderate')" data-value="2.0">Moderate</button>
-            <button id="hack-extensive-btn-kitchen" class="common-btn" type="button" onclick="toggleHackingButton('kitchen', 'extensive')" data-value="3.0">Extensive</button>
-            <div id="hacking-text-kitchen" class="button-text"></div><!--Change this to what you want-->
-        </div>
-        <div class="masonry-grp-kitchen"><!--This affects the javascript of #masonry-grp-${section} button for the toggle fucntions to work, which is linked to the 3 id of the 3 buttons below-->
-            <p>MASONRY</p>
-            <button id="masonry-light-btn" class="common-btn" type="button" onclick="toggleMasonryButton('kitchen', 'light')" data-value="1.0">Light</button>
-            <button id="masonry-moderate-btn" class="common-btn" type="button" onclick="toggleMasonryButton('kitchen', 'moderate')" data-value="2.0">Moderate</button>
-            <button id="masonry-extensive-btn" class="common-btn" type="button" onclick="toggleMasonryButton('kitchen', 'extensive')" data-value="3.0">Extensive</button>
-            <div id="masonry-text-kitchen" class="button-text"></div><!--Change this to what you want-->
-        </div>
+    <div id="hack-text" class="button-text"></div><!--The hack-text is in lined with the 'hack':{ 'hack- javascript'}-->
+
+    <div class="button-set">
+        <p>MASONRY</p>
+        <button id="masonry-light-btn" class="rq-button masonry" type="button" onclick="toggleSingleButton(this, 'masonry-light-btn', 'masonry-moderate-btn', 'masonry-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="masonry-moderate-btn" class="rq-button rq-masonry" type="button" onclick="toggleSingleButton(this, 'masonry-light-btn', 'masonry-moderate-btn', 'masonry-extensive-btn')" data-min="2" data-max="6.0">Moderate</button>
+        <button id="masonry-extensive-btn" class="rq-button rq-masonry" type="button" onclick="toggleSingleButton(this, 'masonry-light-btn', 'masonry-moderate-btn', 'masonry-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
     </div>
-    <br>
-    <h2>BEDROOM</h2>
-    <div id="Bedroom-Group">
-        <div id="painting-grp-bedroom"><!--This affects the javascript of #painting-grp-${section} button for the toggle fucntions to work, which is linked to the 3 id of the 3 buttons below-->
-            <p>PAINTING</p>
-            <button id="painting-light-btn-bed" class="common-btn" type="button" onclick="togglePaintingBedButton('bedroom', 'light')" data-value="1.0">Light</button>
-            <button id="painting-moderate-btn-bed" class="common-btn" type="button" onclick="togglePaintingBedButton('bedroom', 'moderate')" data-value="2.0">Moderate</button>
-            <button id="painting-extensive-btn-bed" class="common-btn" type="button" onclick="togglePaintingBedButton('bedroom', 'extensive')" data-value="3.0">Extensive</button>
-            <div id="painting-text-bedroom" class="button-text"></div><!--Change this to what you want-->
-        </div>
-        <div id="flooring-grp-bedroom"><!--This affects the javascript of #flooring-grp-${section} button for the toggle fucntions to work, which is linked to the 3 id of the 3 buttons below-->
-            <p>FLOORING</p>
-            <button id="flooring-light-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'light')" data-value="1.0">Light</button>
-            <button id="flooring-moderate-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'moderate')" data-value="2.0">Moderate</button>
-            <button id="flooring-extensive-btn-bed" class="common-btn" type="button" onclick="toggleFlooringButton('bedroom', 'extensive')" data-value="3.0">Extensive</button>
-            <p id="flooring-text-bedroom" class="button-text"></p><!--Change this to what you want-->
-        </div>
+    <div id="masonry-text" class="button-text"></div>
+
+    <div class="button-set">
+        <p>PAINTING</p>
+        <button id="painting-light-btn" class="rq-button painting" type="button" onclick="toggleSingleButton(this, 'painting-light-btn', 'painting-moderate-btn', 'painting-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="painting-moderate-btn" class="rq-button painting" type="button" onclick="toggleSingleButton(this, 'painting-light-btn', 'painting-moderate-btn', 'painting-extensive-btn')" data-min="2" data-max="6.0">Moderate</button>
+        <button id="painting-extensive-btn" class="rq-button painting" type="button" onclick="toggleSingleButton(this, 'painting-light-btn', 'painting-moderate-btn', 'painting-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
     </div>
-    <br>
-    <h2>BATHROOM</h2>
-    <div id="Bathroom-Group">
-        <div id="painting-grp-bathroom"><!--This affects the javascript of #painting-grp-${section} button for the toggle fucntions to work, which is linked to the 3 id of the 3 buttons below-->
-            <p>PAINTING</p>
-            <button id="painting-light-btn-bath" class="common-btn" type="button" onclick="togglePaintingBathButton('bathroom', 'light')" data-value="1.0">Light</button>
-            <button id="painting-moderate-btn-bath" class="common-btn" type="button" onclick="togglePaintingBathButton('bathroom', 'moderate')" data-value="2.0">Moderate</button>
-            <button id="painting-extensive-btn-bath" class="common-btn" type="button" onclick="togglePaintingBathButton('bathroom', 'extensive')" data-value="3.0">Extensive</button>
-            <div id="painting-text-bathroom" class="button-text"></div><!--Change this to what you want-->
-        </div>
-        <div id="tiling-grp-bathroom"><!--This affects the javascript of #tiling-grp-${section} button for the toggle fucntions to work, which is linked to the 3 id of the 3 buttons below-->
-            <p>TILING</p>
-            <button id="tiling-light-btn" class="common-btn" type="button" onclick="toggleTilingButton('bathroom', 'light')" data-value="1.0">Light</button>
-            <button id="tiling-moderate-btn" class="common-btn" type="button" onclick="toggleTilingButton('bathroom', 'moderate')" data-value="2.0">Moderate</button>
-            <button id="tiling-extensive-btn" class="common-btn" type="button" onclick="toggleTilingButton('bathroom', 'extensive')" data-value="3.0">Extensive</button>
-            <div id="tiling-text-bathroom" class="button-text"></div><!--Change this to what you want-->
-        </div>
+    <div id="painting-text" class="button-text"></div>
+
+    <div class="button-set">
+        <p>FLOORING</p>
+        <button id="flooring-light-btn" class="rq-button flooring" type="button" onclick="toggleSingleButton(this, 'flooring-light-btn', 'flooring-moderate-btn', 'flooring-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="flooring-moderate-btn" class="rq-button flooring" type="button" onclick="toggleSingleButton(this, 'flooring-light-btn', 'flooring-moderate-btn', 'flooring-extensive-btn')" data-min="2" data-max="6.0">Moderate</button>
+        <button id="flooring-extensive-btn" class="rq-button flooring" type="button" onclick="toggleSingleButton(this, 'flooring-light-btn', 'flooring-moderate-btn', 'flooring-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
     </div>
-    <br>
+    <div id="flooring-text" class="button-text"></div>
+
+    <div class="button-set">
+        <p>CARPENTRY</p>
+        <button id="carpentry-light-btn" class="rq-button carpentry" type="button" onclick="toggleSingleButton(this, 'carpentry-light-btn', 'carpentry-moderate-btn', 'carpentry-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="carpentry-moderate-btn" class="rq-button carpentry" type="button" onclick="toggleSingleButton(this, 'carpentry-light-btn', 'carpentry-moderate-btn', 'carpentry-extensive-btn')" data-min="2" data-max="6.0">Moderate</button>
+        <button id="carpentry-extensive-btn" class="rq-button carpentry" type="button" onclick="toggleSingleButton(this, 'carpentry-light-btn', 'carpentry-moderate-btn', 'carpentry-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
+    </div>
+    <div id="carpentry-text" class="button-text"></div>
+
+    <div class="button-set">
+        <p>CEILING & PARTITION</p>
+        <button id="ceiling-light-btn" class="rq-button ceiling" type="button" onclick="toggleSingleButton(this, 'ceiling-light-btn', 'ceiling-moderate-btn', 'ceiling-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="ceiling-moderate-btn" class="rq-button ceiling" type="button" onclick="toggleSingleButton(this, 'ceiling-light-btn', 'ceiling-moderate-btn', 'ceiling-extensive-btn')" data-min="2" data-max="6.0">Moderate</button>
+        <button id="ceiling-extensive-btn" class="rq-button ceiling" type="button" onclick="toggleSingleButton(this, 'ceiling-light-btn', 'ceiling-moderate-btn', 'ceiling-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
+    </div>
+    <div id="ceiling-text" class="button-text"></div>
+
+    <div class="button-set">
+        <p>WALL & FLOOR TILING</p>
+        <button id="tiling-light-btn" class="rq-button floor" type="button" onclick="toggleSingleButton(this, 'tiling-light-btn', 'tiling-moderate-btn', 'tiling-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="tiling-moderate-btn" class="rq-button floor" type="button" onclick="toggleSingleButton(this, 'tiling-light-btn', 'tiling-moderate-btn', 'tiling-extensive-btn')" data-min="2" data-max="6.0">Moderate</button>
+        <button id="tiling-extensive-btn" class="rq-button floor" type="button" onclick="toggleSingleButton(this, 'tiling-light-btn', 'tiling-moderate-btn', 'tiling-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
+    </div>
+    <div id="tiling-text" class="button-text"></div>
+
+    <div class="button-set">
+        <p>PLUMBING</p>
+        <button id="plumbing-light-btn" class="rq-button plumbing" type="button" onclick="toggleSingleButton(this, 'plumbing-light-btn', 'plumbing-moderate-btn', 'plumbing-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="plumbing-moderate-btn" class="rq-button plumbing" type="button" onclick="toggleSingleButton(this,'plumbing-light-btn', 'plumbing-moderate-btn', 'plumbing-extensive-btn')" data-min="2" data-max="6.0">Moderate</button>
+        <button id="plumbing-extensive-btn" class="rq-button plumbing" type="button" onclick="toggleSingleButton(this,'plumbing-light-btn', 'plumbing-moderate-btn', 'plumbing-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
+    </div>
+    <div id="plumbing-text" class="button-text"></div>
+
+    <div class="button-set">
+        <p>ELECTRICAL</p>
+        <button id="electrical-light-btn" class="rq-button electrical" type="button" onclick="toggleSingleButton(this, 'electrical-light-btn', 'electrical-moderate-btn', 'electrical-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="electrical-moderate-btn" class="rq-button electrical" type="button" onclick="toggleSingleButton(this, 'electrical-light-btn', 'electrical-moderate-btn', 'electrical-extensive-btn')" data-min="2" data-max="6.0">Moderate</button>
+        <button id="electrical-extensive-btn" class="rq-button electrical" type="button" onclick="toggleSingleButton(this, 'electrical-light-btn', 'electrical-moderate-btn', 'electrical-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
+    </div>
+    <div id="electrical-text" class="button-text"></div>
+
+    <div class="button-set">
+        <p>CLEANING & POLISHING</p>
+        <button id="cleaning-light-btn" class="rq-button cleaning" type="button" onclick="toggleSingleButton(this, 'cleaning-light-btn', 'cleaning-moderate-btn', 'cleaning-extensive-btn')" data-min="1" data-max="3.0">Light</button>
+        <button id="cleaning-moderate-btn" class="rq-button cleaning" type="button" onclick="toggleSingleButton(this, 'cleaning-light-btn', 'cleaning-moderate-btn', 'cleaning-extensive-btn')" data-min="2" data-max="6.0"">Moderate</button>
+        <button id="cleaning-extensive-btn" class="rq-button cleaning" type="button" onclick="toggleSingleButton(this, 'cleaning-light-btn', 'cleaning-moderate-btn', 'cleaning-extensive-btn')" data-min="3" data-max="9.0">Extensive</button>
+    </div>
+    <div id="cleaning-text" class="button-text"></div>
+    </div>
         <!--This code here only works in the same html/php page where goes to the Reviews Result page.-->
-        <button id="btn-10q" class="common-btn" type="button" onclick="nextPage('pg6')">Next</button>
+        <button id="btn-10q" class="rq-button" type="button" onclick="nextPage('pg6')">Next</button>
     </div>
     
     <div id="pg6" class="page">
@@ -152,7 +153,7 @@
             </div>
         </div>
         <!--This code here only works in the same html/php page where goes to the choosing page.-->
-        <button class="common-btn" onclick="nextPage('pg1')">Next</button>
+        <button class="rq-button" onclick="nextPage('pg1')">Next</button>
     </div>
     
     <script>
@@ -180,88 +181,105 @@ function nextPage(pageId) {
     document.getElementById(pageId).classList.add('active');
 }
 
-
-        function toggleFlooringButton(section, level) {
-            const buttons = document.querySelectorAll(`#flooring-grp-${section} button`);
-            buttons.forEach(btn => {
-                if (btn.id.includes(level)) {
-                    btn.classList.toggle('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-        
-        function toggleHackingButton(section, level) {
-    const buttons = document.querySelectorAll(`#Kitchen-Group .hacking-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-
-function toggleMasonryButton(section, level) {
-    const buttons = document.querySelectorAll(`#Kitchen-Group .masonry-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-
-// Function to toggle tiling buttons
-function toggleTilingButton(section, level) {
-    const buttons = document.querySelectorAll(`#tiling-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-function togglePaintingLivingButton(section, level) {
-    const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-function togglePaintingBedButton(section, level) {
-    const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-function togglePaintingBathButton(section, level) {
-    const buttons = document.querySelectorAll(`#painting-grp-${section} button`);
-    buttons.forEach(btn => {
-        if (btn.id.includes(level)) {
-            btn.classList.toggle('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-document.getElementById('living-btn').addEventListener('click', function() {
+        document.getElementById('living-btn').addEventListener('click', function() {
             this.classList.toggle('active');
         });
 
         document.getElementById('kitchen-btn').addEventListener('click', function() {
             this.classList.toggle('active');
         });
+
+        function toggleSingleButton(button, ...otherButtons) {
+    // Toggle the active class on the clicked button
+    button.classList.toggle('active');
+    
+    // Ensure only one button is active
+    otherButtons.forEach(btn => {
+        const otherButton = document.getElementById(btn);
+        if (otherButton !== button) {
+            otherButton.classList.remove('active');
+        }
+    });
+
+    // Update the text display
+    updateButtonText(button);
+}
+
+function updateButtonText(button) {
+    const buttonId = button.id;
+    const sectionId = buttonId.split('-')[0]; // Get the section prefix (e.g., 'hack', 'masonry')
+
+    // Get the corresponding text element
+    const textElement = document.getElementById(sectionId + '-text');
+    
+    // Define the button text descriptions
+    const buttonText = {
+        'hack': {
+            'hack-light-btn': 'Minor modifications to walls or partitions, often for convenience, without major structural changes',
+            'hack-moderate-btn': 'Removing or altering structural components like beams, requiring careful planning to maintain stability',
+            'hack-extensive-btn': 'Major structural alterations, including removing load-bearing walls and extensive rewiring, impacting building integrity'
+        },
+        'masonry': {
+            'masonry-light-btn': 'Post-hacking touch-up with minimal to no tiling',
+            'masonry-moderate-btn': 'Construction of appliance, with post-hacking touch-up and tiling',
+            'masonry-extensive-btn': 'Complete construction of appliance and/or cabinets, with post-hacking touch-up and tiling'
+        },
+        'carpentry': {
+            'carpentry-light-btn': 'Simple renovation of furniture or structure',
+            'carpentry-moderate-btn': 'Renovation of 2-3 furniture or structures',
+            'carpentry-extensive-btn': 'Complex renovation of a variety of furniture or structures'
+        },
+        'ceiling': {
+            'ceiling-light-btn': 'Simple renovation of ceilings, walls',
+            'ceiling-moderate-btn': 'Renovation of partition beams, walls and ceiling',
+            'ceiling-extensive-btn': 'Extensive renovation of partition beams, walls and ceiling'
+        },
+        'plumbing': {
+            'plumbing-light-btn': 'Renovating one water fixture (pipes, taps, etc.)',
+            'plumbing-moderate-btn': 'Renovating two-three water fixture (pipes, taps, etc.)',
+            'plumbing-extensive-btn': 'Renovating various water fixture (pipes, taps, etc.), with pipe extension and concealment'
+        },
+        'electrical': {
+            'electrical-light-btn': 'Install power outlets and plug points for one area',
+            'electrical-moderate-btn': 'Install power outlets and plug points for various area',
+            'electrical-extensive-btn': 'Install power outlets and plug points for the entire house'
+        },
+        'painting': {
+            'painting-light-btn': 'Paint job for one room',
+            'painting-moderate-btn': 'Paint job for two rooms',
+            'painting-extensive-btn': 'Paint job for three or more rooms'
+        },
+        'cleaning': {
+            'cleaning-light-btn': 'Standard post-renovation clean-up',
+            'cleaning-moderate-btn': 'Additional post-renovation clean-up',
+            'cleaning-extensive-btn': 'Comprehensive post-renovation clean-up'
+        },
+        'flooring': {
+            'flooring-light-btn': 'Simple flooring installation',
+            'flooring-moderate-btn': 'Installation of 2-3 types of flooring',
+            'flooring-extensive-btn': 'Installation of various types of flooring'
+        },
+        'tiling': {
+            'tiling-light-btn': 'Simple tiling job for one area',
+            'tiling-moderate-btn': 'Tiling job for two areas',
+            'tiling-extensive-btn': 'Tiling job for three or more areas'
+        }
+    };
+
+    // Update the text content based on the button clicked
+    if (textElement) {
+        textElement.textContent = buttonText[sectionId][button.id] || '';
+    }
+}
+
+jQuery(document).ready(function($) {
+    // Attach click event handler to buttons with class 'rq-button'
+    $('.rq-button').click(function() {
+        const $this = $(this);
+        toggleSingleButton(this, ...$this.siblings('button').map(function() { return this.id; }).get());
+    });
+});
+
     </script>
 </body>
 </html>
