@@ -1,32 +1,24 @@
+/*Start of Renovation Calc Page*/
+.page {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.page.active {
+    display: block;
+    opacity: 1;
+}
+
 body {
     font-family: 'Glacial Indifference', sans-serif;
     background-color: #323131;
     color: #FFFFFF; 
 }
-#rq-formContainer, #rq-resultsContainer {
-    padding: 20px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Glacial Indifference', sans-serif;
-    font-size: 25px;
-    color: #FFFFFF; 
+h3, h2 {
     text-align: center;
+    color: #F7C454;
+    font-size:30px;
 }
-
-h3 {
-    font-family: 'Glacial Indifference', sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-h2{
-    font-family: 'Glacial Indifference', sans-serif;
-    font-weight: bold;
-    font-size: 27px;
-}
-
 .common-btn{
     background-color: #323131;
     color: white;
@@ -65,24 +57,33 @@ h2{
     /* gap: 100px;  */
     position: relative;
 }
+/*Keep this here, is an alternate*/
+/* .Group-2 {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+} 
+.renovate-grp, .bath-bed-group {
+    width: 45%; 
+}*/
 
-.rq-propertyStatus, .rq-propertyType {
+.property-status-grp, .property-type-grp {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.rq-propertyStatus {
+.property-status-grp {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.rq-propertyStatus p, .rq-propertyType p {
+.property-status-grp p, .property-type-grp p {
     margin-bottom: 10px; 
 }
-.rq-propertyStatus, .button-container1 {
+.property-status-grp .button-container1 {
     display: flex;
 }
-.rq-propertyType .button-container2 {
+.property-type-grp .button-container2 {
     display: grid;
     grid-template-columns: auto auto; /* Two columns layout */
     grid-gap: 0px; /* Change the spacing between buttons */
@@ -101,10 +102,10 @@ h2{
 .button-container button {
     margin-left: -4px; 
 }
-.rq-rooms p {
+.renovate-grp p {
     margin-bottom: 10px; 
 }
-.rq-rooms, .bath-bed-group, .button-propertyStatus,.button-propertyType {
+.renovate-grp, .bath-bed-group, .property-status-grp,.property-type-grp {
     width: 30%;
 }
 .bedrooms-container, .bathrooms-container{
@@ -137,76 +138,40 @@ h2{
     justify-self: end; /* Move these buttons to the right */
     margin-right:4px; /* Add some space between the buttons */
 }
+/*End of Renovation Calc Page*/
 
-.button-set {
-    margin-bottom: 20px;
-    align-items: center;
-}
-
-.rq-button {
-    background-color: #323131;
-    color: white;
-    border: 2px solid #323131;
-    border-color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    width: 100px; 
+/*Start of Review Results Page*/
+#review-results-pg{
     text-align: center;
 }
-
-.rq-button:hover {
-    border-color: #F7C454;
-    color: #F7C454;
+#review-header{
+    font-family: Maytra;
+    font-size: 75px;
+    font-weight: lighter;
 }
-
-.rq-button.selected {
-    background-color: #F7C454;
-    color: black;
-    border-color: #F7C454;
-}
-
-.button-text {
-    font-family: 'Glacial Indifference', sans-serif;
-    font-size: 18px;
-}
-/* 
-.set1 {
-    text-align: center;
-} */
-
-#rq-input {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    text-align: center;
-}
-
-#types-text {
-    margin: 2px;
-    font-family: 'Glacial Indifference', sans-serif;
-    font-size: 20px;
-}
-
-/* RESULTS PAGE */
-
-#rq-results {
-    color: #F7C454;
-    font-size: 30px;
+#est-reno-txt{
     font-weight: bold;
+    font-size: 17px;
+    
 }
-
-#rq-links {
-    font-size: 20px !important;
-}
-
-a.highlight {
+#cost-txt{
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: -10px;
     color: #F7C454;
-    text-decoration: none;
+    
+}
+.highlight {
+    color: #F7C454;
     text-decoration: underline;
 }
+#text2{
+    margin-top:-20px;
+    text-align: center;
+}
+/*End of Review Results Page*/
 
-a.highlight:hover {
-    text-decoration: none;
+/*Start of Contact Page*/
+#Kitchen-Group, #Bathroom-Group, #Bedroom-Group, #Living-Group{
+    text-align: center;
 }
