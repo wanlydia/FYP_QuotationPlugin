@@ -305,7 +305,6 @@ function toggleSingleButton(button, ...otherButtonIds) {
         button.innerText = button.getAttribute('data-button-set').charAt(0).toUpperCase() + button.getAttribute('data-button-set').slice(1); // Reset text
     } else {
         button.classList.add('active');
-        button.innerText = "Selected"; // Change text to indicate selection
     }
 
     // Calculate and update results
