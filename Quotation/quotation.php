@@ -21,7 +21,6 @@ function rq_quotation_shortcode() {
     <div id="rq-formContainer" class="page active">
         <h3>FIND THE PRICE OF SERVICE AT THE PRICE OF NONE</h3>
 
-        <!-- let friend settle this part owo -->
         <div class="Group-1">
             <div class="rq-propertyStatus">
                 <p>Property Status</p>
