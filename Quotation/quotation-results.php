@@ -17,11 +17,15 @@ function rq_results_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'rq_results_enqueue_scripts');
 
 function rq_results_shortcode() {
+    // Get the min and max values from the URL parameters
+    $totalMin = isset($_GET['min']) ? floatval($_GET['min']) : 0;
+    $totalMax = isset($_GET['max']) ? floatval($_GET['max']) : 0;
+
     ob_start(); ?>
     <div id="rq-resultsContainer">
         <p id="est-reno-txt">Your estimated renovation cost is</p>
         <div id="rq-results">
-            $<div id="rq-minResults"></div>-<div id="rq-maxResults"></div>
+            $<div id="rq-minResults"><?php echo number_format($totalMin, 1); ?></div> - $<div id="rq-maxResults"><?php echo number_format($totalMax, 1); ?></div>
         </div>
         
         <div id="rq-links">

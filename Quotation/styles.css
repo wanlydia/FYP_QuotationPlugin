@@ -1,5 +1,3 @@
-
-
 #rq-formContainer, #rq-resultsContainer {
     padding: 20px;
     margin: 20px;
@@ -21,6 +19,9 @@ h3 {
 h2{
     font-family: 'Glacial Indifference', sans-serif;
     font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    margin-bottom: 1px;
     font-size: 27px;
 }
 
@@ -53,93 +54,73 @@ h2{
     font-size:14px;
 }
 /*quotation.html*/
-.Group-1, .Group-2{
-    text-align: center;
-}
-.Group-1,.Group-2 {
+
+.Group-1 {
     display: flex;
-    justify-content: center;
-    /* gap: 100px;  */
-    position: relative;
+    justify-content: space-between;
+    gap: 20px; /* Space between the two sections */
 }
 
 .rq-propertyStatus, .rq-propertyType {
+    flex: 1; /* Allow both to take up equal space */
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-.rq-propertyStatus {
+
+.button-propertyStatus, .button-propertyType {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 10px; /* Space between buttons */
 }
-.rq-propertyStatus p, .rq-propertyType p {
-    margin-bottom: 10px; 
-}
-.rq-propertyStatus, .button-container1 {
-    display: flex;
-}
-.rq-propertyType .button-container2 {
+
+/* Group-2 styling */
+.Group-2 {
     display: grid;
-    grid-template-columns: auto auto; /* Two columns layout */
-    grid-gap: 0px; /* Change the spacing between buttons */
-    justify-content: center; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
-#btn-3q {
-    grid-column: 1 / 2; /* Place btn-3q in the first column */
-}
-#btn-4q {
-    grid-column: 2 / 3; /* Place btn-4q in the second column */
-}
-#btn-5q {
-    grid-column: 1 / 2; /* Place btn-5q in the first column */
-    grid-row: 2; /* Place btn-5q in the second row */
-}
-.button-container button {
-    margin-left: -4px; 
-}
-.rq-rooms p {
-    margin-bottom: 10px; 
-}
-.rq-rooms, .bath-bed-group, .button-propertyStatus,.button-propertyType {
-    width: 30%;
-}
-.bedrooms-container, .bathrooms-container{
+
+.rq-rooms, .input-bath-bed {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap:10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-.bedrooms-container input {
-    margin-left: 8px;
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between buttons */
+    justify-content: center;
 }
-.bathrooms-container input {
-    margin-left: 8px;
+
+/* Input containers */
+.input-bath-bed div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.bath-bed-group{
-    margin-top:40px;
+
+input[type="number"] {
+    padding: 5px;
+    margin-top: 5px;
 }
-.bathrooms-container{
+
+/* Specific container styling */
+#bathrooms-container, #bedrooms-container {
+    display: none;
     margin-top: 10px;
 }
-#btn-10q {
-    display: block;
-    margin: 20px auto 0; /* Top and bottom margin as needed */
-    margin-left: 895px; 
-}
-.button-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-#living-btn, #bathroom-btn {
-    justify-self: end; /* Move these buttons to the right */
-    margin-right:4px; /* Add some space between the buttons */
+
+#bathrooms-txt, #bedrooms-txt {
+    font-size: 20px;
 }
 
-.button-set {
-    margin-bottom: 20px;
-    align-items: center;
-}
-
+/* TYPES OF WORK */
 .rq-button {
     background-color: #323131;
     color: white;
@@ -168,10 +149,6 @@ h2{
     font-family: 'Glacial Indifference', sans-serif;
     font-size: 18px;
 }
-/* 
-.set1 {
-    text-align: center;
-} */
 
 #rq-input {
     margin: 10px;
@@ -191,6 +168,11 @@ h2{
     color: #F7C454;
     font-size: 30px;
     font-weight: bold;
+    display: inline-block;
+}
+
+#rq-minResults, #rq-maxResults {
+    display: inline-block;
 }
 
 #rq-links {

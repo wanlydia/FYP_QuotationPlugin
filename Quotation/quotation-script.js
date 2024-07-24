@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
             $('.rq-button.' + setClass).removeClass('selected');
             // Select the clicked button and display the corresponding text
             $this.addClass('selected');
-            const selectedValue = $this.data('value');
+            const selectedValue = $this.text().toLowerCase(); // Use the button text to match the buttonText keys
             const minValue = parseFloat($this.data('min'));
             const maxValue = parseFloat($this.data('max'));
             selectedValues[setClass] = { min: minValue, max: maxValue };
@@ -65,6 +65,8 @@ jQuery(document).ready(function($) {
 
         $('#rq-minResults').text(totalMin.toFixed(1));
         $('#rq-maxResults').text(totalMax.toFixed(1));
+
+        return { totalMin, totalMax };
     }
 
     // Attach click event handler to buttons with class 'rq-button'
@@ -97,5 +99,26 @@ jQuery(document).ready(function($) {
     // Attach click event handlers to living and kitchen buttons
     $('#living-btn, #kitchen-btn').click(function() {
         $(this).toggleClass('active').siblings().removeClass('active');
+    });
+
+    // Redirect to another page on submit button click
+    $('#rq-submit').click(function() {
+        const totals = calculateTotals();
+        const { totalMin, totalMax } = totals;
+        const url = `http://localhost/wp_fyptest/index.php/results/?min=${totalMin}&max=${totalMax}`;
+        window.location.href = url;
+    });
+
+    // Ensure only one button in each set (property status and property type) is selected
+    $('.button-propertyStatus button').click(function() {
+        $(this).toggleClass('selected');
+        $(this).siblings().removeClass('selected');
+        calculateTotals(); // Recalculate totals if needed
+    });
+
+    $('.button-propertyType button').click(function() {
+        $(this).toggleClass('selected');
+        $(this).siblings().removeClass('selected');
+        calculateTotals(); // Recalculate totals if needed
     });
 });
