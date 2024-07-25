@@ -1,6 +1,6 @@
 #rq-formContainer, #rq-resultsContainer {
-    padding: 20px;
-    margin: 20px;
+    padding: 5px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,7 @@ h2{
     font-size: 27px;
 }
 
-.common-btn{
+/* .common-btn{
     background-color: #323131;
     color: white;
     border: 2px solid #323131;
@@ -45,7 +45,8 @@ h2{
     background-color: #F7C454;
     color: black;
     border-color: #F7C454;
-}
+} */
+
 #bedrooms-box, #bathrooms-box, #area-box, #rq-kitchen-submit {
     border: 2px solid white; 
     padding: 10px 10px;
@@ -53,6 +54,7 @@ h2{
     font-family: 'Glacial Indifference', sans-serif;
     font-size:14px;
 }
+
 /*quotation.html*/
 
 .Group-1 {
@@ -103,6 +105,7 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 input[type="number"] {
@@ -121,7 +124,7 @@ input[type="number"] {
 }
 
 /* TYPES OF WORK */
-.rq-button {
+.common-btn, .rq-button {
     background-color: #323131;
     color: white;
     border: 2px solid #323131;
@@ -134,12 +137,12 @@ input[type="number"] {
     text-align: center;
 }
 
-.rq-button:hover {
+.common-btn:hover, .rq-button:hover {
     border-color: #F7C454;
     color: #F7C454;
 }
 
-.rq-button.selected {
+.common-btn.selected, .rq-button.selected {
     background-color: #F7C454;
     color: black;
     border-color: #F7C454;
@@ -160,6 +163,10 @@ input[type="number"] {
 #types-text {
     font-family: 'Glacial Indifference', sans-serif;
     font-size: 20px;
+}
+
+#rq-submit {
+    margin-top: 35px;
 }
 
 /* RESULTS PAGE */

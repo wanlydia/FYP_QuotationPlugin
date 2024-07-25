@@ -4,30 +4,30 @@ jQuery(document).ready(function($) {
 
     // Object to store text descriptions for each button
     var buttonText = {
-        'hacking-1': 'Minor modifications to walls or partitions, often for convenience, without major structural changes',
-        'hacking-2': 'Removing or altering structural components like beams, requiring careful planning to maintain stability',
-        'hacking-3': 'Major structural alterations, including removing load-bearing walls and extensive rewiring, impacting building integrity',
-        'masonry-1': 'Post-hacking touch-up with minimal to no tiling',
-        'masonry-2': 'Construction of appliance, with post-hacking touch-up and tiling',
-        'masonry-3': 'Complete construction of appliance and/or cabinets, with post-hacking touch-up and tiling',
-        'carpentry-1': 'Simple renovation of furniture or structure',
-        'carpentry-2': 'Renovation of 2-3 furniture or structures',
-        'carpentry-3': 'Complex renovation of a variety of furniture or structures',
-        'ceiling-partition-1': 'Simple renovation of ceilings, walls',
-        'ceiling-partition-2': 'Renovation of partition beams, walls and ceiling',
-        'ceiling-partition-3': 'Extensive renovation of partition beams, walls and ceiling',
-        'plumbing-1': 'Renovating one water fixture (pipes, taps, etc.)',
-        'plumbing-2': 'Renovating two-three water fixture (pipes, taps, etc.)',
-        'plumbing-3': 'Renovating various water fixture (pipes, taps, etc.), with pipe extension and concealment',
-        'electrical-1': 'Install power outlets and plug points for one area',
-        'electrical-2': 'Install power outlets and plug points for various area',
-        'electrical-3': 'Install power outlets and plug points for the entire house',
-        'painting-1': 'Paint job for one room',
-        'painting-2': 'Paint job for two rooms',
-        'painting-3': 'Paint job for three or more rooms',
-        'cleaning-polishing-1': 'Standard post-renovation clean-up',
-        'cleaning-polishing-2': 'Additional post-renovation clean-up',
-        'cleaning-polishing-3': 'Comprehensive post-renovation clean-up'
+        'hacking-1.0': 'Minor modifications to walls or partitions, often for convenience, without major structural changes',
+        'hacking-2.0': 'Removing or altering structural components like beams, requiring careful planning to maintain stability',
+        'hacking-3.0': 'Major structural alterations, including removing load-bearing walls and extensive rewiring, impacting building integrity',
+        'masonry-1.0': 'Post-hacking touch-up with minimal to no tiling',
+        'masonry-2.0': 'Construction of appliance, with post-hacking touch-up and tiling',
+        'masonry-3.0': 'Complete construction of appliance and/or cabinets, with post-hacking touch-up and tiling',
+        'carpentry-1.0': 'Simple renovation of furniture or structure',
+        'carpentry-2.0': 'Renovation of 2-3 furniture or structures',
+        'carpentry-3.0': 'Complex renovation of a variety of furniture or structures',
+        'ceiling-partition-1.0': 'Simple renovation of ceilings, walls',
+        'ceiling-partition-2.0': 'Renovation of partition beams, walls and ceiling',
+        'ceiling-partition-3.0': 'Extensive renovation of partition beams, walls and ceiling',
+        'plumbing-1.0': 'Renovating one water fixture (pipes, taps, etc.)',
+        'plumbing-2.0': 'Renovating two-three water fixture (pipes, taps, etc.)',
+        'plumbing-3.0': 'Renovating various water fixture (pipes, taps, etc.), with pipe extension and concealment',
+        'electrical-1.0': 'Install power outlets and plug points for one area',
+        'electrical-2.0': 'Install power outlets and plug points for various area',
+        'electrical-3.0': 'Install power outlets and plug points for the entire house',
+        'painting-1.0': 'Paint job for one room',
+        'painting-2.0': 'Paint job for two rooms',
+        'painting-3.0': 'Paint job for three or more rooms',
+        'cleaning-polishing-1.0': 'Standard post-renovation clean-up',
+        'cleaning-polishing-2.0': 'Additional post-renovation clean-up',
+        'cleaning-polishing-3.0': 'Comprehensive post-renovation clean-up'
     };
 
     // Function to handle button click events
@@ -40,13 +40,14 @@ jQuery(document).ready(function($) {
         } else {
             // Deselect any other selected button in the same set
             $('.rq-button.' + setClass).removeClass('selected');
+            $('.common-btn.' + setClass).removeClass('selected');
             // Select the clicked button and display the corresponding text
             $this.addClass('selected');
             const selectedValue = $this.text().toLowerCase(); // Use the button text to match the buttonText keys
             const minValue = parseFloat($this.data('min'));
             const maxValue = parseFloat($this.data('max'));
             selectedValues[setClass] = { min: minValue, max: maxValue };
-            $('#' + setClass + '-text').text(buttonText[setClass + '-' + selectedValue]);
+            $('#' + setClass + '-text').text(buttonText[setClass + '-' + minValue]);
         }
 
         // Calculate the total min and max values
@@ -69,43 +70,42 @@ jQuery(document).ready(function($) {
         return { totalMin, totalMax };
     }
 
-    // Attach click event handler to buttons with class 'rq-button'
-    $('.rq-button').click(function() {
-        const $this = $(this);
-        const setClass = $this.attr('class').split(' ')[1];
-        handleButtonClick($this, setClass);
-    });
-
-    // Function to toggle the active state of a single button and deactivate others
-    window.toggleSingleButton = function(button, ...otherButtons) {
-        $(button).toggleClass('active');
-        otherButtons.forEach(btn => $('#' + btn).removeClass('active'));
-    }
-
-    // Function to toggle visibility of containers (bathroom, bedroom) and button state
-    window.toggleContainer = function(containerId, button) {
+    // Function to toggle the visibility of containers
+    function toggleContainer(containerId, button) {
         const $container = $('#' + containerId);
         const isDisplayed = $container.is(':visible');
         $container.toggle(!isDisplayed);
         $(button).toggleClass('active', !isDisplayed);
     }
 
-    // Function to navigate to the next page
-    window.nextPage = function(pageId) {
-        $('.page').hide();
-        $('#' + pageId).show();
+    // Function to handle button clicks and manage button states
+    function handleButtonSelection() {
+        const $this = $(this);
+        const setClass = $this.attr('class').split(' ')[1];
+        handleButtonClick($this, setClass);
     }
 
-    // Attach click event handlers to living and kitchen buttons
+    // Attach click event handlers
+    $('.rq-button').click(handleButtonSelection);
+
     $('#living-btn, #kitchen-btn').click(function() {
         $(this).toggleClass('active').siblings().removeClass('active');
     });
 
-    // Redirect to another page on submit button click
+    $('#living-btn').click(function() {
+        $(this).toggleClass('active').siblings().removeClass('active');
+        // Do not deselect others in this case
+    });
+
+    $('#bathroom-btn, #bedroom-btn').click(function() {
+        const containerId = $(this).attr('id').replace('-btn', 's-container');
+        toggleContainer(containerId, this);
+    });
+
     $('#rq-submit').click(function() {
         const totals = calculateTotals();
         const { totalMin, totalMax } = totals;
-        const url = `http://localhost/wp_fyptest/index.php/results/?min=${totalMin}&max=${totalMax}`;
+        const url = `https://renoku2.azharapp.com/1677-2/?min=${totalMin}&max=${totalMax}`;
         window.location.href = url;
     });
 
