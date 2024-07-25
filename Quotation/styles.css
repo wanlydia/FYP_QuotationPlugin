@@ -25,28 +25,6 @@ h2{
     font-size: 27px;
 }
 
-/* .common-btn{
-    background-color: #323131;
-    color: white;
-    border: 2px solid #323131;
-    border-color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    width: 100px; 
-    text-align: center;
-}
-.common-btn:hover {
-    border-color: #F7C454;
-    color: #F7C454;
-}
-.common-btn.active {
-    background-color: #F7C454;
-    color: black;
-    border-color: #F7C454;
-} */
-
 #bedrooms-box, #bathrooms-box, #area-box, #rq-kitchen-submit {
     border: 2px solid white; 
     padding: 10px 10px;
@@ -54,8 +32,6 @@ h2{
     font-family: 'Glacial Indifference', sans-serif;
     font-size:14px;
 }
-
-/*quotation.html*/
 
 .Group-1 {
     display: flex;
@@ -123,6 +99,10 @@ input[type="number"] {
     font-size: 20px;
 }
 
+#rq-inputSize {
+    height: 45px;
+}
+
 /* TYPES OF WORK */
 .common-btn, .rq-button {
     background-color: #323131;
@@ -169,7 +149,7 @@ input[type="number"] {
     margin-top: 35px;
 }
 
-/* RESULTS PAGE */
+/*rq_results*/
 
 #rq-results {
     color: #F7C454;

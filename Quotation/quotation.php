@@ -60,8 +60,10 @@ function rq_quotation_shortcode() {
                     <input type="number" id="bedrooms-box" name="bedrooms" placeholder="No." min="1" max="5">
                 </div>
             </div>
-            <!-- <p>Total Size of Renovated Area</p>
-            <input type="number" id="rq-input" placeholder="Enter..."> -->
+            <div class="rq-size">
+                <p>Total Size of Renovated Area</p>
+                <input type="number" id="rq-inputSize" placeholder="Enter..." min="1">
+            </div>
         </div>
         <br><br><br>
 
