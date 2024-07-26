@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
     }
 
     // Attach click event handlers
-    $('.rq-button').click(handleButtonSelection);
+    $('.rq-button, .common-btn').click(handleButtonSelection);
 
     $('#living-btn, #kitchen-btn').click(function() {
         $(this).toggleClass('active').siblings().removeClass('active');
