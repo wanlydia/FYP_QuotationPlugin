@@ -64,6 +64,8 @@ function rq_quotation_shortcode() {
         <div class="rq-size">
             <p>Total Size of Renovated Area</p>
             <input type="number" id="rq-inputSize" placeholder="Enter..." min="1">
+            <button id="metreSquared-btn" class="common-btn">m²</button>
+            <button id="squareFoot-btn" class="common-btn">sq ft</button>
         </div>
         <br><br><br>
 
