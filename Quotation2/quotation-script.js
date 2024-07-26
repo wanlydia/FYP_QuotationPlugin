@@ -31,6 +31,17 @@ jQuery(document).ready(function($) {
     //     'cleaning-polishing-3.0': 'Comprehensive post-renovation clean-up'
     // };
 
+    //Start-New
+    function toggleSingleButton(button, ...otherIds) {
+        button.classList.toggle('active');
+        otherIds.forEach(id => {
+            const otherButton = document.getElementById(id);
+            if (otherButton && otherButton !== button) {
+                otherButton.classList.remove('active');
+            }
+        });
+    }
+    //End-New
 
     // Function to handle button click events
     function handleButtonClick($this, setClass) {
@@ -86,11 +97,26 @@ jQuery(document).ready(function($) {
         $(button).toggleClass('active', !isDisplayed);
     }
 
+//New
+    // Function to toggle the visibility of containers
+function toggleContainer(containerId, button) {
+    const $container = $('#' + containerId);
+    const isDisplayed = $container.is(':visible');
+    $container.toggle(!isDisplayed);
+    $(button).toggleClass('active', !isDisplayed);
+}
 
-    $('#bathroom-btn, #bedroom-btn').click(function() {
-        const containerId = $(this).attr('id').replace('-btn', 's-container');
-        toggleContainer(containerId, this);
-    });
+// Attach click event handlers for bathroom-btn and bedroom-btn
+$('#bathroom-btn').click(function() {
+    $('#bathrooms-container').toggle();
+    $(this).toggleClass('active');
+});
+
+$('#bedroom-btn').click(function() {
+    $('#bedrooms-container').toggle();
+    $(this).toggleClass('active');
+});
+//New
    
     // Function to handle button clicks and manage button states
     function handleButtonSelection() {
