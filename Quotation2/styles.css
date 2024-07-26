@@ -1,0 +1,181 @@
+#rq-formContainer, #rq-resultsContainer {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 25px;
+    color: #FFFFFF; 
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h2{
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+    font-size: 27px;
+}
+
+#bedrooms-box, #bathrooms-box, #area-box, #rq-kitchen-submit {
+    border: 2px solid white; 
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size:14px;
+}
+
+.Group-1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between the two sections */
+}
+
+.rq-propertyStatus, .rq-propertyType {
+    flex: 1; /* Allow both to take up equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.button-propertyStatus, .button-propertyType {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Group-2 styling */
+.Group-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.rq-rooms, .input-bath-bed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 10px; Space between buttons */
+    justify-content: center;
+}
+
+/* Input containers */
+.input-bath-bed div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+input[type="number"] {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+/* Specific container styling */
+#bathrooms-container, #bedrooms-container {
+    display: none;
+    margin-top: 10px;
+}
+
+#bathrooms-txt, #bedrooms-txt {
+    font-size: 20px;
+}
+
+#rq-inputSize {
+    height: 45px;
+    border: 2px solid white; 
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* TYPES OF WORK */
+.common-btn, .rq-button {
+    background-color: #323131;
+    color: white;
+    border: 2px solid #323131;
+    border-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    width: 100px; 
+    text-align: center;
+}
+
+.common-btn:hover, .rq-button:hover {
+    border-color: #F7C454;
+    color: #F7C454;
+}
+
+.common-btn.selected, .rq-button.selected {
+    background-color: #F7C454;
+    color: black;
+    border-color: #F7C454;
+}
+
+.button-text {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 18px;
+}
+
+#rq-input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#types-text {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 20px;
+}
+
+#rq-submit {
+    margin-top: 35px;
+}
+
+/*rq_results*/
+
+#rq-results {
+    color: #F7C454;
+    font-size: 30px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#rq-minResults, #rq-maxResults {
+    display: inline-block;
+}
+
+#rq-links {
+    font-size: 20px !important;
+}
+
+a.highlight {
+    color: #F7C454;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+a.highlight:hover {
+    text-decoration: none;
+}
