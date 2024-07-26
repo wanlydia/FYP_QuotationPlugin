@@ -131,7 +131,7 @@ input[type="number"] {
 .button-text {
     font-family: 'Glacial Indifference', sans-serif;
     font-size: 18px;
-    padding: 5px;
+    padding-top: 10px;
 }
 
 #rq-input {
