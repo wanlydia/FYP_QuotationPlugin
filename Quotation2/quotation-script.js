@@ -2,6 +2,7 @@ jQuery(document).ready(function($) {
     // Variables to store the selected values from each set of buttons
     var selectedValues = {};
 
+
     // Object to store text descriptions for each button
     // var buttonText = {
     //     'hacking-1.0': 'Minor modifications to walls or partitions, often for convenience, without major structural changes',
@@ -30,6 +31,7 @@ jQuery(document).ready(function($) {
     //     'cleaning-polishing-3.0': 'Comprehensive post-renovation clean-up'
     // };
 
+
     // Function to handle button click events
     function handleButtonClick($this, setClass) {
         if ($this.hasClass('selected')) {
@@ -50,25 +52,31 @@ jQuery(document).ready(function($) {
             $('#' + setClass + '-text').text(buttonText[setClass + '-' + minValue]);
         }
 
+
         // Calculate the total min and max values
         calculateTotals();
     }
+
 
     // Function to calculate the total min and max values
     function calculateTotals() {
         let totalMin = 0;
         let totalMax = 0;
 
+
         for (const key in selectedValues) {
             totalMin += selectedValues[key].min;
             totalMax += selectedValues[key].max;
         }
 
+
         $('#rq-minResults').text(totalMin.toFixed(1));
         $('#rq-maxResults').text(totalMax.toFixed(1));
 
+
         return { totalMin, totalMax };
     }
+
 
     // Function to toggle the visibility of containers
     function toggleContainer(containerId, button) {
@@ -78,6 +86,12 @@ jQuery(document).ready(function($) {
         $(button).toggleClass('active', !isDisplayed);
     }
 
+
+    $('#bathroom-btn, #bedroom-btn').click(function() {
+        const containerId = $(this).attr('id').replace('-btn', 's-container');
+        toggleContainer(containerId, this);
+    });
+   
     // Function to handle button clicks and manage button states
     function handleButtonSelection() {
         const $this = $(this);
@@ -85,22 +99,24 @@ jQuery(document).ready(function($) {
         handleButtonClick($this, setClass);
     }
 
+
     // Attach click event handlers
     $('.rq-button, .common-btn').click(handleButtonSelection);
+
 
     $('#living-btn, #kitchen-btn').click(function() {
         $(this).toggleClass('active').siblings().removeClass('active');
     });
+
 
     $('#living-btn').click(function() {
         $(this).toggleClass('active').siblings().removeClass('active');
         // Do not deselect others in this case
     });
 
-    $('#bathroom-btn, #bedroom-btn').click(function() {
-        const containerId = $(this).attr('id').replace('-btn', 's-container');
-        toggleContainer(containerId, this);
-    });
+
+   
+
 
     $('#rq-submit').click(function() {
         const totals = calculateTotals();
@@ -109,6 +125,7 @@ jQuery(document).ready(function($) {
         window.location.href = url;
     });
 
+
     // Ensure only one button in each set (property status and property type) is selected
     $('.button-propertyStatus button').click(function() {
         $(this).toggleClass('selected');
@@ -116,9 +133,11 @@ jQuery(document).ready(function($) {
         calculateTotals(); // Recalculate totals if needed
     });
 
+
     $('.button-propertyType button').click(function() {
         $(this).toggleClass('selected');
         $(this).siblings().removeClass('selected');
         calculateTotals(); // Recalculate totals if needed
     });
 });
+
