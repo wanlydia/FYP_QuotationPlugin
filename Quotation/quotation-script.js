@@ -1,11 +1,13 @@
 jQuery(document).ready(function($) {
     // Variables to store the selected values from each set of buttons
     var selectedValues = {};
-    var unitMultiplier = 1; // Default multiplier for "m²"
+    var sizeMultiplier = 1; // Default multiplier for "m²"
     var inputSize = 1; // Default size multiplier
-    var quarterMultiplier = 1; // Default multiplier for quarter buttons
+    var statusMultiplier = 1; // Default multiplier for quarter buttons
+    var typeMultiplier = 1; // Default multiplier for property type
+    var numOfRooms = 0; // Default number of rooms
 
-    // Object to store text descriptions for each button
+// Object to store text descriptions for each button
     var buttonText = {
         'hacking-light': 'Minor modifications to walls or partitions, often for convenience, without major structural changes',
         'hacking-moderate': 'Removing or altering structural components like beams, requiring careful planning to maintain stability',
@@ -63,11 +65,25 @@ jQuery(document).ready(function($) {
             totalMin += selectedValues[key].min;
             totalMax += selectedValues[key].max;
         }
-        totalMin *= unitMultiplier * inputSize * quarterMultiplier;
-        totalMax *= unitMultiplier * inputSize * quarterMultiplier;
+        totalMin *= sizeMultiplier * inputSize * statusMultiplier * typeMultiplier * numOfRooms;
+        totalMax *= sizeMultiplier * inputSize * statusMultiplier * typeMultiplier * numOfRooms;
         $('#rq-minResults').text(totalMin);
         $('#rq-maxResults').text(totalMax);
         return { totalMin, totalMax };
+    }
+
+    // Function to update the number of rooms
+    function updateNumOfRooms() {
+function updateNumOfRooms() {
+    const bathrooms = (parseInt($('#bathrooms-box').val()) || 0);
+    const bedrooms = (parseInt($('#bedrooms-box').val()) || 0);
+    numOfRooms = Math.max(0, bathrooms + bedrooms); // Ensure numOfRooms is not negative
+    $('#numOfRooms').text(numOfRooms); // Update the number of rooms displayed
+    calculateTotals(); // Recalculate totals based on the new number of rooms
+}
+        numOfRooms = bathrooms + bedrooms;
+        $('#numOfRooms').text(numOfRooms); // Update the number of rooms displayed
+        calculateTotals(); // Recalculate totals based on the new number of rooms
     }
 
     // Function to toggle the visibility of containers
@@ -101,23 +117,42 @@ jQuery(document).ready(function($) {
     });
 
     // Ensure only one button in each set (property status and property type) is selected
-    $('.button-propertyStatus button, .button-propertyType button').click(function() {
+    $('.button-propertyStatus button').click(function() {
         $(this).addClass('selected').siblings().removeClass('selected');
         calculateTotals(); // Recalculate totals if needed
+    });
+
+    $('.button-propertyType button').click(function() {
+        $(this).addClass('selected').siblings().removeClass('selected');
+        const propertyType = $(this).text().toLowerCase();
+        switch (propertyType) {
+            case 'hdb':
+                typeMultiplier = 1.2;
+                break;
+            case 'condo':
+                typeMultiplier = 1;
+                break;
+            case 'landed':
+                typeMultiplier = 1.5;
+                break;
+            default:
+                typeMultiplier = 1;
+        }
+        calculateTotals(); // Recalculate totals with the new property type multiplier
     });
 
     // Ensure only one button in each set (area unit) is selected and set multiplier
     $('#metreSquared-btn').click(function() {
         $(this).addClass('selected');
         $('#squareFoot-btn').removeClass('selected');
-        unitMultiplier = 1; // No change needed for m²
+        sizeMultiplier = 1; // No change needed for m²
         calculateTotals(); // Recalculate totals with the new multiplier
     });
 
     $('#squareFoot-btn').click(function() {
         $(this).addClass('selected');
         $('#metreSquared-btn').removeClass('selected');
-        unitMultiplier = 10.764; // Conversion factor from m² to sq ft
+        sizeMultiplier = 1.0764; // Conversion factor from m² to sq ft
         calculateTotals(); // Recalculate totals with the new multiplier
     });
 
@@ -130,8 +165,11 @@ jQuery(document).ready(function($) {
         } else {
             $this.addClass('selected');
         }
-        calculateTotals(); // Recalculate totals based on the selected buttons
+        updateNumOfRooms(); // Update the number of rooms based on button selection
     });
+
+    // Update numOfRooms and recalculate totals when input size changes
+    $('#bathrooms-box, #bedrooms-box').on('input', updateNumOfRooms);
 
     // Update inputSize and recalculate totals when input size changes
     $('#rq-inputSize').on('input', function() {
@@ -139,18 +177,18 @@ jQuery(document).ready(function($) {
         calculateTotals(); // Recalculate totals based on the new input size
     });
 
-    // Update quarterMultiplier and recalculate totals when quarter buttons are clicked
+    // Update statusMultiplier and recalculate totals when quarter buttons are clicked
     $('#btn-1q').click(function() {
         $(this).addClass('selected');
         $('#btn-2q').removeClass('selected');
-        quarterMultiplier = 1; // Multiplier for 1q
+        statusMultiplier = 1; // Multiplier for 1q
         calculateTotals(); // Recalculate totals with the new quarter multiplier
     });
 
     $('#btn-2q').click(function() {
         $(this).addClass('selected');
         $('#btn-1q').removeClass('selected');
-        quarterMultiplier = 2; // Multiplier for 2q
+        statusMultiplier = 2; // Multiplier for 2q
         calculateTotals(); // Recalculate totals with the new quarter multiplier
     });
 });
