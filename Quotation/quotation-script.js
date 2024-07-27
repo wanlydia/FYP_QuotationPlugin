@@ -120,4 +120,15 @@ jQuery(document).ready(function($) {
         $(this).siblings().removeClass('selected');
         calculateTotals(); // Recalculate totals if needed
     });
+
+    // Ensure only one button in each set (area unit) is selected
+    $('#metreSquared-btn').click(function() {
+        $(this).addClass('selected');
+        $('#squareFoot-btn').removeClass('selected');
+    });
+
+    $('#squareFoot-btn').click(function() {
+        $(this).addClass('selected');
+        $('#metreSquared-btn').removeClass('selected');
+    });
 });
