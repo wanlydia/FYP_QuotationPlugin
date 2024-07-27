@@ -54,60 +54,14 @@ jQuery(document).ready(function($) {
 
     // Function to calculate totals and update the results
     function calculateTotals() {
-        // Clear previous error messages and scroll positions
-        $('html, body').stop(true, true);
-
-        // Validate that all required selections and inputs are present
-        const propertyStatusSelected = $('.button-propertyStatus .selected').length > 0;
-        const propertyTypeSelected = $('.button-propertyType .selected').length > 0;
-        const areaSelected = $('#living-btn.active, #kitchen-btn.active, #bathroom-btn.active, #bedroom-btn.active').length > 0;
-        const inputSize = parseFloat($('#rq-inputSize').val());
-        const areaUnitSelected = $('#metreSquared-btn').hasClass('selected') || $('#squareFoot-btn').hasClass('selected');
-
-        if (!propertyStatusSelected) {
-            $('html, body').animate({ scrollTop: $('.rq-propertyStatus').offset().top }, 1000);
-            return;
-        }
-
-        if (!propertyTypeSelected) {
-            $('html, body').animate({ scrollTop: $('.rq-propertyType').offset().top }, 1000);
-            return;
-        }
-
-        if (!areaSelected) {
-            $('html, body').animate({ scrollTop: $('.rq-rooms').offset().top }, 1000);
-            return;
-        }
-
-        if (!areaUnitSelected) {
-            $('html, body').animate({ scrollTop: $('#rq-size').offset().top }, 1000);
-            return;
-        }
-
-        if (isNaN(inputSize) || inputSize <= 0) {
-            $('html, body').animate({ scrollTop: $('#rq-size').offset().top }, 1000);
-            return;
-        }
-
         let totalMin = 0;
         let totalMax = 0;
         for (let key in selectedValues) {
             totalMin += selectedValues[key].min;
             totalMax += selectedValues[key].max;
         }
-
-        // Check the selected area unit and adjust totals accordingly
-        if ($('#squareFoot-btn').hasClass('selected')) {
-            totalMin *= 10.7;
-            totalMax *= 10.7;
-        }
-
-        // Multiply totals by the input size
-        totalMin *= inputSize;
-        totalMax *= inputSize;
-
-        $('#rq-minResults').text(totalMin.toFixed(2));
-        $('#rq-maxResults').text(totalMax.toFixed(2));
+        $('#rq-minResults').text(totalMin);
+        $('#rq-maxResults').text(totalMax);
         return { totalMin, totalMax };
     }
 
@@ -129,11 +83,6 @@ jQuery(document).ready(function($) {
     // Attach click event handlers
     $('.rq-button').click(handleButtonSelection);
 
-    $('#living-btn, #kitchen-btn').click(function() {
-        $(this).toggleClass('active').siblings().removeClass('active');
-        // Ensure only one button in this set can be active
-    });
-
     $('#bathroom-btn, #bedroom-btn').click(function() {
         const containerId = $(this).attr('id').replace('-btn', 's-container');
         toggleContainer(containerId, this);
@@ -141,7 +90,6 @@ jQuery(document).ready(function($) {
 
     $('#rq-submit').click(function() {
         const totals = calculateTotals();
-        if (!totals) return; // Prevent submission if validation fails
         const { totalMin, totalMax } = totals;
         const url = `http://localhost/wp_fyptest/index.php/results/?min=${totalMin}&max=${totalMax}`;
         window.location.href = url;
@@ -157,13 +105,11 @@ jQuery(document).ready(function($) {
     $('#metreSquared-btn').click(function() {
         $(this).addClass('selected');
         $('#squareFoot-btn').removeClass('selected');
-        calculateTotals(); // Recalculate totals based on the new unit
     });
 
     $('#squareFoot-btn').click(function() {
         $(this).addClass('selected');
         $('#metreSquared-btn').removeClass('selected');
-        calculateTotals(); // Recalculate totals based on the new unit
     });
 
     // Ensure that buttons in button-container can also be selected/deselected
@@ -174,10 +120,6 @@ jQuery(document).ready(function($) {
             delete selectedValues[$this.data('type')];
         } else {
             $this.addClass('selected');
-            selectedValues[$this.data('type')] = {
-                min: parseFloat($this.data('min')),
-                max: parseFloat($this.data('max'))
-            };
         }
         calculateTotals(); // Recalculate totals based on the selected buttons
     });
