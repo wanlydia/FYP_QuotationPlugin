@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
     // Variables to store the selected values from each set of buttons
     var selectedValues = {};
+    var unitMultiplier = 1; // Default multiplier for "m²"
 
     // Object to store text descriptions for each button
     var buttonText = {
@@ -60,6 +61,8 @@ jQuery(document).ready(function($) {
             totalMin += selectedValues[key].min;
             totalMax += selectedValues[key].max;
         }
+        totalMin *= unitMultiplier;
+        totalMax *= unitMultiplier;
         $('#rq-minResults').text(totalMin);
         $('#rq-maxResults').text(totalMax);
         return { totalMin, totalMax };
@@ -101,15 +104,19 @@ jQuery(document).ready(function($) {
         calculateTotals(); // Recalculate totals if needed
     });
 
-    // Ensure only one button in each set (area unit) is selected
+    // Ensure only one button in each set (area unit) is selected and set multiplier
     $('#metreSquared-btn').click(function() {
         $(this).addClass('selected');
         $('#squareFoot-btn').removeClass('selected');
+        unitMultiplier = 1; // No change needed for m²
+        calculateTotals(); // Recalculate totals with the new multiplier
     });
 
     $('#squareFoot-btn').click(function() {
         $(this).addClass('selected');
         $('#metreSquared-btn').removeClass('selected');
+        unitMultiplier = 1.0764; // Conversion factor from m² to sq ft
+        calculateTotals(); // Recalculate totals with the new multiplier
     });
 
     // Ensure that buttons in button-container can also be selected/deselected
