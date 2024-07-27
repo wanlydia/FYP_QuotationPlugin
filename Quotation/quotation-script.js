@@ -143,7 +143,7 @@ jQuery(document).ready(function($) {
         const totals = calculateTotals();
         if (!totals) return; // Prevent submission if validation fails
         const { totalMin, totalMax } = totals;
-        const url = `https://renoku2.azharapp.com/1677-2/?min=${totalMin}&max=${totalMax}`;
+        const url = `http://localhost/wp_fyptest/index.php/results/?min=${totalMin}&max=${totalMax}`;
         window.location.href = url;
     });
 
