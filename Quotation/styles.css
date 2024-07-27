@@ -91,13 +91,12 @@ h2{
 
 input[type="number"] {
     padding: 5px;
-    margin-top: 5px;
 }
 
 /* Specific container styling */
 #bathrooms-container, #bedrooms-container {
     display: none;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 #bathrooms-txt, #bedrooms-txt {
