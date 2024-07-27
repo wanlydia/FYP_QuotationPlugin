@@ -141,15 +141,14 @@ function rq_quotation_shortcode() {
 
         <button class="common-btn" id="rq-submit">Submit</button>
     </div>
-
-        
+   
     <?php
     return ob_get_clean();
 }
 add_shortcode('rq_quotation', 'rq_quotation_shortcode');
 
 function rq_results_shortcode() {
-    // Get the min and max values from the URL parameters
+
     $totalMin = isset($_GET['min']) ? floatval($_GET['min']) : 0;
     $totalMax = isset($_GET['max']) ? floatval($_GET['max']) : 0;
 
@@ -157,7 +156,7 @@ function rq_results_shortcode() {
     <div id="rq-resultsContainer">
         <p id="est-reno-txt">Your estimated renovation cost is</p>
         <div id="rq-results">
-            $<div id="rq-minResults"><?php echo number_format($totalMin, 1); ?></div> - $<div id="rq-maxResults"><?php echo number_format($totalMax, 1); ?></div>
+            $<div id="rq-minResults"><?php echo number_format($totalMin); ?></div> - $<div id="rq-maxResults"><?php echo number_format($totalMax); ?></div>
         </div>
         
         <div id="rq-links">
@@ -168,5 +167,6 @@ function rq_results_shortcode() {
     <?php
     return ob_get_clean();
 }
+
 add_shortcode('rq_results', 'rq_results_shortcode');
 ?>

@@ -35,37 +35,33 @@ jQuery(document).ready(function($) {
         if ($this.hasClass('selected')) {
             // If the button is already selected, deselect it and clear the text
             $this.removeClass('selected');
-            $('#' + setClass + '-text').text(''); // Clear the text
+            $('#' + setClass + '-text').text('');
             delete selectedValues[setClass];
         } else {
             // Deselect any other selected button in the same set
             $('.rq-button.' + setClass).removeClass('selected');
             // Select the clicked button and display the corresponding text
             $this.addClass('selected');
-            const value = $this.data('value');
+            const selectedValue = $this.text().toLowerCase(); // Use the button text to match the buttonText keys
             const minValue = parseFloat($this.data('min'));
             const maxValue = parseFloat($this.data('max'));
-            selectedValues[setClass] = { value: value, min: minValue, max: maxValue };
-            $('#' + setClass + '-text').text(buttonText[setClass + '-' + value] || ''); // Display the text
+            selectedValues[setClass] = { min: minValue, max: maxValue };
+            $('#' + setClass + '-text').text(buttonText[setClass + '-' + selectedValue]);
         }
-
         // Calculate the total min and max values
         calculateTotals();
     }
 
-    // Function to calculate the total min and max values
+    // Function to calculate totals and update the results
     function calculateTotals() {
         let totalMin = 0;
         let totalMax = 0;
-
-        for (const key in selectedValues) {
+        for (let key in selectedValues) {
             totalMin += selectedValues[key].min;
             totalMax += selectedValues[key].max;
         }
-
-        $('#rq-minResults').text(totalMin.toFixed(1));
-        $('#rq-maxResults').text(totalMax.toFixed(1));
-
+        $('#rq-minResults').text(totalMin);
+        $('#rq-maxResults').text(totalMax);
         return { totalMin, totalMax };
     }
 
@@ -85,7 +81,7 @@ jQuery(document).ready(function($) {
     }
 
     // Attach click event handlers
-    $('.rq-button, .common-btn').click(handleButtonSelection);
+    $('.rq-button').click(handleButtonSelection);
 
     $('#living-btn, #kitchen-btn').click(function() {
         $(this).toggleClass('active').siblings().removeClass('active');
@@ -104,7 +100,7 @@ jQuery(document).ready(function($) {
     $('#rq-submit').click(function() {
         const totals = calculateTotals();
         const { totalMin, totalMax } = totals;
-        const url = `https://renoku2.azharapp.com/1677-2/?min=${totalMin}&max=${totalMax}`;
+        const url = `http://localhost/wp_fyptest/index.php/results/?min=${totalMin}&max=${totalMax}`;
         window.location.href = url;
     });
 
