@@ -3,6 +3,7 @@ jQuery(document).ready(function($) {
     var selectedValues = {};
     var unitMultiplier = 1; // Default multiplier for "m²"
     var inputSize = 1; // Default size multiplier
+    var quarterMultiplier = 1; // Default multiplier for quarter buttons
 
     // Object to store text descriptions for each button
     var buttonText = {
@@ -62,8 +63,8 @@ jQuery(document).ready(function($) {
             totalMin += selectedValues[key].min;
             totalMax += selectedValues[key].max;
         }
-        totalMin *= unitMultiplier * inputSize;
-        totalMax *= unitMultiplier * inputSize;
+        totalMin *= unitMultiplier * inputSize * quarterMultiplier;
+        totalMax *= unitMultiplier * inputSize * quarterMultiplier;
         $('#rq-minResults').text(totalMin);
         $('#rq-maxResults').text(totalMax);
         return { totalMin, totalMax };
@@ -136,5 +137,20 @@ jQuery(document).ready(function($) {
     $('#rq-inputSize').on('input', function() {
         inputSize = parseFloat($(this).val()) || 1; // Default to 1 if input is invalid
         calculateTotals(); // Recalculate totals based on the new input size
+    });
+
+    // Update quarterMultiplier and recalculate totals when quarter buttons are clicked
+    $('#btn-1q').click(function() {
+        $(this).addClass('selected');
+        $('#btn-2q').removeClass('selected');
+        quarterMultiplier = 1; // Multiplier for 1q
+        calculateTotals(); // Recalculate totals with the new quarter multiplier
+    });
+
+    $('#btn-2q').click(function() {
+        $(this).addClass('selected');
+        $('#btn-1q').removeClass('selected');
+        quarterMultiplier = 2; // Multiplier for 2q
+        calculateTotals(); // Recalculate totals with the new quarter multiplier
     });
 });
