@@ -29,6 +29,7 @@ function rq_quotation_shortcode() {
                     <button id="btn-2q" class="common-btn" type="button" onclick="toggleSingleButton(this, 'btn-2q', 'btn-1q')">Resale</button>
                 </div>
             </div>
+
             <div class="rq-propertyType">
                 <p>Property Type</p>
                 <div class="button-propertyType">

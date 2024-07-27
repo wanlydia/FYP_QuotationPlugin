@@ -109,15 +109,8 @@ jQuery(document).ready(function($) {
     });
 
     // Ensure only one button in each set (property status and property type) is selected
-    $('.button-propertyStatus button').click(function() {
-        $(this).toggleClass('selected');
-        $(this).siblings().removeClass('selected');
-        calculateTotals(); // Recalculate totals if needed
-    });
-
-    $('.button-propertyType button').click(function() {
-        $(this).toggleClass('selected');
-        $(this).siblings().removeClass('selected');
+    $('.button-propertyStatus button, .button-propertyType button').click(function() {
+        $(this).addClass('selected').siblings().removeClass('selected');
         calculateTotals(); // Recalculate totals if needed
     });
 
