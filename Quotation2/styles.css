@@ -76,12 +76,17 @@ h2{
     justify-content: center;
 }
 
+/* Add padding between buttons in .button-container */
+.button-container button {
+    margin: 5px; /* Adjust the margin value as needed */
+}
+
 /* Input containers */
 .input-bath-bed div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    padding-top: 40px;
 }
 
 input[type="number"] {
@@ -100,7 +105,7 @@ input[type="number"] {
 }
 
 #rq-inputSize {
-    height: 45px;
+    height: 25px;
     border: 2px solid white; 
     padding: 10px 10px;
     border-radius: 5px;

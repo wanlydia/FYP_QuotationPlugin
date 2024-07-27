@@ -35,37 +35,79 @@ jQuery(document).ready(function($) {
         if ($this.hasClass('selected')) {
             // If the button is already selected, deselect it and clear the text
             $this.removeClass('selected');
-            $('#' + setClass + '-text').text(''); // Clear the text
+            $('#' + setClass + '-text').text('');
             delete selectedValues[setClass];
         } else {
             // Deselect any other selected button in the same set
             $('.rq-button.' + setClass).removeClass('selected');
             // Select the clicked button and display the corresponding text
             $this.addClass('selected');
-            const value = $this.data('value');
+            const selectedValue = $this.text().toLowerCase(); // Use the button text to match the buttonText keys
             const minValue = parseFloat($this.data('min'));
             const maxValue = parseFloat($this.data('max'));
-            selectedValues[setClass] = { value: value, min: minValue, max: maxValue };
-            $('#' + setClass + '-text').text(buttonText[setClass + '-' + value] || ''); // Display the text
+            selectedValues[setClass] = { min: minValue, max: maxValue };
+            $('#' + setClass + '-text').text(buttonText[setClass + '-' + selectedValue]);
         }
-
         // Calculate the total min and max values
         calculateTotals();
     }
 
-    // Function to calculate the total min and max values
+    // Function to calculate totals and update the results
     function calculateTotals() {
+        // Clear previous error messages and scroll positions
+        $('html, body').stop(true, true);
+
+        // Validate that all required selections and inputs are present
+        const propertyStatusSelected = $('.button-propertyStatus .selected').length > 0;
+        const propertyTypeSelected = $('.button-propertyType .selected').length > 0;
+        const areaSelected = $('#living-btn.active, #kitchen-btn.active, #bathroom-btn.active, #bedroom-btn.active').length > 0;
+        const inputSize = parseFloat($('#rq-inputSize').val());
+        const areaUnitSelected = $('#metreSquared-btn').hasClass('selected') || $('#squareFoot-btn').hasClass('selected');
+
+        if (!propertyStatusSelected) {
+            $('html, body').animate({ scrollTop: $('.rq-propertyStatus').offset().top }, 1000);
+            return;
+        }
+
+        if (!propertyTypeSelected) {
+            $('html, body').animate({ scrollTop: $('.rq-propertyType').offset().top }, 1000);
+            return;
+        }
+
+        if (!areaSelected) {
+            $('html, body').animate({ scrollTop: $('.rq-rooms').offset().top }, 1000);
+            return;
+        }
+
+        if (!areaUnitSelected) {
+            $('html, body').animate({ scrollTop: $('#rq-size').offset().top }, 1000);
+            return;
+        }
+
+        if (isNaN(inputSize) || inputSize <= 0) {
+            $('html, body').animate({ scrollTop: $('#rq-size').offset().top }, 1000);
+            return;
+        }
+
         let totalMin = 0;
         let totalMax = 0;
-
-        for (const key in selectedValues) {
+        for (let key in selectedValues) {
             totalMin += selectedValues[key].min;
             totalMax += selectedValues[key].max;
         }
 
-        $('#rq-minResults').text(totalMin.toFixed(1));
-        $('#rq-maxResults').text(totalMax.toFixed(1));
+        // Check the selected area unit and adjust totals accordingly
+        if ($('#squareFoot-btn').hasClass('selected')) {
+            totalMin *= 10.7;
+            totalMax *= 10.7;
+        }
 
+        // Multiply totals by the input size
+        totalMin *= inputSize;
+        totalMax *= inputSize;
+
+        $('#rq-minResults').text(totalMin.toFixed(2));
+        $('#rq-maxResults').text(totalMax.toFixed(2));
         return { totalMin, totalMax };
     }
 
@@ -85,15 +127,11 @@ jQuery(document).ready(function($) {
     }
 
     // Attach click event handlers
-    $('.rq-button, .common-btn').click(handleButtonSelection);
+    $('.rq-button').click(handleButtonSelection);
 
     $('#living-btn, #kitchen-btn').click(function() {
         $(this).toggleClass('active').siblings().removeClass('active');
-    });
-
-    $('#living-btn').click(function() {
-        $(this).toggleClass('active').siblings().removeClass('active');
-        // Do not deselect others in this case
+        // Ensure only one button in this set can be active
     });
 
     $('#bathroom-btn, #bedroom-btn').click(function() {
@@ -103,21 +141,44 @@ jQuery(document).ready(function($) {
 
     $('#rq-submit').click(function() {
         const totals = calculateTotals();
+        if (!totals) return; // Prevent submission if validation fails
         const { totalMin, totalMax } = totals;
-        const url = `https://renoku2.azharapp.com/1677-2/?min=${totalMin}&max=${totalMax}`;
+        const url = `http://localhost/wp_fyptest/index.php/results/?min=${totalMin}&max=${totalMax}`;
         window.location.href = url;
     });
 
     // Ensure only one button in each set (property status and property type) is selected
-    $('.button-propertyStatus button').click(function() {
-        $(this).toggleClass('selected');
-        $(this).siblings().removeClass('selected');
+    $('.button-propertyStatus button, .button-propertyType button').click(function() {
+        $(this).addClass('selected').siblings().removeClass('selected');
         calculateTotals(); // Recalculate totals if needed
     });
 
-    $('.button-propertyType button').click(function() {
-        $(this).toggleClass('selected');
-        $(this).siblings().removeClass('selected');
-        calculateTotals(); // Recalculate totals if needed
+    // Ensure only one button in each set (area unit) is selected
+    $('#metreSquared-btn').click(function() {
+        $(this).addClass('selected');
+        $('#squareFoot-btn').removeClass('selected');
+        calculateTotals(); // Recalculate totals based on the new unit
+    });
+
+    $('#squareFoot-btn').click(function() {
+        $(this).addClass('selected');
+        $('#metreSquared-btn').removeClass('selected');
+        calculateTotals(); // Recalculate totals based on the new unit
+    });
+
+    // Ensure that buttons in button-container can also be selected/deselected
+    $('.button-container button').click(function() {
+        const $this = $(this);
+        if ($this.hasClass('selected')) {
+            $this.removeClass('selected');
+            delete selectedValues[$this.data('type')];
+        } else {
+            $this.addClass('selected');
+            selectedValues[$this.data('type')] = {
+                min: parseFloat($this.data('min')),
+                max: parseFloat($this.data('max'))
+            };
+        }
+        calculateTotals(); // Recalculate totals based on the selected buttons
     });
 });
