@@ -121,7 +121,7 @@ jQuery(document).ready(function($) {
             return;
         }
         const { totalMin, totalMax } = totals;
-        const url = `http://localhost/wp_fyptest/index.php/results/?min=${totalMin}&max=${totalMax}`;
+        const url = `https://renoku2.azharapp.com/1677-2/?min=${totalMin}&max=${totalMax}`;
         window.location.href = url;
     });
 
