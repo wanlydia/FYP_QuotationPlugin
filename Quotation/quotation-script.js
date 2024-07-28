@@ -179,9 +179,9 @@ jQuery(document).ready(function($) {
         const id = $(this).attr('id');
         const value = parseInt($(this).val()) || 0; // Default to 0 if input is invalid
         if (id === 'bathrooms-box') {
-            noOfRooms += value;
+            noOfRooms += (value - 1);
         } else if (id === 'bedrooms-box') {
-            noOfRooms += value;
+            noOfRooms += (value - 1);
         }
         calculateTotals();
     });
